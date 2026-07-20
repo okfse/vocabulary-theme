@@ -130,7 +130,7 @@
         'meta_type' => 'numeric',
 		'meta_value' => array($today),
 		'orderby' => 'meta_value_num',
-		'order' => 'ASC'
+		'order' => 'DESC'
         //'paged' => $paged,
     ));
     ?>
