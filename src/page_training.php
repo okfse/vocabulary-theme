@@ -24,7 +24,7 @@
 <?php $testimonial1 = get_field('testimonial_1_content'); ?>
 <?php $testimonial2 = get_field('testimonial_2_content'); ?>
 
-
+<?php if(get_field('subhead_title')) : ?>
 <article class="topic-summary about">
     <div class="description">
         <?php if (get_field('subhead_title')) : ?>
@@ -49,6 +49,50 @@
     </figure>
 
 </article>
+<?php endif; ?>
+
+<?php if(get_field('display_training_flow_section')) : ?>
+
+    <div>
+        <?php the_field('training_flow_content'); ?>
+
+        <ol>
+            <li>
+                <details>
+                    <summary>Free Training Video Library</summary>
+
+                    <p> stuff here</p>
+                </details>
+            </li>
+
+            <li>
+                <details>
+                    <summary>Assessment for Digital Credential</summary>
+
+                    <p> stuff here</p>
+                </details>
+            </li>
+
+            <li>
+                <details>
+                    <summary>Seminar Courses</summary>
+
+                    <p> stuff here</p>
+                </details>
+            </li>
+
+            <li>
+                <details>
+                    <summary>CC Certifcation</summary>
+
+                    <p> stuff here</p>
+                </details>
+            </li>
+        </ol>
+        
+    </div>
+
+<?php endif; ?>
 
     <?php if($testimonial1) : ?>
     <blockquote>
@@ -142,49 +186,6 @@
     </article>
 
 </article>
-<?php endif; ?>
-
-<?php if(get_field('display_training_flow_section')) : ?>
-
-    <div>
-        <?php the_field('training_flow_content'); ?>
-
-        <ol>
-            <li>
-                <details>
-                    <summary>Free Training Video Library</summary>
-
-                    <p> stuff here</p>
-                </details>
-            </li>
-
-            <li>
-                <details>
-                    <summary>Assessment for Digital Credential</summary>
-
-                    <p> stuff here</p>
-                </details>
-            </li>
-
-            <li>
-                <details>
-                    <summary>Seminar Courses</summary>
-
-                    <p> stuff here</p>
-                </details>
-            </li>
-
-            <li>
-                <details>
-                    <summary>CC Certifcation</summary>
-
-                    <p> stuff here</p>
-                </details>
-            </li>
-        </ol>
-        
-    </div>
-
 <?php endif; ?>
 
 <!-- topic features here -->
