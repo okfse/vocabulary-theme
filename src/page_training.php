@@ -146,8 +146,43 @@
 
 <?php if(get_field('display_training_flow_section')) : ?>
 
-    <div class="highlight">
+    <div>
         <?php the_field('training_flow_content'); ?>
+
+        <ol>
+            <li>
+                <details>
+                    <summary>Free Training Video Library</summary>
+
+                    <p> stuff here</p>
+                </details>
+            </li>
+
+            <li>
+                <details>
+                    <summary>Assessment for Digital Credential</summary>
+
+                    <p> stuff here</p>
+                </details>
+            </li>
+
+            <li>
+                <details>
+                    <summary>Seminar Courses</summary>
+
+                    <p> stuff here</p>
+                </details>
+            </li>
+
+            <li>
+                <details>
+                    <summary>CC Certifcation</summary>
+
+                    <p> stuff here</p>
+                </details>
+            </li>
+        </ol>
+        
     </div>
 
 <?php endif; ?>
