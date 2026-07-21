@@ -56,7 +56,7 @@
     </blockquote>
     <?php endif; ?>
 
-
+<?php if(get_field('display_training_events_section')) : ?>
 <article class="topic-dive">
     <h2><?php the_field('training_events_title'); ?></h2>
     <p><?php the_field('training_events_tagline'); ?></p>
@@ -142,6 +142,15 @@
     </article>
 
 </article>
+<?php endif; ?>
+
+<?php if(get_field('display_training_flow_section')) : ?>
+
+    <div class="highlight">
+        <?php the_field('training_flow_content'); ?>
+    </div>
+
+<?php endif; ?>
 
 <!-- topic features here -->
  <?php
