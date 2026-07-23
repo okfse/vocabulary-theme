@@ -55,12 +55,20 @@ article.training-flow details {
     /* padding-top: 10em; */
 }
 
+article.training-flow details:open {
+    /* background: #FFD9CC; */
+}
+
+
 article.training-flow details summary {
     display: inline-block;
     margin-top: -3em;
-    z-index: 1000;
+    z-index: 5;
     display: block;
-    margin-bottom: 3em;
+    /* margin-bottom: 3em; */
+    /* padding-left: 1em; */
+    /* padding-right: 1em; */
+    /* box-sizing: border-box; */
 }
 
 article.training-flow details summary:hover {
@@ -71,6 +79,13 @@ article.training-flow details summary span {
     display: inline-block;
     font-size: .5em;
     transform: rotate(90deg);
+    color: white;
+
+    --icon-sprite-color: white;
+
+
+    display: none;
+    
 }
 
 article.training-flow details:open summary span {
@@ -78,16 +93,88 @@ article.training-flow details:open summary span {
 }
 
 article.training-flow details summary {
-    background: grey;
-    min-height: 3em;
+    background: black;
+    background: #E0E0E0;
+
+    /* color: white; */
+    color: #2E1FB8;
+
+    min-height: 4em;
     text-align: center;
     vertical-align: middle;
     padding-top: 1em;
+    padding-left: 1em;
+    padding-right: 1em;
+    box-sizing: border-box;
+    position: relative;
+
+    border-top: 4px solid black;
+    border-top: 4px solid white;
+
+    /* border-right: 1px solid white; */
+    border-left: 4px solid white;
+
 }
+
+/* article.training-flow details:open summary:before {
+    content: '';
+    background: black;
+    width: 3em;
+    height: 3em;
+    position: absolute;
+    top: .65em;
+    left: -1.5em;
+    transform: rotate(45deg);
+    z-index: 1000;
+} */
+
+article.training-flow ol li:nth-of-type(1) details:open summary:before {
+    display: none;
+}
+
+/* article.training-flow ol li:nth-of-type(1) details:open summary:after {
+    content: '';
+    background: white;
+    width: 3em;
+    height: 3em;
+    position: absolute;
+    top: .65em;
+    right: -1.5em;
+    transform: rotate(45deg);
+    z-index: 1000;
+} */
 
 article.training-flow details:open summary {
     background: black;
-    color: white;
+    background: #FFD9CC;
+    background: white;
+    /* color: white; */
+    color: black;
+    color: #2E1FB8;
+
+    font-weight: 700;
+
+
+    /* box-shadow: 2px 2px #ADFF00; */
+    border-top: 4px solid black;
+    border-top-color: #E0E0E0;
+    border-right: none;
+
+    /* z-index: 5; */
+
+}
+
+article.training-flow details:open span {
+        --icon-sprite-color: black;
+
+}
+
+article.training-flow:not(details:open) ol li:nth-of-type(1) details summary {
+    border-bottom-left-radius: 16px;
+}
+
+article.training-flow:not(details:open) ol li:nth-of-type(4) details summary {
+    border-bottom-right-radius: 16px;
 }
 
 
@@ -190,21 +277,28 @@ article.training-flow .post.featured .byline a {
 
  .posts h2 {
     text-align: left;
-}
+} */
 
 article.training-flow .post .byline, article.training-flow .post .categories {
     display: none;
-} */
-
-
-
+}
 
 
 
 
 article.training-flow {
-    grid-column: 2 / 11;
+    grid-column: 1 / 12;
+    padding: 2em 4em;
+    margin-bottom: 4em;
+
+    /* background: #FFD9CC; */
+    /* background: black; */
 }
+
+article.training-flow > p {
+    /* color: white; */
+}
+
 
 article.training-flow ol {
     grid-column: 2 / 11;
@@ -240,15 +334,37 @@ article.training-flow ol > li details {
     grid-template-columns: 25% 25% 25% 25%;
     grid-template-rows: 1em 1fr;
     box-sizing: border-box;
+    /* background: white; */
+
 }
+
+article.training-flow ol > li details .posts {
+    padding: 0 2em;
+    padding-top: 3em;
+    margin-bottom: 3em;
+    /* border: 4px solid black; */
+    /* border-top: none; */
+    background: white;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
 
 article.training-flow ol > li:nth-of-type(1) summary {
     grid-column: 1 / 5;
     grid-row: 1;
     /* grid-column: 1;
     grid-row: 1; */
-    z-index: 1000;
+    z-index: 999;
     width: 25%;
+    /* padding-left: 10px; */
+    /* padding-right: 10px; */
+
+    border-top-left-radius: 15px;
+    /* border-left: 1px solid black; */
+    /* border-top: 1px solid black; */
+    /* border-bottom-left-radius: 100px; */
+    border-left: none;
 
 }
 
@@ -256,6 +372,7 @@ article.training-flow ol > li:nth-of-type(1) details .posts {
     grid-column: 1 / 5;
     grid-row: 2;
     /* margin-right: -3em; */
+
 }
 
 
@@ -296,6 +413,11 @@ article.training-flow ol > li:nth-of-type(4) summary {
     
     width: 25%;
     margin-left: 75%;
+
+    border-top-right-radius: 15px;
+    border-right: none;
+
+    /* border-bottom-right-radius: 100px; */
 }
 
 article.training-flow ol > li:nth-of-type(4) details .posts {
