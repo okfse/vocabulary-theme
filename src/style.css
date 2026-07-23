@@ -17,73 +17,9 @@ License URI: https://github.com/creativecommons/vocabulary-theme/blob/main/LICEN
 
 /* WordPress specific rules */
 
-article.training-flow {
-    grid-column: 2 / 10;
-}
-
-article.training-flow ol {
-    grid-column: 2 / 11;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-areas:  'tab1 tab2 tab3 tab4'
-                          'content content content content'
-                          'footer footer footer footer';
-    position: relative;
-}
-
-article.training-flow ol > li {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-column: 1 / 5;
-    grid-row: 1;
-}
 
 
-article.training-flow ol > li details {
-    grid-column: 1 / 5;
-    /* display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-areas: 
-        "tab tabb tabbb tabbbb"
-        "c c c c"; */
-}
-
-article.training-flow ol > li:nth-of-type(1) summary {
-    grid-area: tab;
-}
-
-article.training-flow ol > li .posts {
-    /* grid-area: c; */
-    grid-column: 1 / 5;
-}
-
-
-article.training-flow ol > li:nth-of-type(2) summary {
-    grid-area: tabb;
-}
-
-article.training-flow ol > li:nth-of-type(2) .posts {
-    /* grid-column: 1; */
-}
-
-article.training-flow ol > li:nth-of-type(3) summary {
-    /* grid-column: 3; */
-    grid-area: tabbb;
-}
-
-article.training-flow ol > li:nth-of-type(3) .posts {
-    /* grid-column: 1; */
-}
-
-article.training-flow ol > li:nth-of-type(4) summary {
-    grid-area: tabbbb;
-}
-
-article.training-flow ol > li:nth-of-type(4) .posts {
-    /* grid-column: 1; */
-}
-
-article.training-flow > ol {
+/* article.training-flow > ol {
     position: relative;
 
     list-style: none;
@@ -109,29 +45,54 @@ article.training-flow > ol > li::before {
     color: black;
     text-align: center;
     vertical-align: middle;
-}
+} */
 
 article.training-flow > ol > li {
     margin-bottom: 4em;
 }
 
+article.training-flow details {
+    /* padding-top: 10em; */
+}
+
 article.training-flow details summary {
     display: inline-block;
+    margin-top: -3em;
+    z-index: 1000;
+    display: block;
+    margin-bottom: 3em;
+}
+
+article.training-flow details summary:hover {
+    cursor: pointer;
 }
 
 article.training-flow details summary span {
     display: inline-block;
     font-size: .5em;
-    transform: rotate(180deg);
+    transform: rotate(90deg);
 }
 
 article.training-flow details:open summary span {
-    transform: none;
+    transform: rotate(180deg);
+}
+
+article.training-flow details summary {
+    background: grey;
+    min-height: 3em;
+    text-align: center;
+    vertical-align: middle;
+    padding-top: 1em;
+}
+
+article.training-flow details:open summary {
+    background: black;
+    color: white;
 }
 
 
 
-article.training-flow .posts h2 {
+/* article.training-flow .posts h2 {
     text-align: center;
 }
 
@@ -139,7 +100,6 @@ article.training-flow .posts ul {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     margin-top: 8em;
-    /* padding: 0 4em; */
     gap: 2em;
     box-sizing: border-box;
     width:100%;
@@ -234,4 +194,112 @@ article.training-flow .post.featured .byline a {
 
 article.training-flow .post .byline, article.training-flow .post .categories {
     display: none;
+} */
+
+
+
+
+
+
+
+article.training-flow {
+    grid-column: 2 / 11;
+}
+
+article.training-flow ol {
+    grid-column: 2 / 11;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    /* grid-row: 1fr 1fr auto; */
+    /* grid-template-areas:  'tab1 tab2 tab3 tab4'
+                          'content content content content'
+                          'footer footer footer footer'; */
+    position: relative;
+    list-style: none;
+    margin: 0;
+    margin-top: 4em;
+    padding: 0;
+}
+
+article.training-flow ol > li {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    /* grid-template-areas:  'tab tabb tabbbb tabbbb'
+                          'c c c c'
+                          'footer footer footer footer'; */
+    grid-column: 1 / 5;
+    grid-row: 1;
+    margin: 0;
+    padding: 0;
+}
+
+
+article.training-flow ol > li details {
+    /* display: grid; */
+    grid-column: 1 / 5;
+    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-rows: 1em 1fr;
+    box-sizing: border-box;
+}
+
+article.training-flow ol > li:nth-of-type(1) summary {
+    grid-column: 1 / 5;
+    grid-row: 1;
+    /* grid-column: 1;
+    grid-row: 1; */
+    z-index: 1000;
+    width: 25%;
+
+}
+
+article.training-flow ol > li:nth-of-type(1) details .posts {
+    grid-column: 1 / 5;
+    grid-row: 2;
+    /* margin-right: -3em; */
+}
+
+
+article.training-flow ol > li:nth-of-type(2) summary {
+    /* grid-area: tabb; */
+    grid-column: 2;
+    grid-row: 1;
+
+    width: 25%;
+    margin-left: 25%;
+}
+
+article.training-flow ol > li:nth-of-type(2) details .posts {
+    grid-column: 1 / 5;
+    grid-row: 2;
+}
+
+article.training-flow ol > li:nth-of-type(3) summary {
+    /* grid-column: 3; */
+    /* grid-area: tabbb; */
+    grid-column: 3;
+    grid-row: 1;
+    width: 25%;
+    margin-left: 50%;
+}
+
+article.training-flow ol > li:nth-of-type(3) details .posts {
+    /* grid-column: 1; */
+    grid-column: 1;
+    grid-row: 2;
+}
+
+article.training-flow ol > li:nth-of-type(4) summary {
+    /* grid-area: tabbbb; */
+    grid-column: 4;
+    grid-row: 1;
+    /* z-index: 1000; */
+    
+    width: 25%;
+    margin-left: 75%;
+}
+
+article.training-flow ol > li:nth-of-type(4) details .posts {
+    /* grid-column: 1; */
+    grid-column: 1;
+    grid-row: 2;
 }

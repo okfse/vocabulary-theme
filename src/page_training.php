@@ -58,9 +58,10 @@
 
         <ol>
             <li>
-                <details>
+                <details name="step" open>
                     <summary>Free Training Video Library <span class="icon icon-replace fa-angle-up"></span></summary>
                     <article class="posts">
+                    <!-- <p>a bunch of content here</p> -->
                     <ul>
 
 
@@ -68,18 +69,18 @@
                         <article class="post">
                             <header>
                             <h3 class="title"><a href="https://stage.creativecommons.org/2023/09/26/explore-the-2023-cc-global-summit-program/">Explore the 2023 CC Global Summit Program</a></h3>
-                                    <!-- <span class="byline">by
+                                    <span class="byline">by
                                 
                                 <a href="https://stage.creativecommons.org/person/cc/">Creative Commons</a>
                                                                                     </span>
                                     <span class="categories">
-                                <a href="https://stage.creativecommons.org/category/about-cc/events/" rel="category tag">Events</a>        </span> -->
+                                <a href="https://stage.creativecommons.org/category/about-cc/events/" rel="category tag">Events</a>        </span>
                             </header>
 
                             <figure>
                                             <img src="https://creativecommons.org/wp-content/uploads/2023/08/SomosElBienComún16x9-1024x576.jpg" alt="A colorful illustration of a wall of windows, each showing a different figure, including an axolotl and humans engaged in various activities, one wearing a blue luchador mask, and others holding a slender blue line hung with a light blue CC Global Summit banner, all surrounded by butterflies, birds, vines, and flowering plants.">
                             </figure>
-                            <!-- <p>summary here</p> -->
+                            <p>summary here</p>
                         </article>
                         </li>
 
@@ -191,26 +192,404 @@
             </li>
 
             <li>
-                <details>
+                <details name="step">
                     <summary>Assessment for Digital Credential <span class="icon icon-replace fa-angle-up"></span></summary>
 
-                    <div class="posts"> stuff here</div>
+                    <article class="posts">
+                        <ul>
+
+
+                        <li>
+                        <article class="post">
+                            <header>
+                            <h3 class="title"><a href="https://stage.creativecommons.org/2023/09/26/explore-the-2023-cc-global-summit-program/">Explore the 2023 CC Global Summit Program</a></h3>
+                                    <span class="byline">by
+                                
+                                <a href="https://stage.creativecommons.org/person/cc/">Creative Commons</a>
+                                                                                    </span>
+                                    <span class="categories">
+                                <a href="https://stage.creativecommons.org/category/about-cc/events/" rel="category tag">Events</a>        </span>
+                            </header>
+
+                            <figure>
+                                            <img src="https://creativecommons.org/wp-content/uploads/2023/08/SomosElBienComún16x9-1024x576.jpg" alt="A colorful illustration of a wall of windows, each showing a different figure, including an axolotl and humans engaged in various activities, one wearing a blue luchador mask, and others holding a slender blue line hung with a light blue CC Global Summit banner, all surrounded by butterflies, birds, vines, and flowering plants.">
+                            </figure>
+                            <p>summary here</p>
+                        </article>
+                        </li>
+
+                        
+                        
+                        <li>
+                        <article class="post">
+                            <header>
+                            <h3 class="title"><a href="https://stage.creativecommons.org/2023/09/26/explorar-el-programa-de-la-cumbre-mundial-cc-2023/">Explorar el Programa de la Cumbre Mundial CC 2023</a></h3>
+                                    <span class="byline">by
+                                
+                                <a href="https://stage.creativecommons.org/person/cc/">Creative Commons</a>
+                                                                                    </span>
+                                    <span class="categories">
+                                <a href="https://stage.creativecommons.org/category/about-cc/events/" rel="category tag">Events</a>        </span>
+                            </header>
+
+                            <figure>
+                                            <img src="https://creativecommons.org/wp-content/uploads/2023/08/SomosElBienComún16x9-1024x576.jpg" alt="A colorful illustration of a wall of windows, each showing a different figure, including an axolotl and humans engaged in various activities, one wearing a blue luchador mask, and others holding a slender blue line hung with a light blue CC Global Summit banner, all surrounded by butterflies, birds, vines, and flowering plants.">
+                            </figure>
+                        </article>
+                        </li>
+
+                        
+                        
+                        <li>
+                        <article class="post">
+                            <header>
+                            <h3 class="title"><a href="https://stage.creativecommons.org/2023/09/26/christy-henshaw-open-culture-voices-season-2-episode-26/">Christy Henshaw — Open Culture VOICES, Season 2 Episode 26</a></h3>
+                                    <span class="byline">by
+                                
+                                <a href="https://stage.creativecommons.org/person/brigittevezina/">Brigitte Vézina</a>,
+                                                            
+                                <a href="https://stage.creativecommons.org/person/connorbenedict/">Connor Benedict</a>
+                                                                                    </span>
+                                    <span class="categories">
+                                <a href="https://stage.creativecommons.org/category/uncategorized/" rel="category tag">Uncategorized</a>        </span>
+                            </header>
+
+                            <figure>
+                                            <img src="https://creativecommons.org/wp-content/uploads/2023/08/Christy.png" alt="Screenshot from Christy Henshaw from Open Culture Voices by Creative Commons, Creative Commons Attribution 4.0 License">
+                            </figure>
+                        </article>
+                        </li>
+
+                        
+                        
+                        <li>
+                        <article class="post">
+                            <header>
+                            <h3 class="title"><a href="https://stage.creativecommons.org/2023/09/23/marina-nunez-bespalova-sera-una-oradora-principal-en-la-cumbre-mundial-cc-2023/">Marina Núñez Bespalova Será una Oradora Principal en la Cumbre Mundial CC 2023</a></h3>
+                                    <span class="byline">by
+                                
+                                <a href="https://stage.creativecommons.org/person/cc/">Creative Commons</a>
+                                                                                    </span>
+                                    <span class="categories">
+                                <a href="https://stage.creativecommons.org/category/community/" rel="category tag">Community</a>, <a href="https://stage.creativecommons.org/category/about-cc/events/" rel="category tag">Events</a>, <a href="https://stage.creativecommons.org/category/open-culture/" rel="category tag">Open Culture</a>        </span>
+                            </header>
+
+                            <figure>
+                                            <img src="https://creativecommons.org/wp-content/uploads/2023/09/CCGlobalSummitKeynoteMarinaNúñezBespalova-1024x576.png" alt="A headshot of Marina Núñez Bespalova, speaking at a microphone and wearing a light top and dark suit jacket, to the right of a colorful illustration of a wall of windows, each revealing a different human or animal doing some activity, on a building decorated with a light blue CC Global Summit banner hanging from a slender blue line, surrounded by yellow butterflies and birds and green vines and plants.">
+                            </figure>
+                        </article>
+                        </li>
+
+                        
+                        
+                        <li>
+                        <article class="post">
+                            <header>
+                            <h3 class="title"><a href="https://stage.creativecommons.org/2023/09/23/marina-nunez-bespalova-to-keynote-cc-global-summit-2023/">Marina Núñez Bespalova to Keynote CC Global Summit 2023</a></h3>
+                                    <span class="byline">by
+                                
+                                <a href="https://stage.creativecommons.org/person/cc/">Creative Commons</a>
+                                                                                    </span>
+                                    <span class="categories">
+                                <a href="https://stage.creativecommons.org/category/community/" rel="category tag">Community</a>, <a href="https://stage.creativecommons.org/category/about-cc/events/" rel="category tag">Events</a>, <a href="https://stage.creativecommons.org/category/open-culture/" rel="category tag">Open Culture</a>        </span>
+                            </header>
+
+                            <figure>
+                                            <img src="https://creativecommons.org/wp-content/uploads/2023/09/CCGlobalSummitKeynoteMarinaNúñezBespalova-1024x576.png" alt="A headshot of Marina Núñez Bespalova, speaking at a microphone and wearing a light top and dark suit jacket, to the right of a colorful illustration of a wall of windows, each revealing a different human or animal doing some activity, on a building decorated with a light blue CC Global Summit banner hanging from a slender blue line, surrounded by yellow butterflies and birds and green vines and plants.">
+                            </figure>
+                        </article>
+                        </li>
+
+                        
+                        
+                        <li>
+                        <article class="post">
+                            <header>
+                            <h3 class="title"><a href="https://stage.creativecommons.org/2023/09/22/cc-defends-better-sharing-and-the-commons-in-wipo-conversation-on-generative-ai/">CC Defends Better Sharing and the Commons in WIPO Conversation on Generative AI</a></h3>
+                                    <span class="byline">by
+                                
+                                <a href="https://stage.creativecommons.org/person/brigittevezina/">Brigitte Vézina</a>
+                                                                                    </span>
+                                    <span class="categories">
+                                <a href="https://stage.creativecommons.org/category/policy/better-internet/" rel="category tag">Better Internet</a>, <a href="https://stage.creativecommons.org/category/policy/copyright/" rel="category tag">Copyright Reform</a>, <a href="https://stage.creativecommons.org/category/open-culture/" rel="category tag">Open Culture</a>        </span>
+                            </header>
+
+                            <figure>
+                                            <img src="https://creativecommons.org/wp-content/uploads/2023/09/BrigitteVézinaWIPO21092023-1024x576.jpg" alt="A World Intellectual Property Organization title slide saying Ms. Brigitte Vézina, Director, Policy and Open Culture, Creative Commons, decorated with purple and green abstract shapes and a large, gray number 8, next to a screen capture of Brigitte Vézina smiling and wearing earbuds.">
+                            </figure>
+                        </article>
+                        </li>
+                  
+                    </ul>
+                    </article>
                 </details>
             </li>
 
             <li>
-                <details>
+                <details name="step">
                     <summary>Seminar Courses <span class="icon icon-replace fa-angle-up"></span></summary>
 
-                    <div class="posts"> stuff here</div>
+                    <article class="posts">
+                        <ul>
+
+
+                        <li>
+                        <article class="post">
+                            <header>
+                            <h3 class="title"><a href="https://stage.creativecommons.org/2023/09/26/explore-the-2023-cc-global-summit-program/">Explore the 2023 CC Global Summit Program</a></h3>
+                                    <span class="byline">by
+                                
+                                <a href="https://stage.creativecommons.org/person/cc/">Creative Commons</a>
+                                                                                    </span>
+                                    <span class="categories">
+                                <a href="https://stage.creativecommons.org/category/about-cc/events/" rel="category tag">Events</a>        </span>
+                            </header>
+
+                            <figure>
+                                            <img src="https://creativecommons.org/wp-content/uploads/2023/08/SomosElBienComún16x9-1024x576.jpg" alt="A colorful illustration of a wall of windows, each showing a different figure, including an axolotl and humans engaged in various activities, one wearing a blue luchador mask, and others holding a slender blue line hung with a light blue CC Global Summit banner, all surrounded by butterflies, birds, vines, and flowering plants.">
+                            </figure>
+                            <p>summary here</p>
+                        </article>
+                        </li>
+
+                        
+                        
+                        <li>
+                        <article class="post">
+                            <header>
+                            <h3 class="title"><a href="https://stage.creativecommons.org/2023/09/26/explorar-el-programa-de-la-cumbre-mundial-cc-2023/">Explorar el Programa de la Cumbre Mundial CC 2023</a></h3>
+                                    <span class="byline">by
+                                
+                                <a href="https://stage.creativecommons.org/person/cc/">Creative Commons</a>
+                                                                                    </span>
+                                    <span class="categories">
+                                <a href="https://stage.creativecommons.org/category/about-cc/events/" rel="category tag">Events</a>        </span>
+                            </header>
+
+                            <figure>
+                                            <img src="https://creativecommons.org/wp-content/uploads/2023/08/SomosElBienComún16x9-1024x576.jpg" alt="A colorful illustration of a wall of windows, each showing a different figure, including an axolotl and humans engaged in various activities, one wearing a blue luchador mask, and others holding a slender blue line hung with a light blue CC Global Summit banner, all surrounded by butterflies, birds, vines, and flowering plants.">
+                            </figure>
+                        </article>
+                        </li>
+
+                        
+                        
+                        <li>
+                        <article class="post">
+                            <header>
+                            <h3 class="title"><a href="https://stage.creativecommons.org/2023/09/26/christy-henshaw-open-culture-voices-season-2-episode-26/">Christy Henshaw — Open Culture VOICES, Season 2 Episode 26</a></h3>
+                                    <span class="byline">by
+                                
+                                <a href="https://stage.creativecommons.org/person/brigittevezina/">Brigitte Vézina</a>,
+                                                            
+                                <a href="https://stage.creativecommons.org/person/connorbenedict/">Connor Benedict</a>
+                                                                                    </span>
+                                    <span class="categories">
+                                <a href="https://stage.creativecommons.org/category/uncategorized/" rel="category tag">Uncategorized</a>        </span>
+                            </header>
+
+                            <figure>
+                                            <img src="https://creativecommons.org/wp-content/uploads/2023/08/Christy.png" alt="Screenshot from Christy Henshaw from Open Culture Voices by Creative Commons, Creative Commons Attribution 4.0 License">
+                            </figure>
+                        </article>
+                        </li>
+
+                        
+                        
+                        <li>
+                        <article class="post">
+                            <header>
+                            <h3 class="title"><a href="https://stage.creativecommons.org/2023/09/23/marina-nunez-bespalova-sera-una-oradora-principal-en-la-cumbre-mundial-cc-2023/">Marina Núñez Bespalova Será una Oradora Principal en la Cumbre Mundial CC 2023</a></h3>
+                                    <span class="byline">by
+                                
+                                <a href="https://stage.creativecommons.org/person/cc/">Creative Commons</a>
+                                                                                    </span>
+                                    <span class="categories">
+                                <a href="https://stage.creativecommons.org/category/community/" rel="category tag">Community</a>, <a href="https://stage.creativecommons.org/category/about-cc/events/" rel="category tag">Events</a>, <a href="https://stage.creativecommons.org/category/open-culture/" rel="category tag">Open Culture</a>        </span>
+                            </header>
+
+                            <figure>
+                                            <img src="https://creativecommons.org/wp-content/uploads/2023/09/CCGlobalSummitKeynoteMarinaNúñezBespalova-1024x576.png" alt="A headshot of Marina Núñez Bespalova, speaking at a microphone and wearing a light top and dark suit jacket, to the right of a colorful illustration of a wall of windows, each revealing a different human or animal doing some activity, on a building decorated with a light blue CC Global Summit banner hanging from a slender blue line, surrounded by yellow butterflies and birds and green vines and plants.">
+                            </figure>
+                        </article>
+                        </li>
+
+                        
+                        
+                        <li>
+                        <article class="post">
+                            <header>
+                            <h3 class="title"><a href="https://stage.creativecommons.org/2023/09/23/marina-nunez-bespalova-to-keynote-cc-global-summit-2023/">Marina Núñez Bespalova to Keynote CC Global Summit 2023</a></h3>
+                                    <span class="byline">by
+                                
+                                <a href="https://stage.creativecommons.org/person/cc/">Creative Commons</a>
+                                                                                    </span>
+                                    <span class="categories">
+                                <a href="https://stage.creativecommons.org/category/community/" rel="category tag">Community</a>, <a href="https://stage.creativecommons.org/category/about-cc/events/" rel="category tag">Events</a>, <a href="https://stage.creativecommons.org/category/open-culture/" rel="category tag">Open Culture</a>        </span>
+                            </header>
+
+                            <figure>
+                                            <img src="https://creativecommons.org/wp-content/uploads/2023/09/CCGlobalSummitKeynoteMarinaNúñezBespalova-1024x576.png" alt="A headshot of Marina Núñez Bespalova, speaking at a microphone and wearing a light top and dark suit jacket, to the right of a colorful illustration of a wall of windows, each revealing a different human or animal doing some activity, on a building decorated with a light blue CC Global Summit banner hanging from a slender blue line, surrounded by yellow butterflies and birds and green vines and plants.">
+                            </figure>
+                        </article>
+                        </li>
+
+                        
+                        
+                        <li>
+                        <article class="post">
+                            <header>
+                            <h3 class="title"><a href="https://stage.creativecommons.org/2023/09/22/cc-defends-better-sharing-and-the-commons-in-wipo-conversation-on-generative-ai/">CC Defends Better Sharing and the Commons in WIPO Conversation on Generative AI</a></h3>
+                                    <span class="byline">by
+                                
+                                <a href="https://stage.creativecommons.org/person/brigittevezina/">Brigitte Vézina</a>
+                                                                                    </span>
+                                    <span class="categories">
+                                <a href="https://stage.creativecommons.org/category/policy/better-internet/" rel="category tag">Better Internet</a>, <a href="https://stage.creativecommons.org/category/policy/copyright/" rel="category tag">Copyright Reform</a>, <a href="https://stage.creativecommons.org/category/open-culture/" rel="category tag">Open Culture</a>        </span>
+                            </header>
+
+                            <figure>
+                                            <img src="https://creativecommons.org/wp-content/uploads/2023/09/BrigitteVézinaWIPO21092023-1024x576.jpg" alt="A World Intellectual Property Organization title slide saying Ms. Brigitte Vézina, Director, Policy and Open Culture, Creative Commons, decorated with purple and green abstract shapes and a large, gray number 8, next to a screen capture of Brigitte Vézina smiling and wearing earbuds.">
+                            </figure>
+                        </article>
+                        </li>
+                  
+                    </ul>
+                    </article>
                 </details>
             </li>
 
             <li>
-                <details>
+                <details name="step">
                     <summary>CC Certifcation <span class="icon icon-replace fa-angle-up"></span></summary>
 
-                    <div class="posts"> stuff here</div>
+                    <article class="posts">
+                        <ul>
+
+
+                        <li>
+                        <article class="post">
+                            <header>
+                            <h3 class="title"><a href="https://stage.creativecommons.org/2023/09/26/explore-the-2023-cc-global-summit-program/">Explore the 2023 CC Global Summit Program</a></h3>
+                                    <span class="byline">by
+                                
+                                <a href="https://stage.creativecommons.org/person/cc/">Creative Commons</a>
+                                                                                    </span>
+                                    <span class="categories">
+                                <a href="https://stage.creativecommons.org/category/about-cc/events/" rel="category tag">Events</a>        </span>
+                            </header>
+
+                            <figure>
+                                            <img src="https://creativecommons.org/wp-content/uploads/2023/08/SomosElBienComún16x9-1024x576.jpg" alt="A colorful illustration of a wall of windows, each showing a different figure, including an axolotl and humans engaged in various activities, one wearing a blue luchador mask, and others holding a slender blue line hung with a light blue CC Global Summit banner, all surrounded by butterflies, birds, vines, and flowering plants.">
+                            </figure>
+                            <p>summary here</p>
+                        </article>
+                        </li>
+
+                        
+                        
+                        <li>
+                        <article class="post">
+                            <header>
+                            <h3 class="title"><a href="https://stage.creativecommons.org/2023/09/26/explorar-el-programa-de-la-cumbre-mundial-cc-2023/">Explorar el Programa de la Cumbre Mundial CC 2023</a></h3>
+                                    <span class="byline">by
+                                
+                                <a href="https://stage.creativecommons.org/person/cc/">Creative Commons</a>
+                                                                                    </span>
+                                    <span class="categories">
+                                <a href="https://stage.creativecommons.org/category/about-cc/events/" rel="category tag">Events</a>        </span>
+                            </header>
+
+                            <figure>
+                                            <img src="https://creativecommons.org/wp-content/uploads/2023/08/SomosElBienComún16x9-1024x576.jpg" alt="A colorful illustration of a wall of windows, each showing a different figure, including an axolotl and humans engaged in various activities, one wearing a blue luchador mask, and others holding a slender blue line hung with a light blue CC Global Summit banner, all surrounded by butterflies, birds, vines, and flowering plants.">
+                            </figure>
+                        </article>
+                        </li>
+
+                        
+                        
+                        <li>
+                        <article class="post">
+                            <header>
+                            <h3 class="title"><a href="https://stage.creativecommons.org/2023/09/26/christy-henshaw-open-culture-voices-season-2-episode-26/">Christy Henshaw — Open Culture VOICES, Season 2 Episode 26</a></h3>
+                                    <span class="byline">by
+                                
+                                <a href="https://stage.creativecommons.org/person/brigittevezina/">Brigitte Vézina</a>,
+                                                            
+                                <a href="https://stage.creativecommons.org/person/connorbenedict/">Connor Benedict</a>
+                                                                                    </span>
+                                    <span class="categories">
+                                <a href="https://stage.creativecommons.org/category/uncategorized/" rel="category tag">Uncategorized</a>        </span>
+                            </header>
+
+                            <figure>
+                                            <img src="https://creativecommons.org/wp-content/uploads/2023/08/Christy.png" alt="Screenshot from Christy Henshaw from Open Culture Voices by Creative Commons, Creative Commons Attribution 4.0 License">
+                            </figure>
+                        </article>
+                        </li>
+
+                        
+                        
+                        <li>
+                        <article class="post">
+                            <header>
+                            <h3 class="title"><a href="https://stage.creativecommons.org/2023/09/23/marina-nunez-bespalova-sera-una-oradora-principal-en-la-cumbre-mundial-cc-2023/">Marina Núñez Bespalova Será una Oradora Principal en la Cumbre Mundial CC 2023</a></h3>
+                                    <span class="byline">by
+                                
+                                <a href="https://stage.creativecommons.org/person/cc/">Creative Commons</a>
+                                                                                    </span>
+                                    <span class="categories">
+                                <a href="https://stage.creativecommons.org/category/community/" rel="category tag">Community</a>, <a href="https://stage.creativecommons.org/category/about-cc/events/" rel="category tag">Events</a>, <a href="https://stage.creativecommons.org/category/open-culture/" rel="category tag">Open Culture</a>        </span>
+                            </header>
+
+                            <figure>
+                                            <img src="https://creativecommons.org/wp-content/uploads/2023/09/CCGlobalSummitKeynoteMarinaNúñezBespalova-1024x576.png" alt="A headshot of Marina Núñez Bespalova, speaking at a microphone and wearing a light top and dark suit jacket, to the right of a colorful illustration of a wall of windows, each revealing a different human or animal doing some activity, on a building decorated with a light blue CC Global Summit banner hanging from a slender blue line, surrounded by yellow butterflies and birds and green vines and plants.">
+                            </figure>
+                        </article>
+                        </li>
+
+                        
+                        
+                        <li>
+                        <article class="post">
+                            <header>
+                            <h3 class="title"><a href="https://stage.creativecommons.org/2023/09/23/marina-nunez-bespalova-to-keynote-cc-global-summit-2023/">Marina Núñez Bespalova to Keynote CC Global Summit 2023</a></h3>
+                                    <span class="byline">by
+                                
+                                <a href="https://stage.creativecommons.org/person/cc/">Creative Commons</a>
+                                                                                    </span>
+                                    <span class="categories">
+                                <a href="https://stage.creativecommons.org/category/community/" rel="category tag">Community</a>, <a href="https://stage.creativecommons.org/category/about-cc/events/" rel="category tag">Events</a>, <a href="https://stage.creativecommons.org/category/open-culture/" rel="category tag">Open Culture</a>        </span>
+                            </header>
+
+                            <figure>
+                                            <img src="https://creativecommons.org/wp-content/uploads/2023/09/CCGlobalSummitKeynoteMarinaNúñezBespalova-1024x576.png" alt="A headshot of Marina Núñez Bespalova, speaking at a microphone and wearing a light top and dark suit jacket, to the right of a colorful illustration of a wall of windows, each revealing a different human or animal doing some activity, on a building decorated with a light blue CC Global Summit banner hanging from a slender blue line, surrounded by yellow butterflies and birds and green vines and plants.">
+                            </figure>
+                        </article>
+                        </li>
+
+                        
+                        
+                        <li>
+                        <article class="post">
+                            <header>
+                            <h3 class="title"><a href="https://stage.creativecommons.org/2023/09/22/cc-defends-better-sharing-and-the-commons-in-wipo-conversation-on-generative-ai/">CC Defends Better Sharing and the Commons in WIPO Conversation on Generative AI</a></h3>
+                                    <span class="byline">by
+                                
+                                <a href="https://stage.creativecommons.org/person/brigittevezina/">Brigitte Vézina</a>
+                                                                                    </span>
+                                    <span class="categories">
+                                <a href="https://stage.creativecommons.org/category/policy/better-internet/" rel="category tag">Better Internet</a>, <a href="https://stage.creativecommons.org/category/policy/copyright/" rel="category tag">Copyright Reform</a>, <a href="https://stage.creativecommons.org/category/open-culture/" rel="category tag">Open Culture</a>        </span>
+                            </header>
+
+                            <figure>
+                                            <img src="https://creativecommons.org/wp-content/uploads/2023/09/BrigitteVézinaWIPO21092023-1024x576.jpg" alt="A World Intellectual Property Organization title slide saying Ms. Brigitte Vézina, Director, Policy and Open Culture, Creative Commons, decorated with purple and green abstract shapes and a large, gray number 8, next to a screen capture of Brigitte Vézina smiling and wearing earbuds.">
+                            </figure>
+                        </article>
+                        </li>
+                  
+                    </ul>
+                    </article>
                 </details>
             </li>
         </ol>
