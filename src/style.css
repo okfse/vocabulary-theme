@@ -425,3 +425,9 @@ article.training-flow ol > li:nth-of-type(4) details .posts {
     grid-column: 1;
     grid-row: 2;
 }
+
+article.training-flow details .flow-content {
+    padding: 0 2em;
+    padding-top: 3em;
+
+}

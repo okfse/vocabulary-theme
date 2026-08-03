@@ -62,6 +62,10 @@
                     
                     <summary><?php the_field('training_flow_section_1_title'); ?> <span class="icon icon-replace fa-angle-up"></span></summary>
                     
+                    <div class="flow-content">
+                    <?php the_field('training_flow_section_1_content'); ?>
+                    </div>
+
                     <!-- training highlights here -->
                     <?php
                         $trainings = get_field('training_flow_section_1_highlights');
@@ -111,6 +115,10 @@
             <li>
                 <details name="step">
                     <summary><?php the_field('training_flow_section_2_title'); ?> <span class="icon icon-replace fa-angle-up"></span></summary>
+
+                    <div class="flow-content">
+                    <?php the_field('training_flow_section_2_content'); ?>
+                    </div>
 
                     <!-- training highlights here -->
                     <?php
@@ -163,6 +171,10 @@
                 <details name="step">
                     <summary><?php the_field('training_flow_section_3_title'); ?> <span class="icon icon-replace fa-angle-up"></span></summary>
 
+                    <div class="flow-content">
+                    <?php the_field('training_flow_section_3_content'); ?>
+                    </div>
+
                     <!-- training highlights here -->
                     <?php
                         $trainings = get_field('training_flow_section_3_highlights');
@@ -212,6 +224,10 @@
             <li>
                 <details name="step">
                     <summary><?php the_field('training_flow_section_4_title'); ?><span class="icon icon-replace fa-angle-up"></span></summary>
+
+                    <div class="flow-content">
+                    <?php the_field('training_flow_section_4_content'); ?>
+                    </div>
 
                     <!-- training highlights here -->
                     <?php
