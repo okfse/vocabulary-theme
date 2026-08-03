@@ -59,7 +59,8 @@
         <ol>
             <li>
                 <details name="step" open>
-                    <summary>Free Training Video Library <span class="icon icon-replace fa-angle-up"></span></summary>
+                    
+                    <summary><?php the_field('training_flow_section_1_title'); ?> <span class="icon icon-replace fa-angle-up"></span></summary>
                     <article class="posts">
                     <!-- <p>a bunch of content here</p> -->
                     <ul>
@@ -192,7 +193,7 @@
 
             <li>
                 <details name="step">
-                    <summary>Assessment for Digital Credential <span class="icon icon-replace fa-angle-up"></span></summary>
+                    <summary><?php the_field('training_flow_section_2_title'); ?> <span class="icon icon-replace fa-angle-up"></span></summary>
 
                     <article class="posts">
                         <p>[placeholder content here]</p>
@@ -202,7 +203,7 @@
 
             <li>
                 <details name="step">
-                    <summary>Seminar Courses <span class="icon icon-replace fa-angle-up"></span></summary>
+                    <summary><?php the_field('training_flow_section_3_title'); ?> <span class="icon icon-replace fa-angle-up"></span></summary>
 
                     <article class="posts">
                         <ul>
@@ -336,7 +337,7 @@
 
             <li>
                 <details name="step">
-                    <summary>CC Certifcation <span class="icon icon-replace fa-angle-up"></span></summary>
+                    <summary><?php the_field('training_flow_section_4_title'); ?><span class="icon icon-replace fa-angle-up"></span></summary>
 
                     <article class="posts">
                         <ul>
