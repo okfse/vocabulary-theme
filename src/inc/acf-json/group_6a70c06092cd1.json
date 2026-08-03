@@ -4,7 +4,7 @@
     "fields": [
         {
             "key": "field_6a70c06043116",
-            "label": "External URL",
+            "label": "URL",
             "name": "external_url",
             "aria-label": "",
             "type": "text",
@@ -42,5 +42,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1785774251
+    "modified": 1785774403
 }
