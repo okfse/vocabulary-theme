@@ -51,13 +51,13 @@
         <?php
             // $permalink = get_permalink( $training->ID );
             $title = get_the_title( $training->ID );
-            $url = get_field('external_url'); 
+            $url = get_field('external_url', $training->ID); 
          ?>
         <li>
             <article class="training extends event">
 
                 <div class="description">
-                <h3><?php the_title(); ?></h3>
+                <h3><?php echo $title; ?></h3>
 
                 <p><?php echo wp_trim_words($excerpt, 50); ?></p>
 
@@ -66,7 +66,7 @@
 
                 <figure>
 
-                    <img src="<?php echo get_the_post_thumbnail_url( $post_id, 'large' ); ?>" alt="<?php echo get_post_meta ( get_post_thumbnail_id($post_id), '_wp_attachment_image_alt', true ); ?>" />
+                    <img src="<?php echo get_the_post_thumbnail_url( $training->ID, 'large' ); ?>" alt="<?php echo get_post_meta ( get_post_thumbnail_id($training->ID), '_wp_attachment_image_alt', true ); ?>" />
 
 
                     <figcaption>
@@ -97,13 +97,13 @@
         <?php
             // $permalink = get_permalink( $training->ID );
             $title = get_the_title( $training->ID );
-            $url = get_field('external_url'); 
+            $url = get_field('external_url', $training->ID); 
          ?>
         <li>
             <article class="training extends event">
 
                 <div class="description">
-                <h3><?php the_title(); ?></h3>
+                <h3><?php echo $title; ?></h3>
 
                 <p><?php echo wp_trim_words($excerpt, 50); ?></p>
 
@@ -112,12 +112,12 @@
 
                 <figure>
 
-                    <img src="<?php echo get_the_post_thumbnail_url( $post_id, 'large' ); ?>" alt="<?php echo get_post_meta ( get_post_thumbnail_id($post_id), '_wp_attachment_image_alt', true ); ?>" />
+                    <img src="<?php echo get_the_post_thumbnail_url( $training->ID, 'large' ); ?>" alt="<?php echo get_post_meta ( get_post_thumbnail_id($training->ID), '_wp_attachment_image_alt', true ); ?>" />
 
 
                     <figcaption>
                         <!-- <p>attribution details here</p> -->
-                         <p><?php echo get_the_post_thumbnail_caption( $post_id ); ?></p>
+                         <p><?php echo get_the_post_thumbnail_caption( $training->ID ); ?></p>
 
                     </figcaption>
                 </figure>
