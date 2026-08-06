@@ -24,7 +24,7 @@
 <?php $testimonial1 = get_field('testimonial_1_content'); ?>
 <?php $testimonial2 = get_field('testimonial_2_content'); ?>
 
-
+<?php if(get_field('subhead_title')) : ?>
 <article class="topic-summary about">
     <div class="description">
         <?php if (get_field('subhead_title')) : ?>
@@ -49,6 +49,236 @@
     </figure>
 
 </article>
+<?php endif; ?>
+
+<?php if(get_field('display_training_flow_section')) : ?>
+
+    <article class="training-flow">
+        <?php the_field('training_flow_content'); ?>
+
+        <ol>
+            <li>
+                <details name="step" open>
+                    
+                    <summary><?php the_field('training_flow_section_1_title'); ?> <span class="icon icon-replace fa-angle-up"></span></summary>
+                    
+                    <div class="flow-content">
+                    <?php the_field('training_flow_section_1_content'); ?>
+                    </div>
+
+                    <!-- training highlights here -->
+                    <?php
+                        $trainings = get_field('training_flow_section_1_highlights');
+                        if( !empty($trainings) ) :
+                    ?>
+                    <article class="posts">
+                    <ul>
+
+                        <?php foreach($trainings as $training) : ?>
+                            <?php
+                                $permalink = get_permalink( $training->ID );
+                                $title = get_the_title( $training->ID );
+                                // $category = get_field( 'category', $training->ID );
+                                $link_url = get_field( 'external_url', $training->ID );
+                                // $type = get_field( 'type', $topic_feature->ID );
+                                // $content = get_the_content( $topic_feature->ID );
+                                $content = get_post_field('post_content', $training->ID);
+                                // $excerpt = get_the_excerpt( $staff_person->ID );
+                                ?>
+
+                                <li>
+                                <article class="post">
+                                    <header>
+                                        <h3 class="title"><a href="<?php echo $link_url; ?>"><?php echo $title; ?></a></h3>
+                                        <a href="<?php echo $link_url; ?>"><?php echo $link_text; ?></a>
+                                    </header>
+                                    <figure>
+                                        <img src="<?php echo get_the_post_thumbnail_url( $training->ID, 'full' ); ?>" alt="<?php echo get_post_meta ( get_post_thumbnail_id($training->ID), '_wp_attachment_image_alt', true ); ?>" />
+
+                                        <figcaption>
+                                            <p><?php echo get_the_post_thumbnail_caption( $training->ID ); ?></p>
+                                        </figcaption>
+                                    </figure>
+                                </article>
+                                </li>
+
+
+                            <?php endforeach; ?>
+
+                        </ul>
+                        </article>
+
+                        <?php endif; ?>
+                </details>
+            </li>
+
+            <li>
+                <details name="step">
+                    <summary><?php the_field('training_flow_section_2_title'); ?> <span class="icon icon-replace fa-angle-up"></span></summary>
+
+                    <div class="flow-content">
+                    <?php the_field('training_flow_section_2_content'); ?>
+                    </div>
+
+                    <!-- training highlights here -->
+                    <?php
+                        $trainings = get_field('training_flow_section_2_highlights');
+                        if( !empty($trainings) ) :
+                    ?>
+                    <article class="posts">
+                    <ul>
+
+                        <?php foreach($trainings as $training) : ?>
+                            <?php
+                                $permalink = get_permalink( $training->ID );
+                                $title = get_the_title( $training->ID );
+                                // $category = get_field( 'category', $training->ID );
+                                $link_url = get_field( 'external_url', $training->ID );
+                                // $type = get_field( 'type', $topic_feature->ID );
+                                // $content = get_the_content( $topic_feature->ID );
+                                $content = get_post_field('post_content', $training->ID);
+                                // $excerpt = get_the_excerpt( $staff_person->ID );
+                                ?>
+
+                                <li>
+                                <article class="post">
+                                    <header>
+                                        <h3 class="title"><a href="<?php echo $link_url; ?>"><?php echo $title; ?></a></h3>
+                                        <a href="<?php echo $link_url; ?>"><?php echo $link_text; ?></a>
+                                    </header>
+                                    <figure>
+                                        <img src="<?php echo get_the_post_thumbnail_url( $training->ID, 'full' ); ?>" alt="<?php echo get_post_meta ( get_post_thumbnail_id($training->ID), '_wp_attachment_image_alt', true ); ?>" />
+
+                                        <figcaption>
+                                            <p><?php echo get_the_post_thumbnail_caption( $training->ID ); ?></p>
+                                        </figcaption>
+                                    </figure>
+                                </article>
+                                </li>
+
+
+                            <?php endforeach; ?>
+
+                        </ul>
+                        </article>
+
+                        <?php endif; ?>
+                    
+                </details>
+            </li>
+
+            <li>
+                <details name="step">
+                    <summary><?php the_field('training_flow_section_3_title'); ?> <span class="icon icon-replace fa-angle-up"></span></summary>
+
+                    <div class="flow-content">
+                    <?php the_field('training_flow_section_3_content'); ?>
+                    </div>
+
+                    <!-- training highlights here -->
+                    <?php
+                        $trainings = get_field('training_flow_section_3_highlights');
+                        if( !empty($trainings) ) :
+                    ?>
+                    <article class="posts">
+                    <ul>
+
+                        <?php foreach($trainings as $training) : ?>
+                            <?php
+                                $permalink = get_permalink( $training->ID );
+                                $title = get_the_title( $training->ID );
+                                // $category = get_field( 'category', $training->ID );
+                                $link_url = get_field( 'external_url', $training->ID );
+                                // $type = get_field( 'type', $topic_feature->ID );
+                                // $content = get_the_content( $topic_feature->ID );
+                                $content = get_post_field('post_content', $training->ID);
+                                // $excerpt = get_the_excerpt( $staff_person->ID );
+                                ?>
+
+                                <li>
+                                <article class="post">
+                                    <header>
+                                        <h3 class="title"><a href="<?php echo $link_url; ?>"><?php echo $title; ?></a></h3>
+                                        <a href="<?php echo $link_url; ?>"><?php echo $link_text; ?></a>
+                                    </header>
+                                    <figure>
+                                        <img src="<?php echo get_the_post_thumbnail_url( $training->ID, 'full' ); ?>" alt="<?php echo get_post_meta ( get_post_thumbnail_id($training->ID), '_wp_attachment_image_alt', true ); ?>" />
+
+                                        <figcaption>
+                                            <p><?php echo get_the_post_thumbnail_caption( $training->ID ); ?></p>
+                                        </figcaption>
+                                    </figure>
+                                </article>
+                                </li>
+
+
+                            <?php endforeach; ?>
+
+                        </ul>
+                        </article>
+
+                        <?php endif; ?>
+                </details>
+            </li>
+
+            <li>
+                <details name="step">
+                    <summary><?php the_field('training_flow_section_4_title'); ?><span class="icon icon-replace fa-angle-up"></span></summary>
+
+                    <div class="flow-content">
+                    <?php the_field('training_flow_section_4_content'); ?>
+                    </div>
+
+                    <!-- training highlights here -->
+                    <?php
+                        $trainings = get_field('training_flow_section_4_highlights');
+                        if( !empty($trainings) ) :
+                    ?>
+                    <article class="posts">
+                    <ul>
+
+                        <?php foreach($trainings as $training) : ?>
+                            <?php
+                                $permalink = get_permalink( $training->ID );
+                                $title = get_the_title( $training->ID );
+                                // $category = get_field( 'category', $training->ID );
+                                $link_url = get_field( 'external_url', $training->ID );
+                                // $type = get_field( 'type', $topic_feature->ID );
+                                // $content = get_the_content( $topic_feature->ID );
+                                $content = get_post_field('post_content', $training->ID);
+                                // $excerpt = get_the_excerpt( $staff_person->ID );
+                                ?>
+
+                                <li>
+                                <article class="post">
+                                    <header>
+                                        <h3 class="title"><a href="<?php echo $link_url; ?>"><?php echo $title; ?></a></h3>
+                                        <a href="<?php echo $link_url; ?>"><?php echo $link_text; ?></a>
+                                    </header>
+                                    <figure>
+                                        <img src="<?php echo get_the_post_thumbnail_url( $training->ID, 'full' ); ?>" alt="<?php echo get_post_meta ( get_post_thumbnail_id($training->ID), '_wp_attachment_image_alt', true ); ?>" />
+
+                                        <figcaption>
+                                            <p><?php echo get_the_post_thumbnail_caption( $training->ID ); ?></p>
+                                        </figcaption>
+                                    </figure>
+                                </article>
+                                </li>
+
+
+                            <?php endforeach; ?>
+
+                        </ul>
+                        </article>
+
+                        <?php endif; ?>
+                </details>
+            </li>
+        </ol>
+        
+    </article>
+
+<?php endif; ?>
 
     <?php if($testimonial1) : ?>
     <blockquote>
@@ -56,7 +286,7 @@
     </blockquote>
     <?php endif; ?>
 
-
+<?php if(get_field('display_training_events_section')) : ?>
 <article class="topic-dive">
     <h2><?php the_field('training_events_title'); ?></h2>
     <p><?php the_field('training_events_tagline'); ?></p>
@@ -142,6 +372,7 @@
     </article>
 
 </article>
+<?php endif; ?>
 
 <!-- topic features here -->
  <?php
