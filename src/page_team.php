@@ -196,12 +196,11 @@
     if( !empty($emeritus_listing) ) :
 ?>
 
+<?php endif; ?>
+
 <div class="closing">
 <p><?php the_field('closing'); ?></p>
 </div>
-
-
-<?php endif; ?>
 
 </main>
 
