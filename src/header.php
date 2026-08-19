@@ -120,9 +120,17 @@ $noticeQuery = new WP_Query(array(
 
 <article class="attention <?php echo $importance_level; ?>">
 <div>
+
+<?php if (get_field('message')) : ?>
 <h2><?php the_field('message'); ?></h2>
+<?php endif; ?>
+
+
 <?php the_field('message_rich_text'); ?>
-<a href="<?php the_field('link_url'); ?>"><?php the_field('link_text'); ?></a>
+
+<?php if (get_field('url')) : ?>
+<a href="<?php the_field('url'); ?>"><?php the_field('link_text'); ?></a>
+<?php endif; ?>
 </div>
 
 <figure>
