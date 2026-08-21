@@ -51,6 +51,95 @@
 </article>
 <?php endif; ?>
 
+<?php if(get_field('display_training_events_section')) : ?>
+<article class="topic-dive">
+    <h2><?php the_field('training_events_title'); ?></h2>
+    <p><?php the_field('training_events_tagline'); ?></p>
+
+    <article class="topic-summary focus-area">
+        <div class="description">
+
+            <?php the_field('training_events_content'); ?>
+
+            <a href="<?php the_field('training_events_url'); ?>"><?php the_field('training_events_link_text'); ?></a>
+        </div>
+
+        <figure>
+            <?php $image = get_field('training_events_graphic'); ?>
+            <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
+
+            <figcaption>
+                <p><?php echo $image['caption']; ?></p>
+
+            </figcaption>
+        </figure>
+
+        <article class="trainings">
+            <ul>
+                <?php if(get_field('training_event_1_title')) : ?>
+                <li>
+                    <article class="training">
+                        <h3><?php the_field('training_event_1_title'); ?></h3>
+                        <?php the_field('training_event_1_description'); ?>
+
+                        <h4><?php the_field('training_event_1_list_title'); ?></h4>
+
+                        <?php the_field('training_event_1_list_content'); ?>
+                        <a href="<?php the_field('training_event_1_link_url'); ?>"><?php the_field('training_event_1_link_text'); ?></a>
+                    </article>
+                </li>
+                <?php endif; ?>
+
+                <?php if(get_field('training_event_2_title')) : ?>
+                <li>
+                    <article class="training">
+                        <h3><?php the_field('training_event_2_title'); ?></h3>
+                        <?php the_field('training_event_2_description'); ?>
+
+                        <h4><?php the_field('training_event_2_list_title'); ?></h4>
+
+                        <?php the_field('training_event_2_list_content'); ?>
+                        <a href="<?php the_field('training_event_2_link_url'); ?>"><?php the_field('training_event_1_link_text'); ?></a>
+                    </article>
+                </li>
+                <?php endif; ?>
+
+                <?php if(get_field('training_event_3_title')) : ?>
+                <li>
+                    <article class="training">
+                        <h3><?php the_field('training_event_3_title'); ?></h3>
+                        <?php the_field('training_event_3_description'); ?>
+
+                        <h4><?php the_field('training_event_3_list_title'); ?></h4>
+
+                        <?php the_field('training_event_3_list_content'); ?>
+                        <a href="<?php the_field('training_event_3_link_url'); ?>"><?php the_field('training_event_1_link_text'); ?></a>
+                    </article>
+                </li>
+                <?php endif; ?>
+
+                <?php if(get_field('training_event_4_title')) : ?>
+                <li>
+                    <article class="training">
+                        <h3><?php the_field('training_event_4_title'); ?></h3>
+                        <?php the_field('training_event_4_description'); ?>
+
+                        <h4><?php the_field('training_event_4_list_title'); ?></h4>
+
+                        <?php the_field('training_event_4_list_content'); ?>
+                        <a href="<?php the_field('training_event_4_link_url'); ?>"><?php the_field('training_event_1_link_text'); ?></a>
+                    </article>
+                </li>
+                <?php endif; ?>
+            </ul>
+        </article>
+
+    </article>
+
+</article>
+<?php endif; ?>
+
+
 <?php if(get_field('display_training_flow_section')) : ?>
 
     <article class="training-flow">
@@ -286,93 +375,7 @@
     </blockquote>
     <?php endif; ?>
 
-<?php if(get_field('display_training_events_section')) : ?>
-<article class="topic-dive">
-    <h2><?php the_field('training_events_title'); ?></h2>
-    <p><?php the_field('training_events_tagline'); ?></p>
 
-    <article class="topic-summary focus-area">
-        <div class="description">
-
-            <?php the_field('training_events_content'); ?>
-
-            <a href="<?php the_field('training_events_url'); ?>"><?php the_field('training_events_link_text'); ?></a>
-        </div>
-
-        <figure>
-            <?php $image = get_field('training_events_graphic'); ?>
-            <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
-
-            <figcaption>
-                <p><?php echo $image['caption']; ?></p>
-
-            </figcaption>
-        </figure>
-
-        <article class="trainings">
-            <ul>
-                <?php if(get_field('training_event_1_title')) : ?>
-                <li>
-                    <article class="training">
-                        <h3><?php the_field('training_event_1_title'); ?></h3>
-                        <?php the_field('training_event_1_description'); ?>
-
-                        <h4><?php the_field('training_event_1_list_title'); ?></h4>
-
-                        <?php the_field('training_event_1_list_content'); ?>
-                        <a href="<?php the_field('training_event_1_link_url'); ?>"><?php the_field('training_event_1_link_text'); ?></a>
-                    </article>
-                </li>
-                <?php endif; ?>
-
-                <?php if(get_field('training_event_2_title')) : ?>
-                <li>
-                    <article class="training">
-                        <h3><?php the_field('training_event_2_title'); ?></h3>
-                        <?php the_field('training_event_2_description'); ?>
-
-                        <h4><?php the_field('training_event_2_list_title'); ?></h4>
-
-                        <?php the_field('training_event_2_list_content'); ?>
-                        <a href="<?php the_field('training_event_2_link_url'); ?>"><?php the_field('training_event_1_link_text'); ?></a>
-                    </article>
-                </li>
-                <?php endif; ?>
-
-                <?php if(get_field('training_event_3_title')) : ?>
-                <li>
-                    <article class="training">
-                        <h3><?php the_field('training_event_3_title'); ?></h3>
-                        <?php the_field('training_event_3_description'); ?>
-
-                        <h4><?php the_field('training_event_3_list_title'); ?></h4>
-
-                        <?php the_field('training_event_3_list_content'); ?>
-                        <a href="<?php the_field('training_event_3_link_url'); ?>"><?php the_field('training_event_1_link_text'); ?></a>
-                    </article>
-                </li>
-                <?php endif; ?>
-
-                <?php if(get_field('training_event_4_title')) : ?>
-                <li>
-                    <article class="training">
-                        <h3><?php the_field('training_event_4_title'); ?></h3>
-                        <?php the_field('training_event_4_description'); ?>
-
-                        <h4><?php the_field('training_event_4_list_title'); ?></h4>
-
-                        <?php the_field('training_event_4_list_content'); ?>
-                        <a href="<?php the_field('training_event_4_link_url'); ?>"><?php the_field('training_event_1_link_text'); ?></a>
-                    </article>
-                </li>
-                <?php endif; ?>
-            </ul>
-        </article>
-
-    </article>
-
-</article>
-<?php endif; ?>
 
 <!-- topic features here -->
  <?php
