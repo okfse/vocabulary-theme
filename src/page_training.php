@@ -398,7 +398,7 @@
         // $excerpt = get_the_excerpt( $staff_person->ID );
         ?>
 
-        <article class="topic-summary <?php echo $type; ?>">
+        <article class="topic-summary <?php echo $type; ?>" id="<?php print (str_replace(' ', '-', strtolower($title))); ?>">
         <div class="description">
             <h2><?php echo $title; ?></h2>
             <span class="category"><?php echo $category; ?></span>
