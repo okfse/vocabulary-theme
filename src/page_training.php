@@ -61,9 +61,12 @@
 
             <?php the_field('training_events_content'); ?>
 
+            <?php if(get_field('training_events_url')) :?>
             <a href="<?php the_field('training_events_url'); ?>"><?php the_field('training_events_link_text'); ?></a>
+            <?php endif; ?>
         </div>
 
+        <?php if(get_field('training_events_graphic')) :?>
         <figure>
             <?php $image = get_field('training_events_graphic'); ?>
             <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
@@ -73,6 +76,7 @@
 
             </figcaption>
         </figure>
+        <?php endif; ?>
 
         <article class="trainings">
             <ul>

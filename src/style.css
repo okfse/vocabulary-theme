@@ -18,6 +18,23 @@ License URI: https://github.com/creativecommons/vocabulary-theme/blob/main/LICEN
 /* WordPress specific rules */
 
 
+.training-index .topic-dive:has( article.topic-summary.focus-area:not(figure)) {
+    margin: 0 4em;
+}
+
+.training-index .topic-dive:has( article.topic-summary.focus-area:not(figure)) > h2 {
+    margin: 0 8rem;
+}
+
+.training-index .topic-dive:has( article.topic-summary.focus-area:not(figure)) > p {
+    margin: 0 8rem;
+}
+
+.training-index .topic-dive article.topic-summary.focus-area:has(:not(figure)) .description {
+    /* background: purple; */
+    grid-column: span 2;
+    margin: 0 8em;
+}
 
 /* article.training-flow > ol {
     position: relative;
