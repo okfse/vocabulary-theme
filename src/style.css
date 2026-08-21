@@ -17,27 +17,6 @@ License URI: https://github.com/creativecommons/vocabulary-theme/blob/main/LICEN
 
 /* WordPress specific rules */
 
-body > footer .social-menu li a {
-    --icon-sprite-color: white;
-    --icon-sprite-size: 1.9em;
-}
-.training-index .topic-dive:has( article.topic-summary.focus-area:not(figure)) {
-    margin: 0 4em;
-}
-
-.training-index .topic-dive:has( article.topic-summary.focus-area:not(figure)) > h2 {
-    margin: 0 8rem;
-}
-
-.training-index .topic-dive:has( article.topic-summary.focus-area:not(figure)) > p {
-    margin: 0 8rem;
-}
-
-.training-index .topic-dive article.topic-summary.focus-area:has(:not(figure)) .description {
-    /* background: purple; */
-    grid-column: span 2;
-    margin: 0 8em;
-}
 
 body > article.attention.low-importance {
     background: none;
@@ -122,6 +101,27 @@ body > article.attention.low-importance figure {
     display: none;
 }
 
+body > footer .social-menu li a {
+    --icon-sprite-color: white;
+    --icon-sprite-size: 1.9em;
+}
+.training-index .topic-dive:has( article.topic-summary.focus-area:not(figure)) {
+    margin: 0 4em;
+}
+
+.training-index .topic-dive:has( article.topic-summary.focus-area:not(figure)) > h2 {
+    margin: 0 8rem;
+}
+
+.training-index .topic-dive:has( article.topic-summary.focus-area:not(figure)) > p {
+    margin: 0 8rem;
+}
+
+.training-index .topic-dive article.topic-summary.focus-area:has(:not(figure)) .description {
+    /* background: purple; */
+    grid-column: span 2;
+    margin: 0 8em;
+}
 
 /* article.training-flow > ol {
     position: relative;
@@ -452,7 +452,6 @@ article.training-flow ol > li details .posts {
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
 }
-
 
 article.training-flow ol > li:nth-of-type(1) summary {
     grid-column: 1 / 5;
