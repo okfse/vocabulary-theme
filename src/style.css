@@ -17,6 +17,10 @@ License URI: https://github.com/creativecommons/vocabulary-theme/blob/main/LICEN
 
 /* WordPress specific rules */
 
+body > footer .social-menu li a {
+    --icon-sprite-color: white;
+    --icon-sprite-size: 1.9em;
+}
 
 .training-index .topic-dive:has( article.topic-summary.focus-area:not(figure)) {
     margin: 0 4em;
