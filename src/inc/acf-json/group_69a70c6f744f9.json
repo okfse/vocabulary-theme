@@ -894,7 +894,7 @@
             "label": "Training Event 1 Link URL",
             "name": "training_event_1_link_url",
             "aria-label": "",
-            "type": "url",
+            "type": "text",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -904,8 +904,11 @@
                 "id": ""
             },
             "default_value": "",
+            "maxlength": "",
             "allow_in_bindings": 1,
-            "placeholder": ""
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
         },
         {
             "key": "field_69a70d603b2c5",
@@ -1043,7 +1046,7 @@
             "label": "Training Event 2 Link URL",
             "name": "training_event_2_link_url",
             "aria-label": "",
-            "type": "url",
+            "type": "text",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -1053,8 +1056,11 @@
                 "id": ""
             },
             "default_value": "",
-            "allow_in_bindings": 0,
-            "placeholder": ""
+            "maxlength": "",
+            "allow_in_bindings": 1,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
         },
         {
             "key": "field_69a70d743b2c6",
@@ -1192,7 +1198,7 @@
             "label": "Training Event 3 Link URL",
             "name": "training_event_3_link_url",
             "aria-label": "",
-            "type": "url",
+            "type": "text",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -1202,8 +1208,11 @@
                 "id": ""
             },
             "default_value": "",
-            "allow_in_bindings": 0,
-            "placeholder": ""
+            "maxlength": "",
+            "allow_in_bindings": 1,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
         },
         {
             "key": "field_69a70d7c3b2c7",
@@ -1341,7 +1350,7 @@
             "label": "Training Event 4 Link URL",
             "name": "training_event_4_link_url",
             "aria-label": "",
-            "type": "url",
+            "type": "text",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -1351,8 +1360,11 @@
                 "id": ""
             },
             "default_value": "",
-            "allow_in_bindings": 0,
-            "placeholder": ""
+            "maxlength": "",
+            "allow_in_bindings": 1,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
         },
         {
             "key": "field_69aeeb2777730",
@@ -1424,5 +1436,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1785774110
+    "modified": 1787324473
 }
