@@ -90,6 +90,34 @@ License URI: https://github.com/okfse/vocabulary-theme/blob/main/LICENSE
 }
 
 
+/* --- Icon sprite repairs -------------------------------------------------
+
+   Three `.icon-replace` rules in library-vars.css set `--icon-sprite` on the
+   element instead of on `:before`. Since `.icon-replace:before` declares its
+   own `--icon-sprite: var(--cc-logo)`, that declaration beats the inherited
+   value and the icon renders as the CC logo.
+
+   `fa-facebook` matters most: it has no correct rule in any variant, and
+   `icon-replace fa-facebook` is what an editor puts on a social menu item --
+   Facebook is the account Creative Commons Sverige actually runs. The sprite
+   and the symbol both exist; only the selector was wrong.
+
+   (`.icon-attach.fa-search:before` and `.icon-attach.fa-close:before` are
+   correct upstream, so the footer search button is unaffected.) */
+
+.icon-replace.fa-facebook:before {
+    --icon-sprite: var(--fa-facebook);
+}
+
+.icon-replace.fa-close:before {
+    --icon-sprite: var(--fa-close);
+}
+
+.icon-replace.fa-search:before {
+    --icon-sprite: var(--fa-search);
+}
+
+
 /* --- Token repairs -------------------------------------------------------
 
    vocabulary.css reads --vocabulary-brand-color-grey twice (as the

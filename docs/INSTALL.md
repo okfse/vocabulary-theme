@@ -104,12 +104,16 @@ upload it under **Appearance → Themes → Add New → Upload Theme**, then act
 
    | Class | Effect |
    |---|---|
-   | `donate` | Renders the item as the highlighted call-to-action button |
+   | `donate` | Renders the item as the highlighted call-to-action button. If it points at Creative Commons' own donate page, label it clearly as support for CC globally — the chapter is not the US nonprofit (ROADMAP.md §6) |
    | `attention` | Renders the item as an attention-styled link |
-   | `icon-replace fa-bluesky` | Replaces the label with the Bluesky icon |
+   | `icon-replace fa-facebook` | Facebook icon |
+   | `icon-replace fa-bluesky` | Bluesky icon |
    | `icon-replace fa-mastodon` | Mastodon icon |
    | `icon-replace fa-linkedin` | LinkedIn icon |
    | `icon-attach fa-…` | Keeps the label and adds the icon beside it |
+
+   Only add accounts the chapter actually runs. Do not present Creative
+   Commons HQ's Bluesky or Mastodon as Sweden's.
 
    Any `fa-*` class from Vocabulary's icon set works the same way.
 6. **Edit `inc/site-config.php`** (or filter `vocab_site_config` from a small
