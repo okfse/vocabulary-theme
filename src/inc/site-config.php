@@ -37,6 +37,12 @@ function vocab_site_config() {
         // Empty removes it -- do not empty it on a live chapter site.
         'legal_disclaimer' => 'Denna webbplats ger inte juridisk rådgivning.',
 
+        // Show the 2.5 Sverige ports as an archive section on the licences
+        // page. Those licences are still in force for works already published
+        // under them, so hiding them loses information; 4.0 is presented as
+        // the recommendation regardless.
+        'licenses_show_25_archive' => true,
+
         // Postal address, one array entry per rendered line.
         'address'         => array(
             'Creative Commons Sverige',

@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-09-02T19:02:19+00:00\n"
+"POT-Creation-Date: 2026-09-02T19:21:01+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: vocabulary\n"
@@ -98,6 +98,48 @@ msgstr ""
 msgid "All posts"
 msgstr ""
 
+#: content-partials/license-card.php:55
+msgid "Read the deed"
+msgstr ""
+
+#: content-partials/license-card.php:57
+msgid "Read the legal code"
+msgstr ""
+
+#: content-partials/license-chooser.php:13
+msgid "Choose a license"
+msgstr ""
+
+#: content-partials/license-chooser.php:15
+msgid "Creative Commons' own license chooser walks you through the questions and gives you the license text and badge to publish with your work. It is available in Swedish."
+msgstr ""
+
+#: content-partials/license-chooser.php:19
+msgid "Open the license chooser"
+msgstr ""
+
+#: content-partials/license-ports-25.php:17
+msgid "Older Swedish ports (2.5 Sverige)"
+msgstr ""
+
+#: content-partials/license-ports-25.php:19
+msgid "The 2.5 Sverige licenses are still valid for works already published under them. For new work, use 4.0 International: it is jurisdiction-neutral, it has official Swedish translations of both the deed and the legal code, and there is no 4.0 Sweden port."
+msgstr ""
+
+#. translators: %s: license abbreviation, e.g. CC BY-SA.
+#: content-partials/license-ports-25.php:30
+#, php-format
+msgid "%s 2.5 Sverige"
+msgstr ""
+
+#: content-partials/license-public-domain.php:11
+msgid "Public domain tools"
+msgstr ""
+
+#: content-partials/license-public-domain.php:13
+msgid "CC0 and the Public Domain Mark are not licenses. CC0 is used by a creator to place their own work in the public domain; the Public Domain Mark labels a work that is already free of known copyright restrictions."
+msgstr ""
+
 #: footer.php:6
 #: footer.php:7
 #: search.php:7
@@ -150,19 +192,19 @@ msgstr ""
 msgid "Icons by %s."
 msgstr ""
 
-#: functions.php:41
+#: functions.php:42
 msgid "Primary Navigation"
 msgstr ""
 
-#: functions.php:42
+#: functions.php:43
 msgid "Footer Menu"
 msgstr ""
 
-#: functions.php:43
+#: functions.php:44
 msgid "Social Menu"
 msgstr ""
 
-#: functions.php:166
+#: functions.php:167
 msgid "Related"
 msgstr ""
 
@@ -187,52 +229,162 @@ msgstr ""
 msgid "Advanced Custom Fields (version 6.1 or later) must be installed and activated. Without it none of the theme's post types, taxonomies or fields are registered and the site renders incomplete content."
 msgstr ""
 
-#: inc/media-credits.php:37
+#: inc/licenses.php:40
+msgid "Attribution"
+msgstr ""
+
+#: inc/licenses.php:42
+msgid "Credit must be given to you, the creator."
+msgstr ""
+
+#: inc/licenses.php:46
+msgid "ShareAlike"
+msgstr ""
+
+#: inc/licenses.php:48
+msgid "Adaptations must be shared under the same terms."
+msgstr ""
+
+#: inc/licenses.php:52
+msgid "NonCommercial"
+msgstr ""
+
+#: inc/licenses.php:54
+msgid "Only noncommercial use of your work is permitted."
+msgstr ""
+
+#: inc/licenses.php:55
+msgid "Noncommercial means not primarily intended for or directed towards commercial advantage or monetary compensation."
+msgstr ""
+
+#: inc/licenses.php:58
+msgid "NoDerivatives"
+msgstr ""
+
+#: inc/licenses.php:60
+msgid "No derivatives or adaptations of your work are permitted."
+msgstr ""
+
+#: inc/licenses.php:84
+msgid "Attribution 4.0 International"
+msgstr ""
+
+#: inc/licenses.php:90
+msgid "Lets others distribute, remix, adapt and build upon your work, including commercially, as long as you are credited. The most permissive of the CC licenses."
+msgstr ""
+
+#: inc/licenses.php:94
+msgid "Attribution-ShareAlike 4.0 International"
+msgstr ""
+
+#: inc/licenses.php:100
+msgid "Lets others remix, adapt and build upon your work, including commercially, as long as you are credited and their adaptations are licensed on the same terms."
+msgstr ""
+
+#: inc/licenses.php:104
+msgid "Attribution-NonCommercial 4.0 International"
+msgstr ""
+
+#: inc/licenses.php:110
+msgid "Lets others remix, adapt and build upon your work for noncommercial purposes, as long as you are credited."
+msgstr ""
+
+#: inc/licenses.php:114
+msgid "Attribution-NonCommercial-ShareAlike 4.0 International"
+msgstr ""
+
+#: inc/licenses.php:120
+msgid "Lets others remix, adapt and build upon your work for noncommercial purposes, as long as you are credited and their adaptations are licensed on the same terms."
+msgstr ""
+
+#: inc/licenses.php:124
+msgid "Attribution-NoDerivatives 4.0 International"
+msgstr ""
+
+#: inc/licenses.php:130
+msgid "Lets others reuse your work for any purpose, including commercially, but only in unadapted form and with credit to you."
+msgstr ""
+
+#: inc/licenses.php:134
+msgid "Attribution-NonCommercial-NoDerivatives 4.0 International"
+msgstr ""
+
+#: inc/licenses.php:140
+msgid "Lets others download and share your work for noncommercial purposes, in unadapted form and with credit to you. The most restrictive of the CC licenses."
+msgstr ""
+
+#: inc/licenses.php:144
+msgid "CC0 1.0 Universal"
+msgstr ""
+
+#: inc/licenses.php:150
+msgid "Waives copyright and related rights as far as the law allows, dedicating the work to the public domain. Not a license but a dedication."
+msgstr ""
+
+#: inc/licenses.php:154
+msgid "Public Domain Mark 1.0"
+msgstr ""
+
+#: inc/licenses.php:160
+msgid "Marks a work that is already free of known copyright restrictions. Used to label existing public-domain works, not to license your own."
+msgstr ""
+
+#. translators: 1: link to the source page, 2: link to the CC BY 4.0 deed.
+#: inc/licenses.php:239
+#, php-format
+msgid "License descriptions adapted from %1$s by Creative Commons, %2$s. Changes: translated into Swedish and shortened."
+msgstr ""
+
+#: inc/licenses.php:242
+msgid "The CC Licenses"
+msgstr ""
+
+#: inc/media-credits.php:34
 msgid "All rights reserved"
 msgstr ""
 
-#: inc/media-credits.php:50
+#: inc/media-credits.php:52
 msgid "&mdash; Select &mdash;"
 msgstr ""
 
-#: inc/media-credits.php:63
+#: inc/media-credits.php:65
 msgid "License"
 msgstr ""
 
-#: inc/media-credits.php:71
+#: inc/media-credits.php:73
 msgid "The license this image is published under."
 msgstr ""
 
-#: inc/media-credits.php:75
+#: inc/media-credits.php:77
 msgid "Photographer / designer"
 msgstr ""
 
-#: inc/media-credits.php:78
+#: inc/media-credits.php:80
 msgid "Who made the image. Shown in the credit line."
 msgstr ""
 
-#: inc/media-credits.php:82
+#: inc/media-credits.php:84
 msgid "Source URL"
 msgstr ""
 
-#: inc/media-credits.php:85
+#: inc/media-credits.php:87
 msgid "Where the image came from. Optional; linked from the title in the credit line."
 msgstr ""
 
 #. translators: 1: image title, 2: photographer or designer, 3: license.
-#: inc/media-credits.php:160
+#: inc/media-credits.php:162
 #, php-format
 msgid "%1$s by %2$s is licensed under %3$s."
 msgstr ""
 
 #. translators: 1: image title, 2: license.
-#: inc/media-credits.php:169
+#: inc/media-credits.php:171
 #, php-format
 msgid "%1$s is licensed under %2$s."
 msgstr ""
 
 #. translators: %s: number of images.
-#: inc/media-credits.php:240
+#: inc/media-credits.php:242
 #, php-format
 msgid "%s image has no alternative text. Alternative text is required for accessibility, and the Creative Commons Style Guide asks for it on every upload."
 msgid_plural "%s images have no alternative text. Alternative text is required for accessibility, and the Creative Commons Style Guide asks for it on every upload."
@@ -257,7 +409,7 @@ msgstr ""
 #: page_blog.php:332
 #: page_blog.php:439
 #: page_home-narrative.php:213
-#: page_start.php:101
+#: page_start.php:117
 msgid "more posts"
 msgstr ""
 
@@ -266,7 +418,7 @@ msgid "Our Team"
 msgstr ""
 
 #: page.php:74
-#: page_licenses.php:308
+#: page_licenses.php:223
 #: page_support.php:116
 #: page_training.php:458
 msgid "More Links"
@@ -319,7 +471,7 @@ msgstr ""
 msgid "Recently from the blog"
 msgstr ""
 
-#: page_start.php:76
+#: page_start.php:92
 msgid "Latest news"
 msgstr ""
 

@@ -326,6 +326,15 @@ Execute these phases in the **okfse fork**, not as a patch series against HQ `ma
 
 ### Phase 4 — Swedish licenses and education (HQ remix)
 
+**Theme scaffolding done.** `src/inc/licenses.php` holds the licence table (six
+4.0 licences plus CC0 and PDM: abbreviations, Swedish names, elements,
+`deed.sv` / `legalcode.sv`, badges, summaries, 2.5 SE ports).
+`page_licenses.php` renders from it via `content-partials/license-card.php`,
+plus partials for the public-domain tools, the chooser deep link and the 2.5
+Sverige archive. `vocab_license_attribution()` carries the CC BY 4.0 credit.
+Remaining in this phase is **editorial**: the symboler, hur man licensierar,
+hur man använder and FAQ pages, and the Swedish prose on each.
+
 - Pages from the copy/adopt/remix matrix: Licenserna (HQ 4.0 structure, Swedish names), symboler, hur man licensierar, hur man använder, FAQ
 - Always **link** `deed.sv` and `legalcode.sv` for 4.0; do not re-host legal tools
 - Keep 2.5 SE as an archive section with HQ’s “older version / prefer 4.0” notice

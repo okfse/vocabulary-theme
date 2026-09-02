@@ -114,6 +114,32 @@ alongside the Swedish name, e.g. *Erkännande-DelaLika 4.0 Internationell*
 | ND | IngaBearbetningar |
 | SA | DelaLika |
 
+These are not hardcoded. `src/inc/licenses.php` is the single source of truth
+for all eight tools — abbreviation, name, elements, deed and legal-code URLs,
+badge artwork and summary — and `vocab_media_licenses()` derives the media
+fields' list from it, so the two cannot drift.
+
+The msgids there are the **official English names** (`Attribution-ShareAlike
+4.0 International`), with the Swedish supplied by the catalogue. Do not put
+Swedish in the msgid: gettext would then translate Swedish to Swedish, and any
+other locale would still render Swedish.
+
+**NonCommercial artwork.** For a Swedish/EU audience the euro badge is
+preferred (ROADMAP §7.2), so `vocab_license_badge_url()` picks
+`by_nc.eu.svg` / `by_nc_sa.eu.svg` / `by_nc_nd.eu.svg` when the file exists and
+falls back otherwise — only the `big/` badge set ships euro variants today.
+
+The inline element icons still use the `cc-nc` icon class, not `cc-nc-eu`:
+the sprite carries a `cc-nc-eu` symbol but `library-vars.css` defines no
+`--cc-nc-eu` custom property, so that class would not resolve.
+
+**Legal tools are linked, never re-hosted** (ROADMAP §7.1). Deeds and legal
+code stay on creativecommons.org, in Swedish (`deed.sv`, `legalcode.sv`), and
+the license chooser is a deep link to
+`creativecommons.org/choose/?lang=sv` rather than the dormant local copy.
+`vocab_license_attribution()` renders the CC BY 4.0 attribution that adapted HQ
+wording requires.
+
 **Dates.** The guide's `2019-10-22` form is right for metadata. Visible Swedish
 dates are `22 oktober 2019` — set `j F Y` in Settings → General. Templates use
 `vocab_the_date()` / `vocab_format_date()` (`src/inc/i18n.php`), which honour the

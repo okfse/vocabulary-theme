@@ -146,7 +146,7 @@ field group.
 | Index - Events | `page_events.php` | *(uses the `event` post type)* |
 | Index - FAQs | `page_faqs.php` | FAQs Index Settings, FAQs Index Meta |
 | Index - Case Studies | `page_casestudies.php` | *(uses the `case-study` post type)* |
-| Page - Licenses | `page_licenses.php` | Licenses Page Settings |
+| Page - Licenses | `page_licenses.php` | Licenses Page Settings — see below |
 | Page - Support | `page_support.php` | Support Page Settings |
 | Page - Training | `page_training.php` | Training Index Settings |
 | Page - Training Videos | `page_training-videos.php` | Training Videos Page Settings |
@@ -165,6 +165,30 @@ taxonomy.
 `top-of-site` for the header banner or `newsletter-promo` for the in-page
 newsletter block. The legal-advice disclaimer does **not** use this — it is part
 of the footer template, so it cannot be switched off by accident.
+
+### The Licenserna page
+
+`page_licenses.php` builds the six-license listing from `src/inc/licenses.php`
+rather than hardcoding it. Each of the six slots in **Licenses Page Settings**
+has a *License N Type* select; the template now reads it — upstream never did —
+and derives the heading, badge, Swedish name, condition rows and the
+`deed.sv` / `legalcode.sv` links from the slug.
+
+- Leave a slot's type empty and it falls back to Creative Commons' own ordering
+  for that position (BY, BY-SA, BY-NC, BY-NC-SA, BY-ND, BY-NC-ND).
+- *License N Title* and *License N Summary* override the defaults for that slot
+  if you want your own wording.
+- The same license selected in two slots is rendered once, so the page can show
+  fewer than six cards if slots are duplicated.
+
+Below the six, the template adds three sections that need no configuration: the
+public-domain tools (CC0 and PDM), a deep link to Creative Commons' Swedish
+license chooser, and the 2.5 Sverige ports as an archive with the note that 4.0
+is recommended for new work. Set `licenses_show_25_archive` to `false` in
+`inc/site-config.php` to drop the archive section.
+
+The page carries the CC BY 4.0 attribution for the adapted license
+descriptions automatically.
 
 ### What is dormant, and how to bring it back
 

@@ -16,27 +16,29 @@
 /**
  * Licences offered for uploaded media.
  *
- * Abbreviations follow the style guide (p. 11): all caps, clauses joined with
- * hyphens, and no hyphen after `CC`. Deeds link to the Swedish translation
- * where one exists.
+ * Derived from vocab_licenses() in inc/licenses.php so there is one licence
+ * table rather than two that can drift, plus an "all rights reserved" entry
+ * that is not a Creative Commons tool and so does not belong there.
+ *
+ * Keys are stored in post meta, so they must not be renamed.
  *
  * @return array Slug => array( label, deed URL ).
  */
 function vocab_media_licenses() {
-    return apply_filters(
-        'vocab_media_licenses',
-        array(
-            'cc-by'          => array( 'CC BY 4.0', 'https://creativecommons.org/licenses/by/4.0/deed.sv' ),
-            'cc-by-sa'       => array( 'CC BY-SA 4.0', 'https://creativecommons.org/licenses/by-sa/4.0/deed.sv' ),
-            'cc-by-nc'       => array( 'CC BY-NC 4.0', 'https://creativecommons.org/licenses/by-nc/4.0/deed.sv' ),
-            'cc-by-nd'       => array( 'CC BY-ND 4.0', 'https://creativecommons.org/licenses/by-nd/4.0/deed.sv' ),
-            'cc-by-nc-sa'    => array( 'CC BY-NC-SA 4.0', 'https://creativecommons.org/licenses/by-nc-sa/4.0/deed.sv' ),
-            'cc-by-nc-nd'    => array( 'CC BY-NC-ND 4.0', 'https://creativecommons.org/licenses/by-nc-nd/4.0/deed.sv' ),
-            'cc0'            => array( 'CC0 1.0', 'https://creativecommons.org/publicdomain/zero/1.0/deed.sv' ),
-            'pdm'            => array( 'Public Domain Mark 1.0', 'https://creativecommons.org/publicdomain/mark/1.0/deed.sv' ),
-            'all-rights'     => array( __( 'All rights reserved', 'vocabulary' ), '' ),
-        )
-    );
+    $licenses = array();
+
+    foreach ( vocab_licenses() as $slug => $license ) {
+        $licenses[ $slug ] = array( $license['abbr'], $license['deed'] );
+    }
+
+    $licenses['all-rights'] = array( __( 'All rights reserved', 'vocabulary' ), '' );
+
+    /**
+     * Filter the licences offered on the attachment editor.
+     *
+     * @param array $licenses Slug => array( label, deed URL ).
+     */
+    return apply_filters( 'vocab_media_licenses', $licenses );
 }
 
 /**

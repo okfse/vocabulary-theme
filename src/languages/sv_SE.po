@@ -3,7 +3,7 @@
 # This file is distributed under the MIT License.
 msgid ""
 msgstr ""
-"Project-Id-Version: CC Vocabulary Theme (Sverige) 2.8-se.1\n"
+"Project-Id-Version: CC Vocabulary Theme (Sverige) 2.8-se.2\n"
 "Report-Msgid-Bugs-To: https://github.com/okfse/vocabulary-theme/issues\n"
 "Last-Translator: Creative Commons Sverige <info@creativecommons.se>\n"
 "Language-Team: Svenska\n"
@@ -99,6 +99,48 @@ msgstr "Kategorier"
 msgid "All posts"
 msgstr "Alla inlägg"
 
+#: content-partials/license-card.php:55
+msgid "Read the deed"
+msgstr "Läs sammanfattningen"
+
+#: content-partials/license-card.php:57
+msgid "Read the legal code"
+msgstr "Läs licenstexten"
+
+#: content-partials/license-chooser.php:13
+msgid "Choose a license"
+msgstr "Välj licens"
+
+#: content-partials/license-chooser.php:15
+msgid "Creative Commons' own license chooser walks you through the questions and gives you the license text and badge to publish with your work. It is available in Swedish."
+msgstr "Creative Commons egen licensväljare guidar dig genom frågorna och ger dig licenstexten och märket att publicera tillsammans med verket. Den finns på svenska."
+
+#: content-partials/license-chooser.php:19
+msgid "Open the license chooser"
+msgstr "Öppna licensväljaren"
+
+#: content-partials/license-ports-25.php:17
+msgid "Older Swedish ports (2.5 Sverige)"
+msgstr "Äldre svenska portningar (2.5 Sverige)"
+
+#: content-partials/license-ports-25.php:19
+msgid "The 2.5 Sverige licenses are still valid for works already published under them. For new work, use 4.0 International: it is jurisdiction-neutral, it has official Swedish translations of both the deed and the legal code, and there is no 4.0 Sweden port."
+msgstr "Licenserna 2.5 Sverige gäller fortfarande för verk som redan publicerats under dem. För nya verk, använd 4.0 Internationell: den är jurisdiktionsneutral, har officiella svenska översättningar av både sammanfattning och licenstext, och det finns ingen portning 4.0 Sverige."
+
+#. translators: %s: license abbreviation, e.g. CC BY-SA.
+#: content-partials/license-ports-25.php:30
+#, php-format
+msgid "%s 2.5 Sverige"
+msgstr "%s 2.5 Sverige"
+
+#: content-partials/license-public-domain.php:11
+msgid "Public domain tools"
+msgstr "Verktyg för public domain"
+
+#: content-partials/license-public-domain.php:13
+msgid "CC0 and the Public Domain Mark are not licenses. CC0 is used by a creator to place their own work in the public domain; the Public Domain Mark labels a work that is already free of known copyright restrictions."
+msgstr "CC0 och Public Domain Mark är inte licenser. CC0 används av en upphovsperson för att överlåta sitt eget verk till public domain; Public Domain Mark märker ett verk som redan är fritt från kända upphovsrättsliga begränsningar."
+
 #: footer.php:6
 #: footer.php:7
 #: search.php:7
@@ -151,19 +193,19 @@ msgstr "Creative Commons Erkännande 4.0 Internationell-licens"
 msgid "Icons by %s."
 msgstr "Ikoner av %s."
 
-#: functions.php:41
+#: functions.php:42
 msgid "Primary Navigation"
 msgstr "Huvudmeny"
 
-#: functions.php:42
+#: functions.php:43
 msgid "Footer Menu"
 msgstr "Sidfotsmeny"
 
-#: functions.php:43
+#: functions.php:44
 msgid "Social Menu"
 msgstr "Sociala medier"
 
-#: functions.php:166
+#: functions.php:167
 msgid "Related"
 msgstr "Relaterat"
 
@@ -188,52 +230,162 @@ msgstr "CC Vocabulary Theme:"
 msgid "Advanced Custom Fields (version 6.1 or later) must be installed and activated. Without it none of the theme's post types, taxonomies or fields are registered and the site renders incomplete content."
 msgstr "Advanced Custom Fields (version 6.1 eller senare) måste vara installerat och aktiverat. Utan det registreras inga av temats innehållstyper, taxonomier eller fält, och webbplatsen visar ofullständigt innehåll."
 
-#: inc/media-credits.php:37
+#: inc/licenses.php:40
+msgid "Attribution"
+msgstr "Erkännande"
+
+#: inc/licenses.php:42
+msgid "Credit must be given to you, the creator."
+msgstr "Erkännande måste ges till dig som upphovsperson."
+
+#: inc/licenses.php:46
+msgid "ShareAlike"
+msgstr "DelaLika"
+
+#: inc/licenses.php:48
+msgid "Adaptations must be shared under the same terms."
+msgstr "Bearbetningar måste delas under samma villkor."
+
+#: inc/licenses.php:52
+msgid "NonCommercial"
+msgstr "IckeKommersiell"
+
+#: inc/licenses.php:54
+msgid "Only noncommercial use of your work is permitted."
+msgstr "Endast icke-kommersiell användning av verket är tillåten."
+
+#: inc/licenses.php:55
+msgid "Noncommercial means not primarily intended for or directed towards commercial advantage or monetary compensation."
+msgstr "Icke-kommersiell innebär att användningen inte främst är avsedd för eller riktad mot kommersiell fördel eller ekonomisk ersättning."
+
+#: inc/licenses.php:58
+msgid "NoDerivatives"
+msgstr "IngaBearbetningar"
+
+#: inc/licenses.php:60
+msgid "No derivatives or adaptations of your work are permitted."
+msgstr "Inga bearbetningar eller anpassningar av verket är tillåtna."
+
+#: inc/licenses.php:84
+msgid "Attribution 4.0 International"
+msgstr "Erkännande 4.0 Internationell"
+
+#: inc/licenses.php:90
+msgid "Lets others distribute, remix, adapt and build upon your work, including commercially, as long as you are credited. The most permissive of the CC licenses."
+msgstr "Låter andra sprida, remixa, bearbeta och bygga vidare på verket, också kommersiellt, så länge du erkänns som upphovsperson. Den mest tillåtande av CC-licenserna."
+
+#: inc/licenses.php:94
+msgid "Attribution-ShareAlike 4.0 International"
+msgstr "Erkännande-DelaLika 4.0 Internationell"
+
+#: inc/licenses.php:100
+msgid "Lets others remix, adapt and build upon your work, including commercially, as long as you are credited and their adaptations are licensed on the same terms."
+msgstr "Låter andra remixa, bearbeta och bygga vidare på verket, också kommersiellt, så länge du erkänns och deras bearbetningar licensieras under samma villkor."
+
+#: inc/licenses.php:104
+msgid "Attribution-NonCommercial 4.0 International"
+msgstr "Erkännande-IckeKommersiell 4.0 Internationell"
+
+#: inc/licenses.php:110
+msgid "Lets others remix, adapt and build upon your work for noncommercial purposes, as long as you are credited."
+msgstr "Låter andra remixa, bearbeta och bygga vidare på verket för icke-kommersiella syften, så länge du erkänns."
+
+#: inc/licenses.php:114
+msgid "Attribution-NonCommercial-ShareAlike 4.0 International"
+msgstr "Erkännande-IckeKommersiell-DelaLika 4.0 Internationell"
+
+#: inc/licenses.php:120
+msgid "Lets others remix, adapt and build upon your work for noncommercial purposes, as long as you are credited and their adaptations are licensed on the same terms."
+msgstr "Låter andra remixa, bearbeta och bygga vidare på verket för icke-kommersiella syften, så länge du erkänns och deras bearbetningar licensieras under samma villkor."
+
+#: inc/licenses.php:124
+msgid "Attribution-NoDerivatives 4.0 International"
+msgstr "Erkännande-IngaBearbetningar 4.0 Internationell"
+
+#: inc/licenses.php:130
+msgid "Lets others reuse your work for any purpose, including commercially, but only in unadapted form and with credit to you."
+msgstr "Låter andra återanvända verket för alla syften, också kommersiellt, men bara i oförändrad form och med erkännande till dig."
+
+#: inc/licenses.php:134
+msgid "Attribution-NonCommercial-NoDerivatives 4.0 International"
+msgstr "Erkännande-IckeKommersiell-IngaBearbetningar 4.0 Internationell"
+
+#: inc/licenses.php:140
+msgid "Lets others download and share your work for noncommercial purposes, in unadapted form and with credit to you. The most restrictive of the CC licenses."
+msgstr "Låter andra ladda ner och dela verket för icke-kommersiella syften, i oförändrad form och med erkännande till dig. Den mest restriktiva av CC-licenserna."
+
+#: inc/licenses.php:144
+msgid "CC0 1.0 Universal"
+msgstr "CC0 1.0 Universell"
+
+#: inc/licenses.php:150
+msgid "Waives copyright and related rights as far as the law allows, dedicating the work to the public domain. Not a license but a dedication."
+msgstr "Avstår från upphovsrätt och närliggande rättigheter så långt lagen tillåter och överlåter verket till public domain. Inte en licens utan en överlåtelse."
+
+#: inc/licenses.php:154
+msgid "Public Domain Mark 1.0"
+msgstr "Public Domain Mark 1.0"
+
+#: inc/licenses.php:160
+msgid "Marks a work that is already free of known copyright restrictions. Used to label existing public-domain works, not to license your own."
+msgstr "Märker ett verk som redan är fritt från kända upphovsrättsliga begränsningar. Används för att märka befintliga public domain-verk, inte för att licensiera egna."
+
+#. translators: 1: link to the source page, 2: link to the CC BY 4.0 deed.
+#: inc/licenses.php:239
+#, php-format
+msgid "License descriptions adapted from %1$s by Creative Commons, %2$s. Changes: translated into Swedish and shortened."
+msgstr "Licensbeskrivningarna är bearbetade från %1$s av Creative Commons, %2$s. Ändringar: översatta till svenska och förkortade."
+
+#: inc/licenses.php:242
+msgid "The CC Licenses"
+msgstr "CC-licenserna"
+
+#: inc/media-credits.php:34
 msgid "All rights reserved"
 msgstr "Alla rättigheter förbehållna"
 
-#: inc/media-credits.php:50
+#: inc/media-credits.php:52
 msgid "&mdash; Select &mdash;"
 msgstr "&mdash; Välj &mdash;"
 
-#: inc/media-credits.php:63
+#: inc/media-credits.php:65
 msgid "License"
 msgstr "Licens"
 
-#: inc/media-credits.php:71
+#: inc/media-credits.php:73
 msgid "The license this image is published under."
 msgstr "Licensen som bilden publiceras under."
 
-#: inc/media-credits.php:75
+#: inc/media-credits.php:77
 msgid "Photographer / designer"
 msgstr "Fotograf / formgivare"
 
-#: inc/media-credits.php:78
+#: inc/media-credits.php:80
 msgid "Who made the image. Shown in the credit line."
 msgstr "Vem som skapade bilden. Visas i bildkrediten."
 
-#: inc/media-credits.php:82
+#: inc/media-credits.php:84
 msgid "Source URL"
 msgstr "Käll-URL"
 
-#: inc/media-credits.php:85
+#: inc/media-credits.php:87
 msgid "Where the image came from. Optional; linked from the title in the credit line."
 msgstr "Var bilden kommer ifrån. Valfritt; länkas från titeln i bildkrediten."
 
 #. translators: 1: image title, 2: photographer or designer, 3: license.
-#: inc/media-credits.php:160
+#: inc/media-credits.php:162
 #, php-format
 msgid "%1$s by %2$s is licensed under %3$s."
 msgstr "%1$s av %2$s är licensierad under %3$s."
 
 #. translators: 1: image title, 2: license.
-#: inc/media-credits.php:169
+#: inc/media-credits.php:171
 #, php-format
 msgid "%1$s is licensed under %2$s."
 msgstr "%1$s är licensierad under %2$s."
 
 #. translators: %s: number of images.
-#: inc/media-credits.php:240
+#: inc/media-credits.php:242
 #, php-format
 msgid "%s image has no alternative text. Alternative text is required for accessibility, and the Creative Commons Style Guide asks for it on every upload."
 msgid_plural "%s images have no alternative text. Alternative text is required for accessibility, and the Creative Commons Style Guide asks for it on every upload."
@@ -258,7 +410,7 @@ msgstr "Senaste inläggen"
 #: page_blog.php:332
 #: page_blog.php:439
 #: page_home-narrative.php:213
-#: page_start.php:101
+#: page_start.php:117
 msgid "more posts"
 msgstr "fler inlägg"
 
@@ -267,7 +419,7 @@ msgid "Our Team"
 msgstr "Vårt team"
 
 #: page.php:74
-#: page_licenses.php:308
+#: page_licenses.php:223
 #: page_support.php:116
 #: page_training.php:458
 msgid "More Links"
@@ -320,7 +472,7 @@ msgstr "Till toppen"
 msgid "Recently from the blog"
 msgstr "Senast från bloggen"
 
-#: page_start.php:76
+#: page_start.php:92
 msgid "Latest news"
 msgstr "Senaste nytt"
 

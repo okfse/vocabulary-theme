@@ -10,15 +10,18 @@
 <h1><?php the_title(); ?></h1>
 </div>
 
-<figure>
     <?php $image = get_field('header_graphic'); ?>
-    <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
+    <?php if ( ! empty( $image['url'] ) ) : ?>
+<figure>
+    <img src="<?php echo esc_url( $image['url'] ); ?>" alt="<?php echo esc_attr( isset( $image['alt'] ) ? $image['alt'] : '' ); ?>" />
 
+    <?php if ( ! empty( $image['caption'] ) ) : ?>
     <figcaption>
-        <p><?php echo $image['caption']; ?></p>
-
+        <p><?php echo wp_kses_post( $image['caption'] ); ?></p>
     </figcaption>
+    <?php endif; ?>
 </figure>
+    <?php endif; ?>
 </header>
 
 <article class="topic-summary about"> <!-- TODO: merge with prior article? -->
@@ -27,15 +30,18 @@
         <?php the_field('subhead_intro'); ?>
     </div>
 
-    <figure>
         <?php $image = get_field('subhead_graphic'); ?>
-        <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
+        <?php if ( ! empty( $image['url'] ) ) : ?>
+    <figure>
+        <img src="<?php echo esc_url( $image['url'] ); ?>" alt="<?php echo esc_attr( isset( $image['alt'] ) ? $image['alt'] : '' ); ?>" />
 
+        <?php if ( ! empty( $image['caption'] ) ) : ?>
         <figcaption>
-            <p><?php echo $image['caption']; ?></p>
-
+            <p><?php echo wp_kses_post( $image['caption'] ); ?></p>
         </figcaption>
+        <?php endif; ?>
     </figure>
+        <?php endif; ?>
 </article>
 
 
@@ -48,15 +54,18 @@
 
     </div>
 
-    <figure>
         <?php $image = get_field('introductory_section_graphic'); ?>
-        <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
+        <?php if ( ! empty( $image['url'] ) ) : ?>
+    <figure>
+        <img src="<?php echo esc_url( $image['url'] ); ?>" alt="<?php echo esc_attr( isset( $image['alt'] ) ? $image['alt'] : '' ); ?>" />
 
+        <?php if ( ! empty( $image['caption'] ) ) : ?>
         <figcaption>
-            <p><?php echo $image['caption']; ?></p>
-
+            <p><?php echo wp_kses_post( $image['caption'] ); ?></p>
         </figcaption>
+        <?php endif; ?>
     </figure>
+        <?php endif; ?>
 </article>
 
 
@@ -75,15 +84,18 @@
 
     </div>
 
-    <figure>
         <?php $image = get_field('why_section_graphic'); ?>
-        <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
+        <?php if ( ! empty( $image['url'] ) ) : ?>
+    <figure>
+        <img src="<?php echo esc_url( $image['url'] ); ?>" alt="<?php echo esc_attr( isset( $image['alt'] ) ? $image['alt'] : '' ); ?>" />
 
+        <?php if ( ! empty( $image['caption'] ) ) : ?>
         <figcaption>
-            <p><?php echo $image['caption']; ?></p>
-
+            <p><?php echo wp_kses_post( $image['caption'] ); ?></p>
         </figcaption>
+        <?php endif; ?>
     </figure>
+        <?php endif; ?>
 
     <footer class="supporting">
 
@@ -124,141 +136,56 @@ The CC icons, now recognized around the world, represent openness, collaboration
 <article class="licenses">
     <h2><?php the_field('licenses_listing_title'); ?></h2>
     <?php the_field('licenses_listing_introduction'); ?>
+
+    <?php
+    // The six licence slots each have a `license_N_type` select. Upstream never
+    // read it -- the badge, deed URL and condition rows were hardcoded per slot,
+    // in English, pointing at the English deeds. Now each slot renders from
+    // inc/licenses.php, so an editor reordering the selects reorders the page,
+    // and an empty slot falls back to Creative Commons' own ordering.
+    $defaults = vocab_license_slugs();
+    $cards    = array();
+    $seen     = array();
+
+    for ( $slot = 1; $slot <= 6; $slot++ ) {
+        $slug = (string) get_field( 'license_' . $slot . '_type' );
+
+        if ( ! $slug || ! vocab_license( $slug ) ) {
+            $slug = isset( $defaults[ $slot - 1 ] ) ? $defaults[ $slot - 1 ] : '';
+        }
+
+        // Keep the slot alongside the slug: the title and summary overrides are
+        // per slot, so they must not be read by position in the output.
+        if ( $slug && ! in_array( $slug, $seen, true ) ) {
+            $seen[]  = $slug;
+            $cards[] = array( 'slug' => $slug, 'slot' => $slot );
+        }
+    }
+    ?>
+
     <ul>
-        <li>
-            <article class="license">
-                <h3><a href="https://creativecommons.org/licenses/by/4.0/"><?php the_field('license_1_title'); ?></a></h3>
-                <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/vocabulary/svg/cc/license_badges/big/by.svg" class="badge" />
-                <?php the_field('license_1_summary'); ?>
-
-                <dl class="conditions-definitions">
-                    <div>
-                        <dt class="icon-attach cc-by">BY</dt>
-                        <dd>Credit must be given to you, the creator.</dd>
-                    </div>
-                </dl>
-            </article>
-        </li>
-
-        <li>
-            <article class="license">
-                <h3><a href="https://creativecommons.org/licenses/by-sa/4.0/"><?php the_field('license_2_title'); ?></a></h3>
-                <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/vocabulary/svg/cc/license_badges/big/by_sa.svg" class="badge" />
-                <?php the_field('license_2_summary'); ?>
-                <dl class="conditions-definitions">
-                    <div>
-                        <dt class="icon-attach cc-by">BY</dt>
-                        <dd>Credit must be given to you, the creator.</dd>
-                    </div>
-
-                    <div>
-                        <dt class="icon-attach cc-sa">SA</dt>
-                        <dd>Adaptations must be shared under the same terms.</dd>
-                    </div>
-                </dl>
-            </article>
-        </li>
-
-        <li>
-            <article class="license">
-                <h3><a href="https://creativecommons.org/licenses/by-nd/4.0/"><?php the_field('license_3_title'); ?></a></h3>
-                <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/vocabulary/svg/cc/license_badges/big/by_nd.svg" class="badge" />
-                <?php the_field('license_3_summary'); ?>
-                <dl class="conditions-definitions">
-
-                    <div>
-                        <dt class="icon-attach cc-by">BY</dt>
-                        <dd>Credit must be given to you, the creator.</dd>
-                    </div>
-
-                    <div>
-                        <dt class="icon-attach cc-nd">ND</dt>
-                        <dd>No derivatives or adaptations of your work are permitted.</dd>
-                    </div>
-                </dl>
-            </article>
-        </li>
-
-        <li>
-            <article class="license">
-                <h3><a href="https://creativecommons.org/licenses/by-nc/4.0/"><?php the_field('license_4_title'); ?></a></h3>
-                <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/vocabulary/svg/cc/license_badges/big/by_nc.svg" class="badge" />
-                <?php the_field('license_4_summary'); ?>
-                <dl class="conditions-definitions">
-                    <div>
-                        <dt class="icon-attach cc-by">BY</dt>
-                        <dd>Credit must be given to you, the creator.</dd>
-                    </div>
-
-                    <div>
-                        <dt class="icon-attach cc-nc">NC</dt>
-                        <dd>
-                            Only noncommercial use of your work is permitted.
-                            <em>Noncommercial means not primarily intended for or directed towards commercial advantage or monetary compensation.</em>
-                        </dd>
-                    </div>
-
-
-                </dl>
-            </article>
-        </li>
-
-        <li>
-            <article class="license">
-                <h3><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><?php the_field('license_5_title'); ?></a></h3>
-                <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/vocabulary/svg/cc/license_badges/big/by_nc_sa.svg" class="badge" />
-                <?php the_field('license_5_summary'); ?>
-                <dl class="conditions-definitions">
-                    <div>
-                        <dt class="icon-attach cc-by">BY</dt>
-                        <dd>Credit must be given to you, the creator.</dd>
-                    </div>
-
-                    <div>
-                        <dt class="icon-attach cc-nc">NC</dt>
-                        <dd>
-                            Only noncommercial use of your work is permitted.
-                            <em>Noncommercial means not primarily intended for or directed towards commercial advantage or monetary compensation.</em>
-                        </dd>
-                    </div>
-
-                    <div>
-                        <dt class="icon-attach cc-sa">SA</dt>
-                        <dd>Adaptations must be shared under the same terms.</dd>
-                    </div>
-                </dl>
-            </article>
-        </li>
-
-        <li>
-            <article class="license">
-                <h3><a href="https://creativecommons.org/licenses/by-nc-nd/4.0/"><?php the_field('license_6_title'); ?></a></h3>
-                <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/vocabulary/svg/cc/license_badges/big/by_nc_nd.svg" class="badge" />
-                <?php the_field('license_6_summary'); ?>
-                <dl class="conditions-definitions">
-                    <div>
-                        <dt class="icon-attach cc-by">BY</dt>
-                        <dd>Credit must be given to you, the creator.</dd>
-                    </div>
-
-                    <div>
-                        <dt class="icon-attach cc-nc">NC</dt>
-                        <dd>
-                            Only noncommercial use of your work is permitted.
-                            <em>Noncommercial means not primarily intended for or directed towards commercial advantage or monetary compensation.</em>
-                        </dd>
-                    </div>
-
-                    <div>
-                        <dt class="icon-attach cc-nd">ND</dt>
-                        <dd>No derivatives or adaptations of your work are permitted.</dd>
-                    </div>
-                </dl>
-            </article>
-        </li>
+        <?php foreach ( $cards as $card ) : ?>
+        <?php
+        get_template_part( 'content-partials/license', 'card', array(
+            'slug'    => $card['slug'],
+            'title'   => (string) get_field( 'license_' . $card['slot'] . '_title' ),
+            'summary' => (string) get_field( 'license_' . $card['slot'] . '_summary' ),
+        ) );
+        ?>
+        <?php endforeach; ?>
     </ul>
 
     <?php the_content(); ?>
+
+    <?php get_template_part( 'content-partials/license', 'public-domain' ); ?>
+
+    <?php get_template_part( 'content-partials/license', 'chooser' ); ?>
+
+    <?php if ( vocab_site( 'licenses_show_25_archive' ) ) : ?>
+    <?php get_template_part( 'content-partials/license', 'ports-25' ); ?>
+    <?php endif; ?>
+
+    <p class="attribution"><?php echo wp_kses_post( vocab_license_attribution() ); ?></p>
 
     <footer>
         <a href="<?php the_field('more_url'); ?>" class="more"><?php the_field('more_text'); ?></a>
