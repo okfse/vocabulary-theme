@@ -18,9 +18,10 @@ This is the Creative Commons Sverige fork of
 - **[docs/BRAND.md](docs/BRAND.md)** — the brand and language decisions, and why
   the palette and fonts are *not* the ones in the 2019 print style guide.
 - **[ROADMAP.md](ROADMAP.md)** — the chapter-fork investigation and the phased
-  work plan. Phases 0–4 are done. Phase 6 has had a first code-level pass but
-  **accessibility, privacy/tracking and browser verification all remain open**;
-  Phases 5 and 7 are untouched.
+  work plan. Its **Status** section is the current picture: phases 0–4 done,
+  phase 6 open (accessibility, privacy/tracking and browser verification all
+  still wanted), phase 5 not started, phase 7 deferred. It also lists the
+  upstream bugs fixed here and the outstanding loose ends.
 - [src/inc/README.md](src/inc/README.md) — how the ACF configuration is loaded.
 
 

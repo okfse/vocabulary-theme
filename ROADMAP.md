@@ -4,6 +4,94 @@ Investigation report and sequenced work plan for a **Swedish chapter fork** of [
 
 This file is the implementation guide. Theme changes are **not** done in the upstream snapshot that produced this document; they belong in the okfse fork.
 
+## Status
+
+Updated **2026-09-03**. Work happens in
+[`okfse/vocabulary-theme`](https://github.com/okfse/vocabulary-theme) on `main`;
+`upstream/main` mirrors `creativecommons/vocabulary-theme` (v2.8). Current
+release: **`v2.8-se.3`**.
+
+| Phase | Status |
+|-------|--------|
+| 0 — Repository | **Done** |
+| 1 — Chapter identity | **Done** |
+| 2 — Internationalization | **Done** |
+| 3 — Slim the theme to a chapter site | **Done** |
+| 4 — Swedish licenses and education | **Theme done, drafts written.** Native-speaker review of the Swedish outstanding |
+| 5 — Content migration | **Not started.** Groundwork is possible before the hosting decision — see the phase |
+| 6 — Policy, hosting, verification | **Open.** A code-level pass is released; accessibility, privacy/tracking and browser verification are all still wanted |
+| 7 — Optional chapter logo | **Deferred by decision** — the Accidenz lockup stands |
+
+### What the theme does today
+
+- Chapter identity: the CC product lockup (`cc sverige`) in masthead and footer,
+  `lang="sv-SE"`, the official CC favicon set.
+- Header, footer and social navigation managed in **Appearance → Menus**, with a
+  walker that emits Vocabulary's submenu toggles and moves presentational
+  classes onto the anchor.
+- Swedish UI throughout, 123 strings in `src/languages/sv_SE.po`, dates in the
+  site locale.
+- The legal-advice disclaimer required of chapter sites, in the footer on every
+  page.
+- A chapter home page (**Startsida**) and a **Licenserna** page built from a
+  single licence table (`src/inc/licenses.php`) — Swedish licence names,
+  `deed.sv` / `legalcode.sv` links, euro NC badges, the public-domain tools, a
+  deep link to CC's Swedish chooser, and the 2.5 Sverige ports as an archive.
+- Licence shortcodes so educational pages cannot drift from that table.
+- Swedish drafts of four educational pages in `content/sv/`, importable via
+  `scripts/build-content-wxr.py`.
+- Attachment fields for licence, photographer and source, plus an alt-text nudge.
+- HQ-only page templates and post types dormant, not deleted — each reversible
+  with a one-line edit.
+- Per-site values in `src/inc/site-config.php`; brand and language decisions in
+  `docs/BRAND.md`; install and setup in `docs/INSTALL.md`.
+
+### Upstream bugs found and fixed here
+
+All of these are wrong for any site, not just a Swedish one, and are worth
+offering back to `creativecommons/vocabulary-theme` — every one accepted shrinks
+this fork's merge diff (§2).
+
+| Fix | Why it mattered |
+|-----|-----------------|
+| ACF was an unguarded hard dependency | `get_field()` in `header.php` fataled every URL with a plain *"There has been a critical error on this website."* |
+| `DateTime::createFromFormat()` unchecked | An event saved without a date crashed all four event templates |
+| Three `.icon-replace` rules set `--icon-sprite` on the element, not `:before` | `fa-facebook`, `fa-close`, `fa-search` rendered the CC logo instead of their own icon |
+| `Roboto Condensed` and `Source Sans Pro` had no `@font-face` | Both were named in CSS rules and shipped in the theme, but silently fell back to a generic sans |
+| `--vocabulary-brand-color-grey` used, never defined | Broke the underline descender gaps on attribution links |
+| `a.attention` white on turquoise (2.43:1); `#FF0000` links (4.00:1) | Below WCAG 2.1 AA for normal text |
+| Nav toggles had no ARIA | Assistive tech was told nothing about open/closed state |
+| Two `<h1>` per page | The masthead logo competed with the page title |
+| Skip-link target not focusable | The link moved the viewport but left keyboard focus behind |
+| `single-course.php` read `$previousLink` before assigning it | Could render `<a href="">` |
+| `Requires at least: 5.0` | `has_post_parent()` / `get_post_parent()` need WordPress 5.7 |
+| `update_option()` on every request | A DB write per page load |
+| `[list]`, `[stat]`, `[topic-summary]` read attributes unchecked | PHP 8 warnings on any use without every attribute |
+| Ten license abbreviations written `CC-BY` | Against CC's own style guide (p. 11) |
+| `src/inc/README.md` described a loading mechanism that does not exist | Following it dumps 1138 lines of PHP source into the page |
+| `manifest.webmanifest` icons at root-absolute paths | Both 404ed |
+
+### Loose ends
+
+Small, unblocked, and none of them theme architecture:
+
+- `license_url` in `src/inc/site-config.php` is `/policys/`, a page that does not
+  exist — the footer's site-licence link is dead until that page is created or
+  the value changed.
+- The footer links the licence deed but not `legalcode.sv`; §6 asks for both.
+- Footer postal address and `info@creativecommons.se` are **placeholders**.
+- No `src/screenshot.png`, so the theme card in Appearance → Themes is blank.
+- The Swedish in `src/languages/sv_SE.po` and `content/sv/` has **not** been
+  reviewed by a native speaker.
+- CC's own sources disagree on the Swedish licence names: the
+  [licence index](https://creativecommons.org/licenses/list.sv) gives
+  `Erkännande-IckeKommersiell-DelaLika`, the deed pages render
+  `Erkännande-Icke-Kommersiell-DelaPåSammaVillkor`. The theme follows the index.
+- The theme has no form handling. A contact page can be a plain page with the
+  chapter email, but an actual contact form needs a plugin — decide which §5
+  means by "contact".
+
+
 ## 1. Purpose and non-goals
 
 **Purpose.** Adapt Vocabulary Theme from Creative Commons HQ (`creativecommons.org`) into a chapter theme for Sweden: Swedish chrome, chapter identity, chapter information architecture, and a migration path off the current site.
@@ -293,6 +381,11 @@ Execute these phases in the **okfse fork**, not as a patch series against HQ `ma
 
 ### Phase 0 — Repository
 
+**Done.** Repo is `okfse/vocabulary-theme`, work on `main`, `upstream` remote
+added, licensing and trademark caveats in `README.md`, this file kept, and the
+Open Knowledge Sweden / Creative Commons Sverige distinction recorded. Release
+archives use the stable theme slug `vocabulary-theme-se`.
+
 - Create the okfse repo (name TBD: `cc-sweden-theme` / `vocabulary-theme-se`) from this snapshot
 - Add `upstream` remote to `creativecommons/vocabulary-theme`
 - Document GPL-2.0-or-later (theme code), Vocabulary CC0, trademark caveats for logos
@@ -300,6 +393,14 @@ Execute these phases in the **okfse fork**, not as a patch series against HQ `ma
 - Note Open Knowledge Sweden hosts the code; public identity remains Creative Commons Sverige
 
 ### Phase 1 — Chapter identity (blocking)
+
+**Done.** The lockup is `identity-logo product` reading `cc sverige`, configured
+via `identity_style` / `identity_text` and rendered by `vocab_identity_link()`;
+`style.css` adds the footer variant, which upstream lacks. Theme headers,
+`lang="sv-SE"`, the footer legal-advice disclaimer and the official CC favicon
+set are all in place — the favicon manifest's root-absolute icon paths were
+404ing and are fixed. Footer contact values are still placeholders (see
+**Loose ends**).
 
 - Product lockup `identity-logo product` → “Creative Commons Sverige”
 - Theme headers: Theme Name, Author, Text Domain
@@ -310,6 +411,14 @@ Execute these phases in the **okfse fork**, not as a patch series against HQ `ma
 
 ### Phase 2 — Internationalization
 
+**Done.** `load_theme_textdomain` on the `vocabulary` domain, 123 strings
+translated in `src/languages/sv_SE.po` with the compiled `.mo` shipped in the
+archive, dates through `vocab_the_date()` / `vocab_format_date()` on the site
+locale and format, and search, 404, pagination and form labels all translated.
+Licence and element msgids are the official **English** names with the Swedish
+in the catalogue — putting Swedish in the msgid would have gettext translating
+Swedish to Swedish. Native-speaker review outstanding.
+
 - `load_theme_textdomain`
 - Wrap remaining English UI strings
 - Ship `languages/sv_SE.po` / `.mo`
@@ -317,6 +426,14 @@ Execute these phases in the **okfse fork**, not as a patch series against HQ `ma
 - Search, 404, pagination, form labels
 
 ### Phase 3 — Slim the theme to a chapter site
+
+**Done.** Primary, footer and social nav come from WP menus. Seven HQ page
+templates are retired and ten HQ post types plus one taxonomy are inactive,
+both reversible with a one-line edit. New `page_start.php` ("Startsida") is the
+chapter home page and needs no ACF group of its own. The local chooser stays
+dormant. Note that WordPress finds page templates with a substring match over
+the whole file, so commenting the header out is not enough — the literal is
+removed instead, and each file explains how to restore it.
 
 - Drive primary and footer nav from WP menus
 - Keep templates: blog/archive, single post, pages, events, people, FAQ, notices
@@ -354,6 +471,129 @@ discrepancy between CC's index and its deed pages.
 - Review and refresh `/om-cc/` (history is valuable; roster needs an editorial pass)
 - Import or rewrite privacy/terms for GDPR
 - Preserve permalink dates for the blog archive (2004–2026)
+
+**Not started.** What follows is the investigation, so the work can start
+without re-deriving it.
+
+#### Volume (from the live Yoast sitemaps, checked 2026-09-02)
+
+| Sitemap | Count | Range |
+|---------|-------|-------|
+| `post-sitemap.xml` | **182** | 2004-12-31 → 2026-03-29 |
+| `page-sitemap.xml` | **25** | 2010 → 2024-12-05 |
+| `cc_chfeature`, `cc_chvideos`, `cc_chevent`, `cc_chteam`, `cc_chwork`, `cc_charea`, `cc_highlight` | 7 sitemaps | — |
+| `category`, `post_tag`, `author` | 3 sitemaps | — |
+
+Posts use dated permalinks (`/2008/01/16/slug/`). Preserving those dates means
+keeping a dated permalink structure, or accepting 182 additional redirects.
+
+#### Nothing is hardcoded — but ACF is the interface
+
+The theme is presentation only; all content lives in the database. The catch is
+that its templates read **ACF** fields, and ACF needs *two* meta rows per field:
+
+```
+raw post meta (what a naive import writes):
+    lead_in_copy  = Ingress
+    authorship    = ["12","34"]
+
+written through ACF:
+    lead_in_copy  = Ingress
+    _lead_in_copy = field_69a9e7a5c1ec4      <- the companion key row
+    authorship    = a:2:{i:0;s:2:"12";…}
+    _authorship   = field_64e4fe7010b4f
+```
+
+Without the `_fieldname` row ACF cannot tell which field definition applies, so
+it cannot format the value. Measured consequences:
+
+| Field | Raw meta | Through ACF |
+|-------|----------|-------------|
+| `lead_in_copy` (wysiwyg) | `'Ingress'` | `'<p>Ingress</p>'` — `wpautop` applied |
+| `authorship` (relationship) | **string** `'["12","34"]'` | array of post objects |
+
+That second row generates bugs: a template iterating a relationship field
+breaks on a string. **So the migration must write through `update_field()`, not
+`update_post_meta()`.**
+
+#### What migrates for free, and what does not
+
+- **Free**, via the WordPress importer: title, content, excerpt, slug, date,
+  author, categories, tags, featured image. This is the bulk of the 182 posts,
+  dated permalinks included.
+- **Not free**: every ACF field, and the post-type conversion
+  (`cc_chevent` → `event`, `cc_chteam` → `person`, and decisions for
+  `cc_chfeature`, `cc_chvideos`, `cc_chwork`, `cc_charea`, `cc_highlight`).
+- **Degrades safely**: a post with no `lead_in_copy`, `header_graphic` or
+  `authorship` renders as title + content + date. Verified, including with ACF
+  deactivated — this is what the Phase 1 ACF guards bought.
+
+#### Target schema (active field groups)
+
+| Post type | Fields |
+|-----------|--------|
+| `post` | 11 — `authorship`, `lead_in_copy`, `closing_copy`, `header_graphic`, … |
+| `page` | 49 across 12 groups |
+| `event` | 14 — `event_date`, `event_time_start`/`_end`, `event_location`, `event_speakers`, … |
+| `person` | 2 — `position_title`, `pronouns` |
+| `faqs-group` | 4 — `summary`, `introduction`, `faqs_listing`, `closing` |
+| `notice` | 7 — `type`, `importance_level`, `message`, `url`, … |
+
+The **old** meta keys are unknown until the export exists; the WXR's
+`<wp:postmeta>` rows will reveal them. So the mapping table can only be
+finalised after the export — which is why an importer written now would be
+guesswork.
+
+#### One format constraint
+
+`event_date` must be stored as an **8-character `Ymd` string**.
+`functions.php` misspells `meta_type` as `'numberic'`, so WordPress falls back
+to `CHAR` and the upcoming/past filters do a *string* comparison against
+`current_time('Ymd')`. Storing `2026-11-24` instead of `20261124` silently
+breaks the event filters. Rendering is unaffected — `vocab_format_date()` goes
+through `strtotime()`.
+
+#### What the hosting decision does and does not block
+
+The decision changes the *shape* of this phase, not most of the groundwork.
+
+**Can be done first**
+
+- The URL inventory — source URLs are fixed at `se.creativecommons.net/…`.
+- The old → new **path** crosswalk (`/om-cc/licenserna/` → `/licenserna/`,
+  `/faq-2/` → `/vanliga-fragor/`,
+  `/hur-funkar-det/licensiera-ditt-verk/` → `/sa-marker-du-ditt-verk/`).
+  Expressed as relative paths it is valid either way — Redirection stores
+  relative source and target, and only a host prefix differs at install time.
+  This is the actual intellectual work.
+- The legacy post-type mapping — needed in both scenarios: on a fresh site you
+  map during import, on the existing database you convert in place.
+- The permalink-structure decision.
+- The content audit: what to keep, refresh or drop.
+
+**Blocked**
+
+- **Privacy and terms.** An HQ subdomain inherits HQ's privacy/terms/DMCA; a
+  self-hosted `creativecommons.se` must own GDPR-compliant policies (§7.1, §7.4).
+- **How redirects are deployed.** Same-origin via the Redirection plugin, versus
+  cross-domain 301s issued *from* `se.creativecommons.net`, which is HQ
+  infrastructure and needs HQ's cooperation. Note `creativecommons.se` currently
+  redirects *to* `se.creativecommons.net`; that flips.
+- **Whether there is a migration at all.** Staying on HQ multisite means no
+  export/import: same database, swap the theme, restructure pages in place,
+  path-only redirects. Self-hosting means a full export/import, media transfer,
+  cross-domain redirects and chapter-owned policies.
+
+#### Suggested order
+
+1. Build the URL inventory and the relative-path crosswalk, plus the legacy
+   post-type mapping and the content audit. Output: `docs/MIGRATION.md` and a
+   Redirection-importable CSV.
+2. Settle hosting (§10) — the crosswalk shows how much actually moves, so it is
+   an input to that decision.
+3. Export from the old site, then convert post types and populate ACF fields
+   with a wp-cli script driven by the mapping table.
+4. Install the redirects, in whichever form the hosting decision implies.
 
 ### Phase 6 — Policy, hosting, verification
 
