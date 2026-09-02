@@ -55,6 +55,8 @@ else
         ./.github \
         ./docs \
         ./src \
+        ROADMAP.md \
+        Creative-Commons-Style-Guide-2019.pdf \
         ./docker \
         ./scripts \
         .cc-metadata.yml \

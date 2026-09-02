@@ -2,7 +2,7 @@
     "key": "post_type_699f5c47bc9a1",
     "title": "Case Studies",
     "menu_order": 0,
-    "active": true,
+    "active": false,
     "post_type": "case-study",
     "advanced_configuration": true,
     "import_source": "",

@@ -2,7 +2,7 @@
     "key": "post_type_64f0b8aa48a34",
     "title": "Programs",
     "menu_order": 0,
-    "active": true,
+    "active": false,
     "post_type": "program",
     "advanced_configuration": true,
     "import_source": "",

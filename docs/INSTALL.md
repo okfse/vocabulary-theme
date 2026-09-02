@@ -113,8 +113,22 @@ upload it under **Appearance → Themes → Add New → Upload Theme**, then act
 
    Any `fa-*` class from Vocabulary's icon set works the same way.
 6. **Edit `inc/site-config.php`** (or filter `vocab_site_config` from a small
-   plugin) to set the footer's postal address, contact email, newsletter URL and
-   site licence links. Values left empty are not rendered.
+   plugin) to set the chapter's own details. Values left empty are not rendered.
+
+   | Key | Purpose |
+   |---|---|
+   | `identity_style` | `product` for the CC lettermark + typeset name lockup, `logomark` for the full CC wordmark |
+   | `identity_text` | Lockup text, default `cc sverige`. Empty falls back to the site title |
+   | `legal_disclaimer` | The legal-advice notice. **Required of chapter sites — do not empty it** |
+   | `address`, `email` | Footer contact block |
+   | `newsletter_url` | Empty hides the subscribe block entirely |
+   | `license_url`, `license_anchor`, `license_deed`, `license_icons` | Footer site-licence notice |
+   | `default_header_image`, `default_header_alt`, `default_header_caption` | Fallback page header graphic |
+
+7. **Set the date format.** Settings → General → `j F Y`, so Swedish dates read
+   `22 oktober 2019`. A site installed in Swedish gets this by default; one
+   installed in English and switched afterwards keeps the US default.
+   Metadata dates stay ISO — see [`BRAND.md`](BRAND.md).
 
 
 ## 5. Page templates
@@ -149,7 +163,33 @@ taxonomy.
 
 `notice` posts drive the site-wide banner. Set the notice's **type** to
 `top-of-site` for the header banner or `newsletter-promo` for the in-page
-newsletter block.
+newsletter block. The legal-advice disclaimer does **not** use this — it is part
+of the footer template, so it cannot be switched off by accident.
+
+### What is dormant, and how to bring it back
+
+Creative Commons HQ's own information architecture is retired rather than
+deleted, so every decision here is reversible (ROADMAP.md Phase 3).
+
+**Page templates.** `page_home.php`, `page_home-narrative.php`,
+`page_support.php`, `page_casestudies.php`, `page_training.php`,
+`page_training-videos.php` and `page_walkthrough.php` no longer carry a
+page-template header, so WordPress does not offer them. Each file opens with a
+comment naming the template it used to provide; restoring that header brings it
+back. WordPress caches the template list per theme *version*, so the dropdown
+updates on the next release.
+
+**Post types.** `course`, `course_unit`, `course_chapter`, `course_group`,
+`campaign`, `program`, `project`, `case-study`, `topic-feature`, `training` and
+the `group` taxonomy are `"active": false` in `src/inc/acf-json/post_type_*.json`
+/ `taxonomy_*.json`. Flip the flag to `true` to re-register one. Field groups
+scoped to a dormant post type simply never appear, so they were left untouched.
+
+**The license chooser.** `src/chooser/` and
+`static-templates/static-chooser.php` are still in the repo but unreachable —
+the template has no page-template header. ROADMAP Phase 4 adds a "Välj licens"
+page that deep-links `https://creativecommons.org/choose/?lang=sv` instead of
+running a local copy.
 
 
 ## 6. Shortcodes
@@ -174,6 +214,9 @@ UI strings live in `languages/`:
 
 To change a string, edit `sv_SE.po` and recompile (see
 [`docs/RELEASE.md`](RELEASE.md)); do not edit the `.mo` by hand.
+
+See [`BRAND.md`](BRAND.md) for the language rules the theme follows — license
+abbreviations, Swedish license names, date forms.
 
 **What is not translated.** Editorial copy hardcoded into
 `page_home.php`, `page_licenses.php`, `front-page-old.php` and

@@ -73,7 +73,7 @@ get_header('', array( 'body-classes' => 'home-narrative') );
                     <article class="data-point khan-academy">
                         <h2>Khan Academy</h2>
                         <h3 class="stat">100,000+ lessons</h3>
-                        <p>Many of the lessons found on Khan Academy are openly licensed under CC-BY-NC-SA.</p>
+                        <p>Many of the lessons found on Khan Academy are openly licensed under CC BY-NC-SA.</p>
                     </article>
                 </li>
             </ul>

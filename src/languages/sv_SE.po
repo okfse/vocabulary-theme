@@ -132,38 +132,38 @@ msgid "Subscribe"
 msgstr "Prenumerera"
 
 #. translators: 1: link to the site's licensing policy, 2: link to the licence deed.
-#: footer.php:46
+#: footer.php:50
 #, php-format
 msgid "Except where otherwise %1$s, content on this site is licensed under a %2$s."
 msgstr "Om inget annat %1$s är innehållet på denna webbplats licensierat under en %2$s."
 
-#: footer.php:50
+#: footer.php:54
 msgid "noted"
 msgstr "anges"
 
-#: footer.php:55
+#: footer.php:59
 msgid "Creative Commons Attribution 4.0 International license"
 msgstr "Creative Commons Erkännande 4.0 Internationell-licens"
 
 #. translators: %s: link to fontawesome.com.
-#: footer.php:62
+#: footer.php:66
 #, php-format
 msgid "Icons by %s."
 msgstr "Ikoner av %s."
 
-#: functions.php:40
+#: functions.php:41
 msgid "Primary Navigation"
 msgstr "Huvudmeny"
 
-#: functions.php:41
+#: functions.php:42
 msgid "Footer Menu"
 msgstr "Sidfotsmeny"
 
-#: functions.php:42
+#: functions.php:43
 msgid "Social Menu"
 msgstr "Sociala medier"
 
-#: functions.php:165
+#: functions.php:166
 msgid "Related"
 msgstr "Relaterat"
 
@@ -172,21 +172,73 @@ msgstr "Relaterat"
 msgid "Skip to content"
 msgstr "Hoppa till innehåll"
 
-#: header.php:26
+#: header.php:25
 msgid "Menu"
 msgstr "Meny"
 
-#: header.php:28
+#: header.php:27
 msgid "Primary navigation"
 msgstr "Huvudnavigering"
 
-#: inc/acf-compat.php:85
+#: inc/acf-compat.php:46
 msgid "CC Vocabulary Theme:"
 msgstr "CC Vocabulary Theme:"
 
-#: inc/acf-compat.php:86
+#: inc/acf-compat.php:47
 msgid "Advanced Custom Fields (version 6.1 or later) must be installed and activated. Without it none of the theme's post types, taxonomies or fields are registered and the site renders incomplete content."
 msgstr "Advanced Custom Fields (version 6.1 eller senare) måste vara installerat och aktiverat. Utan det registreras inga av temats innehållstyper, taxonomier eller fält, och webbplatsen visar ofullständigt innehåll."
+
+#: inc/media-credits.php:37
+msgid "All rights reserved"
+msgstr "Alla rättigheter förbehållna"
+
+#: inc/media-credits.php:50
+msgid "&mdash; Select &mdash;"
+msgstr "&mdash; Välj &mdash;"
+
+#: inc/media-credits.php:63
+msgid "License"
+msgstr "Licens"
+
+#: inc/media-credits.php:71
+msgid "The license this image is published under."
+msgstr "Licensen som bilden publiceras under."
+
+#: inc/media-credits.php:75
+msgid "Photographer / designer"
+msgstr "Fotograf / formgivare"
+
+#: inc/media-credits.php:78
+msgid "Who made the image. Shown in the credit line."
+msgstr "Vem som skapade bilden. Visas i bildkrediten."
+
+#: inc/media-credits.php:82
+msgid "Source URL"
+msgstr "Käll-URL"
+
+#: inc/media-credits.php:85
+msgid "Where the image came from. Optional; linked from the title in the credit line."
+msgstr "Var bilden kommer ifrån. Valfritt; länkas från titeln i bildkrediten."
+
+#. translators: 1: image title, 2: photographer or designer, 3: license.
+#: inc/media-credits.php:160
+#, php-format
+msgid "%1$s by %2$s is licensed under %3$s."
+msgstr "%1$s av %2$s är licensierad under %3$s."
+
+#. translators: 1: image title, 2: license.
+#: inc/media-credits.php:169
+#, php-format
+msgid "%1$s is licensed under %2$s."
+msgstr "%1$s är licensierad under %2$s."
+
+#. translators: %s: number of images.
+#: inc/media-credits.php:240
+#, php-format
+msgid "%s image has no alternative text. Alternative text is required for accessibility, and the Creative Commons Style Guide asks for it on every upload."
+msgid_plural "%s images have no alternative text. Alternative text is required for accessibility, and the Creative Commons Style Guide asks for it on every upload."
+msgstr[0] "%s bild saknar alternativtext. Alternativtext krävs för tillgänglighet, och Creative Commons stilguide efterfrågar den vid varje uppladdning."
+msgstr[1] "%s bilder saknar alternativtext. Alternativtext krävs för tillgänglighet, och Creative Commons stilguide efterfrågar den vid varje uppladdning."
 
 #: inc/nav.php:127
 msgid "Expand"
@@ -205,7 +257,8 @@ msgstr "Senaste inläggen"
 #: page_blog.php:226
 #: page_blog.php:332
 #: page_blog.php:439
-#: page_home-narrative.php:202
+#: page_home-narrative.php:213
+#: page_start.php:101
 msgid "more posts"
 msgstr "fler inlägg"
 
@@ -215,16 +268,16 @@ msgstr "Vårt team"
 
 #: page.php:74
 #: page_licenses.php:308
-#: page_support.php:105
-#: page_training.php:447
+#: page_support.php:116
+#: page_training.php:458
 msgid "More Links"
 msgstr "Fler länkar"
 
-#: page_casestudies.php:64
+#: page_casestudies.php:75
 msgid "Learn More"
 msgstr "Läs mer"
 
-#: page_casestudies.php:91
+#: page_casestudies.php:102
 msgid "more case studies"
 msgstr "fler fallstudier"
 
@@ -263,9 +316,13 @@ msgstr "[redigera]"
 msgid "Return to top"
 msgstr "Till toppen"
 
-#: page_home-narrative.php:96
+#: page_home-narrative.php:107
 msgid "Recently from the blog"
 msgstr "Senast från bloggen"
+
+#: page_start.php:76
+msgid "Latest news"
+msgstr "Senaste nytt"
 
 #: page_team.php:74
 msgid "Board"
@@ -283,16 +340,16 @@ msgstr "Rådgivande råd"
 msgid "Audit Committee"
 msgstr "Revisionsutskott"
 
-#: page_training-videos.php:48
+#: page_training-videos.php:59
 msgid "Foundations Courses"
 msgstr "Grundkurser"
 
-#: page_training-videos.php:64
-#: page_training-videos.php:110
+#: page_training-videos.php:75
+#: page_training-videos.php:121
 msgid "View Item"
 msgstr "Visa"
 
-#: page_training-videos.php:94
+#: page_training-videos.php:105
 msgid "Free Videos"
 msgstr "Kostnadsfria videor"
 
@@ -304,39 +361,39 @@ msgstr "Sök efter&hellip;"
 msgid "Licenses & Attribution"
 msgstr "Licenser och erkännande"
 
-#: single-course.php:196
+#: single-course.php:201
 msgid "Previous"
 msgstr "Föregående"
 
-#: single-course.php:200
+#: single-course.php:205
 msgid "Next"
 msgstr "Nästa"
 
-#: single-event.php:30
+#: single-event.php:33
 msgid "Date & Time"
 msgstr "Datum och tid"
 
-#: single-event.php:34
+#: single-event.php:37
 msgid "Location"
 msgstr "Plats"
 
-#: single-event.php:39
+#: single-event.php:42
 msgid "Register"
 msgstr "Anmäl dig"
 
-#: single-event.php:45
+#: single-event.php:48
 msgid "Event Details"
 msgstr "Om evenemanget"
 
-#: single-event.php:49
+#: single-event.php:52
 msgid "Download Event Files"
 msgstr "Ladda ner filer för evenemanget"
 
-#: single-event.php:59
+#: single-event.php:62
 msgid "Meet the speakers"
 msgstr "Möt talarna"
 
-#: single-event.php:93
+#: single-event.php:96
 msgid "View All Events"
 msgstr "Visa alla evenemang"
 

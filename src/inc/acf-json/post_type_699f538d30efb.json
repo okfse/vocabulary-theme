@@ -2,7 +2,7 @@
     "key": "post_type_699f538d30efb",
     "title": "Projects",
     "menu_order": 0,
-    "active": true,
+    "active": false,
     "post_type": "project",
     "advanced_configuration": true,
     "import_source": "",

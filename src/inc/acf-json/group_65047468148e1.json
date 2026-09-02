@@ -66,6 +66,18 @@
                 "operator": "==",
                 "value": "page_overview.php"
             }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "page"
+            },
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "page_start.php"
+            }
         ]
     ],
     "menu_order": 0,

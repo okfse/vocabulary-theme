@@ -17,6 +17,174 @@ License URI: https://github.com/okfse/vocabulary-theme/blob/main/LICENSE
 @import 'chooser/css/chooser.css' layer(chooser);
 
 
+/* =========================================================================
+   CC Sverige — chapter overrides
+   =========================================================================
+
+   Everything below the @import rules is *unlayered*, and unlayered styles form
+   the final implicit cascade layer, above every named layer. So a plain
+   selector here beats any rule in vocabulary.css regardless of specificity --
+   no !important and no selector matching needed. Keep chapter changes in this
+   section rather than editing vocabulary.css, so merges from upstream stay
+   mechanical.
+   ========================================================================= */
+
+
+/* --- Missing @font-face declarations -------------------------------------
+
+   vocabulary.css sets `font-family: 'Roboto Condensed'` in five rules
+   (including the `a.more` buttons) and chooser.css sets 'Source Sans Pro' in
+   two, but neither family is declared anywhere -- so both silently fell back
+   to a generic sans. The font files ship in the theme already. Both are
+   Creative Commons Style Guide fonts (Roboto secondary, Source Sans Pro the
+   2019 primary), so they are declared here rather than substituted away. */
+
+@font-face {
+    font-family: 'Roboto Condensed';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('vocabulary/fonts/RobotoCondensed-Regular.woff2') format('woff2'),
+         url('vocabulary/fonts/RobotoCondensed-Regular.woff') format('woff'),
+         url('vocabulary/fonts/RobotoCondensed-Regular.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Roboto Condensed';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url('vocabulary/fonts/RobotoCondensed-Bold.woff2') format('woff2'),
+         url('vocabulary/fonts/RobotoCondensed-Bold.woff') format('woff'),
+         url('vocabulary/fonts/RobotoCondensed-Bold.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Source Sans Pro';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('vocabulary/fonts/SourceSansPro-Regular.woff2') format('woff2'),
+         url('vocabulary/fonts/SourceSansPro-Regular.woff') format('woff'),
+         url('vocabulary/fonts/SourceSansPro-Regular.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Source Sans Pro';
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+    src: url('vocabulary/fonts/SourceSansPro-SemiBold.woff2') format('woff2'),
+         url('vocabulary/fonts/SourceSansPro-SemiBold.woff') format('woff'),
+         url('vocabulary/fonts/SourceSansPro-SemiBold.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Source Sans Pro';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url('vocabulary/fonts/SourceSansPro-Bold.woff2') format('woff2'),
+         url('vocabulary/fonts/SourceSansPro-Bold.woff') format('woff'),
+         url('vocabulary/fonts/SourceSansPro-Bold.otf') format('opentype');
+}
+
+
+/* --- Token repairs -------------------------------------------------------
+
+   vocabulary.css reads --vocabulary-brand-color-grey twice (as the
+   --underline-background-color of attribution links) but library-vars.css
+   never defines it, so those links lost the descender gaps in their underline.
+   Defined here to the surface those links sit on, which is the same value as
+   --vocabulary-neutral-color-lighter-gray. */
+
+:root {
+    --vocabulary-brand-color-grey: #F5F5F5;
+}
+
+
+/* --- Font fallbacks ------------------------------------------------------
+
+   vocabulary.css sets no font-family on `body` and gives none of its 133
+   font-family declarations a fallback stack, so a webfont that fails to load
+   drops straight to the browser default serif. This gives the document a sane
+   default without touching those declarations. */
+
+body {
+    font-family: 'DM Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+}
+
+
+/* --- Chapter identity lockup, footer -------------------------------------
+
+   vocabulary.css implements `.identity-logo.product` (the compact CC
+   lettermark plus the name typeset in CC Accidenz Commons) for the masthead
+   only; the footer rule masks the full wordmark at 340x82 with no product
+   variant, so the `product` class alone would render a blank 340px box there.
+   These rules mirror the masthead lockup, sized in em and coloured for the
+   black footer. See vocab_identity_link() in inc/site-config.php. */
+
+body > footer .identity-logo.product {
+    width: auto;
+    height: auto;
+    padding-top: 0.1em;
+    box-sizing: border-box;
+    background-color: transparent;
+
+    font-family: 'CC Accidenz Commons', 'DM Sans', sans-serif;
+    font-size: 2.6em;
+    font-weight: normal;
+    line-height: 1em;
+    text-transform: lowercase;
+    text-indent: 1.15em;
+    letter-spacing: -0.02em;
+    text-decoration: none;
+    color: white;
+
+    -webkit-mask-image: none;
+    mask-image: none;
+}
+
+body > footer .identity-logo.product:before {
+    top: 0.176em;
+    left: 0;
+    height: 1em;
+    width: 1em;
+    background-color: white;
+    -webkit-mask-image: url('vocabulary/svg/cc/logos/cc/lettermark.svg');
+    mask-image: url('vocabulary/svg/cc/logos/cc/lettermark.svg');
+    -webkit-mask-size: contain;
+    mask-size: contain;
+    mask-repeat: no-repeat;
+}
+
+body > footer .identity-logo.product:hover {
+    background-color: transparent;
+    color: #FF9CFF;
+}
+
+body > footer .identity-logo.product:hover:before {
+    background-color: #FF9CFF;
+}
+
+
+/* --- Legal-advice disclaimer ---------------------------------------------
+
+   Required of every CC Global Network chapter site. Rendered inside the
+   footer's full-width .license area, set apart so it reads as a notice rather
+   than fine print. */
+
+body > footer .license .legal-disclaimer {
+    margin: 0 0 1.5em;
+    padding-bottom: 1em;
+    border-bottom: 1px solid #767676;
+
+    font-size: 1.2em;
+    font-weight: 700;
+    color: white;
+}
+
+
 /* WordPress specific rules */
 
 

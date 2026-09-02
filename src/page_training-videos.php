@@ -1,4 +1,15 @@
-<?php /* Template Name: Page - Training Videos */ ?>
+<?php
+/*
+ * Retired for Creative Commons Sverige: this is Creative Commons HQ's
+ * information architecture, not the chapter's. See ROADMAP.md Phase 3.
+ *
+ * The file is kept so the decision is reversible. To offer the template
+ * again, give this file a page-template header naming it
+ * "Page - Training Videos". That header string is deliberately not spelled
+ * out above, not even in a comment, because WordPress searches the whole
+ * file for it rather than just the opening docblock.
+ */
+?>
 
 <?php get_header('', array( 'body-classes' => 'training-videos-page extends events-index') ); ?>
 

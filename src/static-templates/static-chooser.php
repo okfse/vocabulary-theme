@@ -57,12 +57,12 @@
         <select name="tool" id="tool">
             <option value="noselect" selected>&mdash;choose a license&mdash;</option>
             <option value="cc-0">CC0 1.0</option>
-            <option value="cc-by">CC-BY 4.0</option>
-            <option value="cc-by-sa">CC-BY-SA 4.0</option>
-            <option value="cc-by-nd">CC-BY-ND 4.0</option>
-            <option value="cc-by-nc">CC-BY-NC 4.0</option>
-            <option value="cc-by-nc-sa">CC-BY-NC-SA 4.0</option>
-            <option value="cc-by-nc-nd">CC-BY-NC-ND 4.0</option>
+            <option value="cc-by">CC BY 4.0</option>
+            <option value="cc-by-sa">CC BY-SA 4.0</option>
+            <option value="cc-by-nd">CC BY-ND 4.0</option>
+            <option value="cc-by-nc">CC BY-NC 4.0</option>
+            <option value="cc-by-nc-sa">CC BY-NC-SA 4.0</option>
+            <option value="cc-by-nc-nd">CC BY-NC-ND 4.0</option>
         </select>
 
         <!-- <p>OR</p>
@@ -436,7 +436,7 @@
 
 <template id="cc-by" class="tool license">
     <header>
-        <h3>CC-BY 4.0</h3>
+        <h3>CC BY 4.0</h3>
         <span class="tool-icons">
             <svg>
                 <use href="<?php echo esc_url( get_template_directory_uri() ); ?>/vocabulary/svg/cc/icons/cc-icons.svg#cc-logo"></use>

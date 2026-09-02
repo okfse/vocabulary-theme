@@ -1,5 +1,5 @@
 <footer>
-    <a class="identity-logo" href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a>
+    <?php vocab_identity_link(); ?>
 
     <div class="search">
         <form method="get" class="" action="<?php echo esc_url( home_url( '/' ) ); ?>">
@@ -33,6 +33,10 @@
     <?php endif; ?>
 
     <div class="license">
+        <?php if ( vocab_site( 'legal_disclaimer' ) ) : ?>
+        <p class="legal-disclaimer"><?php echo esc_html( vocab_site( 'legal_disclaimer' ) ); ?></p>
+        <?php endif; ?>
+
         <?php foreach ( (array) vocab_site( 'license_icons', array() ) as $license_icon ) : ?>
         <svg>
             <use href="<?php echo esc_url( get_template_directory_uri() . '/vocabulary/svg/cc/icons/cc-icons.svg#' . $license_icon ); ?>"></use>

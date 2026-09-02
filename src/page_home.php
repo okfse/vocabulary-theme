@@ -1,4 +1,15 @@
-<?php /* Template Name: Index - Home */ ?>
+<?php
+/*
+ * Retired for Creative Commons Sverige: this is Creative Commons HQ's
+ * information architecture, not the chapter's. See ROADMAP.md Phase 3.
+ *
+ * The file is kept so the decision is reversible. To offer the template
+ * again, give this file a page-template header naming it
+ * "Index - Home". That header string is deliberately not spelled
+ * out above, not even in a comment, because WordPress searches the whole
+ * file for it rather than just the opening docblock.
+ */
+?>
 
 <?php
 
@@ -90,7 +101,7 @@ get_header('', array( 'body-classes' => 'home-index') );
                     <article class="data-point khan-academy">
                         <h2 style="background-image: url('<?php echo $thirdDataPointImage; ?>');");">Khan Academy</h2>
                         <h3 class="stat">100,000+ lessons</h3>
-                        <p>Many of the lessons found on Khan Academy are openly licensed under CC-BY-NC-SA.</p>
+                        <p>Many of the lessons found on Khan Academy are openly licensed under CC BY-NC-SA.</p>
                     </article>
                 </li>
             </ul>

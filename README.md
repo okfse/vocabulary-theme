@@ -15,6 +15,10 @@ This is the Creative Commons Sverige fork of
   plugins it requires, and the full post-activation checklist.
 - **[docs/RELEASE.md](docs/RELEASE.md)** — cutting a release and building the
   installable archive.
+- **[docs/BRAND.md](docs/BRAND.md)** — the brand and language decisions, and why
+  the palette and fonts are *not* the ones in the 2019 print style guide.
+- **[ROADMAP.md](ROADMAP.md)** — the chapter-fork investigation and the phased
+  work plan. Phases 1–3 are done; 4–7 are open.
 - [src/inc/README.md](src/inc/README.md) — how the ACF configuration is loaded.
 
 
@@ -71,6 +75,13 @@ git checkout -b fix-something upstream/main
 - `<title>` comes from core's `title-tag` support rather than `wp_title()`, so
   no SEO plugin is required.
 - Release archives use a stable theme slug (`scripts/build-se-zip.sh`).
+- The masthead and footer use Vocabulary's product lockup (`cc sverige`) rather
+  than Creative Commons HQ's unmodified wordmark, which is what the Chapter Logo
+  Policy allows without an approved chapter mark.
+- The footer carries the legal-advice disclaimer every CC Global Network chapter
+  site is required to show.
+- HQ-only page templates and post types are dormant rather than deleted.
+- Attachments carry license and photographer fields, per the style guide.
 
 Changes that are not Sweden-specific are worth contributing back upstream.
 
@@ -200,6 +211,17 @@ docs][cloudflare-caching-wp]).
 
 [ccpolicies]: https://creativecommons.org/policies
 [tmfaq]: https://creativecommons.org/faq/#could-i-use-a-cc-license-to-share-my-logo-or-trademark
+
+
+### Creative Commons Style Guide
+
+[`Creative-Commons-Style-Guide-2019.pdf`](Creative-Commons-Style-Guide-2019.pdf)
+is by Victoria Heath for Creative Commons, licensed
+[CC BY 4.0][ccby40-sg]. It is kept here because
+[`ROADMAP.md`](ROADMAP.md) and [`docs/BRAND.md`](docs/BRAND.md) cite it. It is
+excluded from release archives.
+
+[ccby40-sg]: https://creativecommons.org/licenses/by/4.0/
 
 
 ### Code

@@ -5,6 +5,7 @@ require_once get_template_directory() . '/inc/site-config.php';
 require_once get_template_directory() . '/inc/acf-compat.php';
 require_once get_template_directory() . '/inc/i18n.php';
 require_once get_template_directory() . '/inc/nav.php';
+require_once get_template_directory() . '/inc/media-credits.php';
 
 // SECURITY
 // remove output of wordpress version in source

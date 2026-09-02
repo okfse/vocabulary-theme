@@ -2,7 +2,7 @@
     "key": "post_type_6a70be5452825",
     "title": "Trainings",
     "menu_order": 0,
-    "active": true,
+    "active": false,
     "post_type": "training",
     "advanced_configuration": true,
     "import_source": "",

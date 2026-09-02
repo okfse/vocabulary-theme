@@ -2,7 +2,7 @@
     "key": "post_type_67cb1ed68c270",
     "title": "Courses",
     "menu_order": 0,
-    "active": true,
+    "active": false,
     "post_type": "course",
     "advanced_configuration": true,
     "import_source": "",

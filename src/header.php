@@ -19,10 +19,9 @@
 
 <header>
     <div class="masthead">
-        <?php // Vocabulary renders the CC logomark from CSS; the link text is the
-              // accessible name only. Add the `product` class to typeset the site
-              // name next to a small CC lettermark instead. ?>
-        <h1><a class="identity-logo" href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a></h1>
+        <?php // The mark itself comes from CSS; see vocab_identity_link() and the
+              // identity_style / identity_text keys in inc/site-config.php. ?>
+        <h1><?php vocab_identity_link(); ?></h1>
         <button class="expand-menu"><?php esc_html_e( 'Menu', 'vocabulary' ); ?></button>
 
         <?php vocab_nav_menu( 'primary-menu', 'nav', 'primary-menu', __( 'Primary navigation', 'vocabulary' ) ); ?>

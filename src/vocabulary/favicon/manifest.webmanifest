@@ -1,6 +1,16 @@
 {
+  "name": "Creative Commons Sverige",
+  "short_name": "cc sverige",
   "icons": [
-    { "src": "/android-chrome-192x192.png", "type": "image/png", "sizes": "192x192" },
-    { "src": "/android-chrome-512x512.png", "type": "image/png", "sizes": "512x512" }
+    {
+      "src": "android-chrome-192x192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "android-chrome-512x512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
   ]
 }

@@ -2,7 +2,7 @@
     "key": "post_type_690218e6a2ded",
     "title": "Topic Features",
     "menu_order": 0,
-    "active": true,
+    "active": false,
     "post_type": "topic-feature",
     "advanced_configuration": true,
     "import_source": "",

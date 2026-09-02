@@ -19,6 +19,24 @@
  */
 function vocab_site_config() {
     $config = array(
+        // Masthead and footer identity.
+        //
+        // 'product' uses Vocabulary's product lockup: the compact CC lettermark
+        // followed by `identity_text` typeset in CC Accidenz Commons, lowercase.
+        // That is the form the Chapter Logo Policy allows without an approved
+        // chapter mark, because the CC circle stays in its original style.
+        // 'logomark' uses the full unmodified Creative Commons wordmark, which
+        // is what creativecommons.org itself shows.
+        'identity_style'  => 'product',
+        // Text of the lockup. Kept short because the lockup letterspaces
+        // tightly. Empty falls back to the site title.
+        'identity_text'   => 'cc sverige',
+
+        // Required of every CC Global Network chapter site: a prominent notice
+        // that the site does not give legal advice. Rendered on every page.
+        // Empty removes it -- do not empty it on a live chapter site.
+        'legal_disclaimer' => 'Denna webbplats ger inte juridisk rådgivning.',
+
         // Postal address, one array entry per rendered line.
         'address'         => array(
             'Creative Commons Sverige',
@@ -68,4 +86,34 @@ function vocab_site( $key, $default = '' ) {
     }
 
     return $config[ $key ];
+}
+
+/**
+ * Render the site identity link (masthead or footer logo).
+ *
+ * Vocabulary draws the mark from CSS: `.identity-logo` masks the full CC
+ * wordmark, and `.identity-logo.product` masks the compact lettermark and
+ * typesets the link text beside it. The link text is therefore both the visible
+ * lockup text and the accessible name, so it is not overridden with a differing
+ * aria-label (WCAG 2.5.3, Label in Name).
+ *
+ * @param string $extra_class Additional class names for the anchor.
+ */
+function vocab_identity_link( $extra_class = '' ) {
+    $classes = array( 'identity-logo' );
+
+    if ( 'product' === vocab_site( 'identity_style', 'logomark' ) ) {
+        $classes[] = 'product';
+    }
+
+    if ( $extra_class ) {
+        $classes[] = $extra_class;
+    }
+
+    printf(
+        '<a class="%s" href="%s">%s</a>',
+        esc_attr( implode( ' ', $classes ) ),
+        esc_url( home_url( '/' ) ),
+        esc_html( vocab_site( 'identity_text', get_bloginfo( 'name' ) ) )
+    );
 }

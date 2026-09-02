@@ -292,7 +292,7 @@ The CC icons, now recognized around the world, represent openness, collaboration
         <li>Offer the CC Certificate, an in-depth course for people interested in becoming experts in creating and engaging with openly licensed works</li>
         <li>Run the CC Open Culture Program, to support the development of a thriving open culture ecosystem among cultural heritage institutions and their users</li>
         <li>Run the CC Open Education Program, to ensure publicly funded knowledge (educational resources, research and data) is open and freely available for everyone to learn, discover and contribute</li>
-        <li>Run the Openly Licensed Preprint project to increase the adoption of CC-BY on preprints to facilitate greater dissemination and reuse of research.</li>
+        <li>Run the Openly Licensed Preprint project to increase the adoption of CC BY on preprints to facilitate greater dissemination and reuse of research.</li>
         <li>Lead the Open Climate Data project to facilitate the opening and sharing of climate datasets and data models as a step toward addressing climate change</li>
     </ul>
 
