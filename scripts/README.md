@@ -12,4 +12,8 @@
   git restore scripts && ./scripts/unprepare-release.sh
   ```
 
+- `build-content-wxr.py` — turns the Swedish page drafts in `content/sv/` into a
+  WordPress import file. Requires Python 3. See
+  [`docs/INSTALL.md`](../docs/INSTALL.md) section 7.
+
 The full release procedure is in [`docs/RELEASE.md`](../docs/RELEASE.md).

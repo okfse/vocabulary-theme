@@ -116,6 +116,7 @@ msgid "Creative Commons' own license chooser walks you through the questions and
 msgstr "Creative Commons egen licensväljare guidar dig genom frågorna och ger dig licenstexten och märket att publicera tillsammans med verket. Den finns på svenska."
 
 #: content-partials/license-chooser.php:19
+#: inc/license-shortcodes.php:110
 msgid "Open the license chooser"
 msgstr "Öppna licensväljaren"
 
@@ -193,19 +194,19 @@ msgstr "Creative Commons Erkännande 4.0 Internationell-licens"
 msgid "Icons by %s."
 msgstr "Ikoner av %s."
 
-#: functions.php:42
+#: functions.php:43
 msgid "Primary Navigation"
 msgstr "Huvudmeny"
 
-#: functions.php:43
+#: functions.php:44
 msgid "Footer Menu"
 msgstr "Sidfotsmeny"
 
-#: functions.php:44
+#: functions.php:45
 msgid "Social Menu"
 msgstr "Sociala medier"
 
-#: functions.php:167
+#: functions.php:168
 msgid "Related"
 msgstr "Relaterat"
 
@@ -229,6 +230,10 @@ msgstr "CC Vocabulary Theme:"
 #: inc/acf-compat.php:47
 msgid "Advanced Custom Fields (version 6.1 or later) must be installed and activated. Without it none of the theme's post types, taxonomies or fields are registered and the site renders incomplete content."
 msgstr "Advanced Custom Fields (version 6.1 eller senare) måste vara installerat och aktiverat. Utan det registreras inga av temats innehållstyper, taxonomier eller fält, och webbplatsen visar ofullständigt innehåll."
+
+#: inc/license-shortcodes.php:135
+msgid "This page explains the Creative Commons licenses in general terms. It is not legal advice, and it does not replace the license text itself. If you need advice about a specific case, consult a lawyer."
+msgstr "Den här sidan förklarar Creative Commons-licenserna i allmänna termer. Det är inte juridisk rådgivning och ersätter inte licenstexten. Behöver du råd om ett enskilt fall bör du vända dig till en jurist."
 
 #: inc/licenses.php:40
 msgid "Attribution"
@@ -419,7 +424,7 @@ msgid "Our Team"
 msgstr "Vårt team"
 
 #: page.php:74
-#: page_licenses.php:223
+#: page_licenses.php:235
 #: page_support.php:116
 #: page_training.php:458
 msgid "More Links"

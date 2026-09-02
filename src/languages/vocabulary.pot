@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-09-02T19:28:19+00:00\n"
+"POT-Creation-Date: 2026-09-02T19:49:16+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: vocabulary\n"
@@ -115,6 +115,7 @@ msgid "Creative Commons' own license chooser walks you through the questions and
 msgstr ""
 
 #: content-partials/license-chooser.php:19
+#: inc/license-shortcodes.php:110
 msgid "Open the license chooser"
 msgstr ""
 
@@ -192,19 +193,19 @@ msgstr ""
 msgid "Icons by %s."
 msgstr ""
 
-#: functions.php:42
+#: functions.php:43
 msgid "Primary Navigation"
 msgstr ""
 
-#: functions.php:43
+#: functions.php:44
 msgid "Footer Menu"
 msgstr ""
 
-#: functions.php:44
+#: functions.php:45
 msgid "Social Menu"
 msgstr ""
 
-#: functions.php:167
+#: functions.php:168
 msgid "Related"
 msgstr ""
 
@@ -227,6 +228,10 @@ msgstr ""
 
 #: inc/acf-compat.php:47
 msgid "Advanced Custom Fields (version 6.1 or later) must be installed and activated. Without it none of the theme's post types, taxonomies or fields are registered and the site renders incomplete content."
+msgstr ""
+
+#: inc/license-shortcodes.php:135
+msgid "This page explains the Creative Commons licenses in general terms. It is not legal advice, and it does not replace the license text itself. If you need advice about a specific case, consult a lawyer."
 msgstr ""
 
 #: inc/licenses.php:40

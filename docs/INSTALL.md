@@ -218,6 +218,24 @@ running a local copy.
 
 ## 6. Shortcodes
 
+### License shortcodes
+
+These render from `src/inc/licenses.php`, so a page that embeds them can never
+drift from the license table.
+
+| Shortcode | Purpose |
+|---|---|
+| `[cc-license-elements]` | The four license elements (BY, NC, ND, SA) with Swedish names and what each requires |
+| `[cc-licenses]` | The six licenses as cards |
+| `[cc-licenses type="public-domain"]` | CC0 and the Public Domain Mark |
+| `[cc-licenses type="all"]` | All eight |
+| `[cc-license slug="cc-by-sa"]` | One license card |
+| `[cc-license-chooser]` | Button linking Creative Commons' Swedish license chooser |
+| `[cc-license-attribution]` | The CC BY 4.0 credit for adapted CC wording |
+| `[cc-no-legal-advice]` | The legal-advice notice, for pages that discuss the licenses |
+
+### General shortcodes
+
 | Shortcode | Purpose |
 |---|---|
 | `[list category="" tags="" type="post" limit="5" sort="ASC" sortby="date" template=""]` | A queried list of posts; `template` names a partial in `shortcode-templates/` |
@@ -228,7 +246,38 @@ running a local copy.
 | `[columns][column]…[/column][/columns]` | Multi-column list |
 
 
-## 7. Translations
+## 7. Page drafts
+
+`content/sv/` holds Swedish drafts of the educational pages — *Symboler och
+förkortningar*, *Så märker du ditt verk*, *Så använder du CC-material* and
+*Vanliga frågor*. They are plain HTML so they can be reviewed in a diff, and
+they use the license shortcodes above rather than restating the licenses.
+
+Build the WordPress import file and load it under **Tools → Import →
+WordPress**:
+
+```shell
+./scripts/build-content-wxr.py
+# writes content/cc-sverige-sidor.wxr
+```
+
+Pages import as **drafts** — nothing goes live until someone publishes it. Pass
+`--status publish` to change that, and `--out` to write elsewhere. To add a
+page, drop another HTML file in `content/sv/` with the same metadata comment at
+the top and rebuild.
+
+`content/` is excluded from release archives; the `.wxr` is gitignored because
+it is generated.
+
+The Swedish in these drafts has **not** been reviewed by a native speaker. Two
+Creative Commons sources also disagree on the Swedish license names: the
+[license index](https://creativecommons.org/licenses/list.sv) gives
+`Erkännande-IckeKommersiell-DelaLika` while the deed pages render
+`Erkännande-Icke-Kommersiell-DelaPåSammaVillkor`. The theme follows the index —
+confirm against the live pages before launch.
+
+
+## 8. Translations
 
 UI strings live in `languages/`:
 
@@ -249,7 +298,7 @@ chooser-app text. That is content, not UI, and should be replaced with Swedish
 editorial content (or the template dropped) rather than routed through gettext.
 
 
-## 8. Caching
+## 9. Caching
 
 > **Warning** (carried over from upstream): the theme's page output is fully
 > deterministic — the same page rendered now and in 30 minutes is byte-identical
@@ -257,7 +306,7 @@ editorial content (or the template dropped) rather than routed through gettext.
 > content must be coordinated with those rules.
 
 
-## 9. Keeping up with upstream
+## 10. Keeping up with upstream
 
 ```bash
 git fetch upstream

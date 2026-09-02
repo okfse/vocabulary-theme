@@ -6,6 +6,7 @@ require_once get_template_directory() . '/inc/acf-compat.php';
 require_once get_template_directory() . '/inc/i18n.php';
 require_once get_template_directory() . '/inc/nav.php';
 require_once get_template_directory() . '/inc/licenses.php';
+require_once get_template_directory() . '/inc/license-shortcodes.php';
 require_once get_template_directory() . '/inc/media-credits.php';
 
 // SECURITY

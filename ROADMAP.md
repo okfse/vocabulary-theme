@@ -332,8 +332,13 @@ Execute these phases in the **okfse fork**, not as a patch series against HQ `ma
 `page_licenses.php` renders from it via `content-partials/license-card.php`,
 plus partials for the public-domain tools, the chooser deep link and the 2.5
 Sverige archive. `vocab_license_attribution()` carries the CC BY 4.0 credit.
-Remaining in this phase is **editorial**: the symboler, hur man licensierar,
-hur man använder and FAQ pages, and the Swedish prose on each.
+**Editorial drafts done.** `content/sv/` holds Swedish drafts of Symboler och
+förkortningar, Så märker du ditt verk, Så använder du CC-material and Vanliga
+frågor, built into a WordPress import file by
+`scripts/build-content-wxr.py`. They embed the licence shortcodes from
+`src/inc/license-shortcodes.php` rather than restating the licences.
+Remaining: a native-speaker review of the Swedish, and the Swedish license-name
+discrepancy between CC's index and its deed pages.
 
 - Pages from the copy/adopt/remix matrix: Licenserna (HQ 4.0 structure, Swedish names), symboler, hur man licensierar, hur man använder, FAQ
 - Always **link** `deed.sv` and `legalcode.sv` for 4.0; do not re-host legal tools

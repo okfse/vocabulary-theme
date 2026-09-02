@@ -53,6 +53,7 @@ else
     rm -fr -- \
         ./.devcontainer \
         ./.github \
+        ./content \
         ./docs \
         ./src \
         ROADMAP.md \

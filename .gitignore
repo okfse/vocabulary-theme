@@ -7,3 +7,6 @@
 # release artifacts
 vocabulary-theme-se.zip
 .release/
+
+# generated import file (rebuild with scripts/build-content-wxr.py)
+content/*.wxr
