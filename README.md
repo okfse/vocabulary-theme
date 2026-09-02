@@ -22,15 +22,36 @@ This is the Creative Commons Sverige fork of
 
 | Branch | Purpose |
 |---|---|
-| `main` | Clean mirror of `upstream/main`; not edited here |
-| `se-main` | Creative Commons Sverige build — all work lands here |
+| `main` | The Creative Commons Sverige build — all work lands here |
 | `prep-*` | Throwaway release-prep branches, deleted after each release |
+
+There is no local mirror of upstream: `upstream/main` is the mirror.
+
+Set the upstream remote up once:
 
 ```shell
 git remote add upstream https://github.com/creativecommons/vocabulary-theme.git
+```
+
+Pick up upstream changes:
+
+```shell
 git fetch upstream
-git checkout se-main
 git merge upstream/main
+```
+
+Conflicts concentrate in `src/header.php`, `src/footer.php`, `src/style.css`
+and `src/functions.php` — the Swedish additions live in separate
+`src/inc/*.php` files so most upstream edits merge cleanly. After merging,
+re-run `wp i18n make-pot` to catch new translatable strings, bump `Version:`
+in `src/style.css`, and cut a release (see
+[docs/RELEASE.md](docs/RELEASE.md)).
+
+To offer a fix upstream, branch from upstream rather than from here, so the
+pull request carries only that change:
+
+```shell
+git checkout -b fix-something upstream/main
 ```
 
 

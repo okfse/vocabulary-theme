@@ -2,7 +2,7 @@
 
 This guide covers installing the theme on a WordPress site — first on staging
 (`www-staging.okfn.se`), then on `creativecommons.se`. It is written for the
-`se-main` branch of [`okfse/vocabulary-theme`][fork], the Creative Commons
+`main` branch of [`okfse/vocabulary-theme`][fork], the Creative Commons
 Sverige build of [`creativecommons/vocabulary-theme`][upstream].
 
 [fork]: https://github.com/okfse/vocabulary-theme
@@ -193,7 +193,6 @@ editorial content (or the template dropped) rather than routed through gettext.
 ## 9. Keeping up with upstream
 
 ```bash
-git checkout se-main
 git fetch upstream
 git merge upstream/main
 ```

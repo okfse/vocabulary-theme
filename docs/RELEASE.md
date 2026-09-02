@@ -6,10 +6,10 @@ counts Creative Commons Sverige releases on top of it. Example: `v2.8-se.1` is
 the first Swedish release based on upstream v2.8.
 
 
-## 1. Prepare `se-main`
+## 1. Prepare `main`
 
 ```bash
-git checkout se-main
+git checkout main
 git pull
 git fetch upstream && git merge upstream/main   # if picking up upstream changes
 ```
@@ -85,7 +85,7 @@ On GitHub → **Releases → Draft a new release**:
 ## 5. Clean up
 
 ```bash
-git checkout se-main
+git checkout main
 git branch -D prep-v2.8-se.1
 git push origin --delete prep-v2.8-se.1
 ```

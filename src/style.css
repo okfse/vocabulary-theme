@@ -10,7 +10,7 @@ Requires PHP: 7.4
 Text Domain: vocabulary
 Domain Path: /languages
 License: MIT License
-License URI: https://github.com/okfse/vocabulary-theme/blob/se-main/LICENSE
+License URI: https://github.com/okfse/vocabulary-theme/blob/main/LICENSE
 */
 
 @import 'vocabulary/css/vocabulary.css' layer(vocabulary);
