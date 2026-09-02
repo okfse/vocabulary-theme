@@ -41,22 +41,25 @@ Bump `Version:` in `src/style.css` and commit.
 ```
 
 This creates a `prep-v2.8-se.1` branch, moves `src/*` to the repository root
-(WordPress needs `style.css` at the top level of the archive) and deletes the
-development scaffolding. Review the result, then:
+(WordPress needs `style.css` at the top level of the archive), deletes the
+development scaffolding, and then runs `build-se-zip.sh` to write
+**`vocabulary-theme-se.zip`**.
+
+Review the result and commit the prepared branch:
 
 ```bash
 git add -A
 git commit -m 'prepare release v2.8-se.1'
 ```
 
+The archive is added to `.git/info/exclude`, so `git add -A` will not commit
+it. Check that with `git status` before committing — an 11MB blob in the
+history is not easy to remove later.
 
-## 3. Build the installable archive
 
-```bash
-./scripts/build-se-zip.sh
-```
+## 3. About the archive
 
-This writes `vocabulary-theme-se.zip` with a **stable** top-level directory,
+`vocabulary-theme-se.zip` has a **stable** top-level directory,
 `vocabulary-theme-se/`.
 
 That stability matters: WordPress takes the theme slug from the archive's top

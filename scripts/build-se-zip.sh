@@ -61,6 +61,17 @@ tar \
 ( cd -- "${STAGING}" && zip -q -r -X "../${ARCHIVE}" "${THEME_SLUG}" )
 rm -fr -- "${STAGING}"
 
+# Keep the archive out of the release commit. prepare-release.sh deletes
+# .gitignore as part of its clean-up, so without this the 11MB artifact is
+# untracked-but-not-ignored and `git add -A` would commit it into the prep
+# branch. .git/info/exclude is local to the clone and never packaged.
+GIT_COMMON_DIR="$(git rev-parse --git-common-dir 2>/dev/null || true)"
+if [[ -n "${GIT_COMMON_DIR}" ]] && [[ -d "${GIT_COMMON_DIR}/info" ]]
+then
+    grep -qxF "${ARCHIVE}" "${GIT_COMMON_DIR}/info/exclude" 2>/dev/null \
+        || echo "${ARCHIVE}" >> "${GIT_COMMON_DIR}/info/exclude"
+fi
+
 echo 'done.'
 echo
 
