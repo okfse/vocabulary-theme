@@ -22,7 +22,7 @@ msgstr ""
 
 #. Description of the theme
 #: style.css
-msgid "Creative Commons Sverige build of the Vocabulary Design System theme. Adds admin-editable navigation, Swedish translations, and per-site footer configuration on top of creativecommons/vocabulary-theme."
+msgid "Creative Commons Sverige build of the Vocabulary Design System theme. Adds admin-editable navigation, Swedish translations, the CC product identity lockup, a chapter home page, Swedish license pages, and per-site configuration on top of creativecommons/vocabulary-theme. Requires Advanced Custom Fields."
 msgstr ""
 
 #. Author of the theme

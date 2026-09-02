@@ -2,14 +2,14 @@
 # This file is distributed under the MIT License.
 msgid ""
 msgstr ""
-"Project-Id-Version: CC Vocabulary Theme (Sverige) 2.8-se.1\n"
+"Project-Id-Version: CC Vocabulary Theme (Sverige) 2.8-se.2\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/theme\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-09-02T19:21:01+00:00\n"
+"POT-Creation-Date: 2026-09-02T19:28:19+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: vocabulary\n"
@@ -21,7 +21,7 @@ msgstr ""
 
 #. Description of the theme
 #: style.css
-msgid "Creative Commons Sverige build of the Vocabulary Design System theme. Adds admin-editable navigation, Swedish translations, and per-site footer configuration on top of creativecommons/vocabulary-theme."
+msgid "Creative Commons Sverige build of the Vocabulary Design System theme. Adds admin-editable navigation, Swedish translations, the CC product identity lockup, a chapter home page, Swedish license pages, and per-site configuration on top of creativecommons/vocabulary-theme. Requires Advanced Custom Fields."
 msgstr ""
 
 #. Author of the theme
@@ -418,7 +418,7 @@ msgid "Our Team"
 msgstr ""
 
 #: page.php:74
-#: page_licenses.php:223
+#: page_licenses.php:235
 #: page_support.php:116
 #: page_training.php:458
 msgid "More Links"
