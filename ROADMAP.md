@@ -357,13 +357,19 @@ discrepancy between CC's index and its deed pages.
 
 ### Phase 6 — Policy, hosting, verification
 
-**Done except hosting.** The accessibility pass and the cookie/analytics audit
-are complete and recorded in `docs/BRAND.md`: two WCAG AA contrast failures
-fixed, ARIA state added to the navigation toggles, one `h1` per page, the skip
-link made focusable, and confirmation that a live page loads nothing from a
-third party and sets no cookies. Still open: the domain decision, the resulting
-policy pages, and browser verification at desktop and mobile widths, which
-needs a person.
+**Phase 6 remains open.** A first, code-level pass has been made and its fixes
+are released (see `docs/BRAND.md`), but none of the three verification items is
+considered finished. What has been done is a static audit of the theme's own
+code; what is still wanted is a real review of the running site.
+
+| Item | Done | Still to do |
+|------|------|-------------|
+| **Accessibility** | Contrast computed across the palette; two WCAG AA failures fixed (`a.attention` pill 2.43:1, `#FF0000` links 4.00:1). `aria-expanded` / `aria-controls` and contextual labels added to the nav toggles, with the state-sync script behaviour-tested. One `h1` per page. Skip-link target made focusable. Alt text confirmed on all 84 `<img>` in reachable templates. Landmarks present and named. | A real audit of the running site: screen reader (NVDA/VoiceOver), keyboard-only traversal, focus visibility and order, zoom to 200% and 400%, reflow at 320px, `prefers-reduced-motion` against the `color-spin` and `twenty-fifth` animations, forms and error states, and an automated run (axe / Lighthouse / WAVE) with the plugins actually installed. |
+| **Privacy / tracking** | Confirmed the theme itself loads nothing third-party, sets no cookies, uses no web storage and makes no server-side outbound requests. Identified two dormant third-party dependencies (Vimeo iframe in the retired `page_home.php`; `mirrors.creativecommons.org` images in the dormant chooser JS). | The same audit on the **live** site with plugins installed — ACF, Classic Editor, Redirection, TablePress and any SEO or forms plugin can each add requests or cookies. Then the cookie/consent decision, an analytics choice, and a GDPR review of what is actually collected. |
+| **Browser verification** | Nothing. Everything so far is markup, HTTP status codes and computed values. | Desktop and mobile widths in real browsers: the `cc sverige` lockup in CC Accidenz Commons (masthead and footer), the licence-card badge grid and `dl` alignment, the three new licence sections which have no dedicated CSS, the legal disclaimer, the mobile masthead, and the nav toggles by mouse, keyboard and touch. |
+
+The domain decision below gates the policy pages, and is unrelated to the three
+items above.
 
 - Confirm domain strategy: keep `se.creativecommons.net` (HQ multisite) vs self-host `creativecommons.se` (chapter owns privacy/terms)
 - Cookie and analytics choice (no non-essential trackers without consent)

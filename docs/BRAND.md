@@ -167,7 +167,10 @@ images with no alternative text.
 
 ## Accessibility
 
-Audited as ROADMAP Phase 6. What was found and fixed:
+**Not finished.** What follows is a code-level audit and its fixes. A real
+review of the running site — screen reader, keyboard-only, zoom and reflow,
+reduced motion, and an automated run with the plugins installed — is still
+outstanding and is tracked in [`ROADMAP.md`](../ROADMAP.md) Phase 6.
 
 **Contrast.** Two colour pairs fell below WCAG 2.1 AA's 4.5:1 for normal text.
 Neither is a Vocabulary brand token, so both were fixed in `style.css` without
@@ -207,14 +210,20 @@ four without are in `front-page-old.php`, which WordPress never loads.
 **Landmarks** are present and named: `<header>`, `<nav aria-label>`, `<main>`,
 `<footer>`.
 
-Not yet verified: rendering and keyboard behaviour in a real browser at desktop
-and mobile widths. That needs a person.
+Not yet verified, and explicitly still wanted: rendering and keyboard behaviour
+in real browsers at desktop and mobile widths, screen-reader output, focus
+order and visibility, zoom to 200%/400%, reflow at 320px, and
+`prefers-reduced-motion` against the `color-spin` and `twenty-fifth`
+animations.
 
 
 ## Privacy and tracking
 
-Audited as ROADMAP Phase 6 (the cookie and analytics item; the hosting decision
-is still open).
+**Not finished.** This covers the *theme* only. The same audit still needs
+running against the live site with the plugins installed — any of ACF, Classic
+Editor, Redirection, TablePress or an SEO plugin can add requests or cookies —
+followed by the consent and analytics decisions. Tracked in
+[`ROADMAP.md`](../ROADMAP.md) Phase 6.
 
 **A live page loads nothing from a third party.** No analytics, no tag
 managers, no web fonts from a CDN — every font, icon and image is served from
