@@ -44,6 +44,11 @@ else
     printf "${HEAD} %-80s${NC}\n" 'Stage directories/files for release'
     # stage theme files
     mv ./src/* ./
+    # keep the archive builder reachable past the clean-up below, which deletes
+    # ./scripts along with the rest of the development scaffolding
+    BUILD_SCRIPT="$(mktemp)"
+    cp ./scripts/build-se-zip.sh "${BUILD_SCRIPT}"
+    chmod +x "${BUILD_SCRIPT}"
     # remove unneeded files for release (and self destruct)
     rm -fr -- \
         ./.devcontainer \
@@ -60,13 +65,21 @@ else
     echo 'done.'
     echo
 
+    "${BUILD_SCRIPT}"
+    rm -f -- "${BUILD_SCRIPT}"
+
     printf "${HEAD} %-80s${NC}\n" 'Repository status'
-    git status
+    git status --short
     echo
 
     printf "${HEAD} %-80s${NC}\n" 'Next steps'
-    echo 'Changes ready to be commited, please commit, and push with:'
+    echo 'Commit and push the prepared branch:'
     echo
+    echo -e "    ${GREEN}git add -A && git commit -m 'prepare release ${VERSION}'${NC}"
     echo -e "    ${GREEN}git push origin prep-${VERSION}${NC}"
+    echo
+    echo 'Then create the GitHub Release from that branch and upload'
+    echo -e "    ${GREEN}vocabulary-theme-se.zip${NC}"
+    echo 'as a release asset. See docs/RELEASE.md.'
     echo
 fi

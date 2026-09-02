@@ -33,14 +33,14 @@ die() {
     exit 1
 }
 
-# Change directory to repository root
-# (parent directory of this script's location)
-pushd "${0%/*}/.." >/dev/null
-
+# Operate on the current directory, which must already hold the staged theme.
+# (Unlike the other scripts here, this one is not run from the repository root
+# in its development layout -- prepare-release.sh moves src/* up to the root
+# first, and then deletes ./scripts, so it invokes a copy of this script.)
 command -v zip >/dev/null || die 'zip is not installed.'
 
 [[ -f ./style.css ]] \
-    || die 'style.css not found in the repository root. Run ./scripts/prepare-release.sh vX.Y-se.N first.'
+    || die "style.css not found in $(pwd). Run ./scripts/prepare-release.sh vX.Y-se.N from the repository root first, which builds the archive for you." 
 
 VERSION=$(sed -n 's/^Version:[[:space:]]*//p' ./style.css | head -1)
 
