@@ -21,10 +21,10 @@
     <div class="masthead">
         <?php // The mark itself comes from CSS; see vocab_identity_link() and the
               // identity_style / identity_text keys in inc/site-config.php. ?>
-        <h1><?php vocab_identity_link(); ?></h1>
-        <button class="expand-menu"><?php esc_html_e( 'Menu', 'vocabulary' ); ?></button>
+        <div class="masthead-identity"><?php vocab_identity_link(); ?></div>
+        <button type="button" class="expand-menu" aria-expanded="false" aria-controls="primary-menu"><?php esc_html_e( 'Menu', 'vocabulary' ); ?></button>
 
-        <?php vocab_nav_menu( 'primary-menu', 'nav', 'primary-menu', __( 'Primary navigation', 'vocabulary' ) ); ?>
+        <?php vocab_nav_menu( 'primary-menu', 'nav', 'primary-menu', __( 'Primary navigation', 'vocabulary' ), 'primary-menu' ); ?>
     </div>
 
 </header>
@@ -73,7 +73,8 @@ $notice_image = get_field('graphic');
 <?php endif; ?>
 <?php wp_reset_postdata(); ?>
 
-<span id="main-content-marker"></span>
+<?php // tabindex allows the skip link to actually move keyboard focus here ?>
+<span id="main-content-marker" tabindex="-1"></span>
 
 <?php if (get_field('css_dev_hotfixes' )) : ?>
 <style>

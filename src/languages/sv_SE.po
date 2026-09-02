@@ -397,7 +397,13 @@ msgid_plural "%s images have no alternative text. Alternative text is required f
 msgstr[0] "%s bild saknar alternativtext. Alternativtext krävs för tillgänglighet, och Creative Commons stilguide efterfrågar den vid varje uppladdning."
 msgstr[1] "%s bilder saknar alternativtext. Alternativtext krävs för tillgänglighet, och Creative Commons stilguide efterfrågar den vid varje uppladdning."
 
-#: inc/nav.php:127
+#. translators: %s: name of the menu item whose submenu this button opens.
+#: inc/nav.php:163
+#, php-format
+msgid "Expand %s"
+msgstr "Visa undermeny för %s"
+
+#: inc/nav.php:164
 msgid "Expand"
 msgstr "Visa undermeny"
 
@@ -424,7 +430,7 @@ msgid "Our Team"
 msgstr "Vårt team"
 
 #: page.php:74
-#: page_licenses.php:235
+#: page_licenses.php:201
 #: page_support.php:116
 #: page_training.php:458
 msgid "More Links"

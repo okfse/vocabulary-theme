@@ -109,25 +109,82 @@ add_filter(
 class Vocabulary_Nav_Walker extends Walker_Nav_Menu {
 
     /**
+     * The menu item most recently opened by start_el().
+     *
+     * start_lvl() is not given the parent item, but it always runs directly
+     * after that item's start_el(), so remembering it here is enough to label
+     * the toggle and wire up aria-controls.
+     *
+     * @var object|null
+     */
+    protected $current_item = null;
+
+    /**
+     * @param string $output      Menu markup, by reference.
+     * @param object $data_object The menu item.
+     * @param int    $depth       Current depth.
+     * @param mixed  $args        wp_nav_menu() arguments.
+     * @param int    $current_object_id Current object ID.
+     */
+    public function start_el( &$output, $data_object, $depth = 0, $args = null, $current_object_id = 0 ) {
+        $this->current_item = $data_object;
+
+        parent::start_el( $output, $data_object, $depth, $args, $current_object_id );
+    }
+
+    /**
      * Emit `button.expand` immediately before a submenu.
      *
      * start_lvl() runs directly after the parent item's anchor and before its
      * `</li>`, so the button lands as a sibling of the anchor -- the structure
      * vocabulary.js toggles via `expander.parentElement.querySelector('ul')`.
      *
+     * The button carries `aria-expanded` and `aria-controls`, and names the
+     * item it belongs to. Without that, a screen reader announces an unlabelled
+     * toggle with no state, repeated once per parent item. `.icon-replace`
+     * indents the label off-screen, so the longer name costs nothing visually.
+     * js/nav-a11y.js keeps `aria-expanded` in step with the class vocabulary.js
+     * toggles.
+     *
      * @param string $output Menu markup, by reference.
      * @param int    $depth  Current depth.
      * @param mixed  $args   wp_nav_menu() arguments.
      */
     public function start_lvl( &$output, $depth = 0, $args = null ) {
-        $indent  = str_repeat( "\t", $depth );
+        $indent = str_repeat( "\t", $depth );
+        $item   = $this->current_item;
+
+        $item_id    = ( $item && isset( $item->ID ) ) ? (int) $item->ID : 0;
+        $submenu_id = $item_id ? 'vocab-submenu-' . $item_id : '';
+        $title      = ( $item && isset( $item->title ) ) ? wp_strip_all_tags( $item->title ) : '';
+
+        $label = $title
+            /* translators: %s: name of the menu item whose submenu this button opens. */
+            ? sprintf( __( 'Expand %s', 'vocabulary' ), $title )
+            : __( 'Expand', 'vocabulary' );
+
         $output .= sprintf(
-            "\n%s<button class=\"expand icon-replace fa-angle-down\">%s</button>\n",
+            "\n%s<button type=\"button\" class=\"expand icon-replace fa-angle-down\" aria-expanded=\"false\"%s>%s</button>\n",
             $indent,
-            esc_html__( 'Expand', 'vocabulary' )
+            $submenu_id ? ' aria-controls="' . esc_attr( $submenu_id ) . '"' : '',
+            esc_html( $label )
         );
 
-        parent::start_lvl( $output, $depth, $args );
+        // Let the parent build the <ul> so the submenu class filters still run,
+        // then give it the id aria-controls points at.
+        $submenu = '';
+        parent::start_lvl( $submenu, $depth, $args );
+
+        if ( $submenu_id ) {
+            $submenu = preg_replace(
+                '/<ul\b/',
+                '<ul id="' . esc_attr( $submenu_id ) . '"',
+                $submenu,
+                1
+            );
+        }
+
+        $output .= $submenu;
     }
 }
 
@@ -142,8 +199,9 @@ class Vocabulary_Nav_Walker extends Walker_Nav_Menu {
  * @param string $container      Wrapping element, or '' for none.
  * @param string $container_class Class for the wrapping element.
  * @param string $aria_label     Accessible name for the wrapping element.
+ * @param string $container_id   Id for the wrapping element, for aria-controls.
  */
-function vocab_nav_menu( $location, $container = '', $container_class = '', $aria_label = '' ) {
+function vocab_nav_menu( $location, $container = '', $container_class = '', $aria_label = '', $container_id = '' ) {
     if ( ! has_nav_menu( $location ) ) {
         return;
     }
@@ -153,6 +211,7 @@ function vocab_nav_menu( $location, $container = '', $container_class = '', $ari
             'theme_location'  => $location,
             'container'       => $container ? $container : false,
             'container_class' => $container_class,
+            'container_id'    => $container_id,
             'container_aria_label' => $aria_label,
             'depth'           => 0,
             'fallback_cb'     => false,

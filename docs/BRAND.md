@@ -165,6 +165,75 @@ photography over stock.
 images with no alternative text.
 
 
+## Accessibility
+
+Audited as ROADMAP Phase 6. What was found and fixed:
+
+**Contrast.** Two colour pairs fell below WCAG 2.1 AA's 4.5:1 for normal text.
+Neither is a Vocabulary brand token, so both were fixed in `style.css` without
+touching the palette:
+
+| | before | after |
+|---|---|---|
+| `a.attention` nav pill | white on turquoise, **2.43:1** | black on the same turquoise, 8.63:1 |
+| link hover, and the resting colour of licence links | `#FF0000` on white, **4.00:1** | `#E00000`, 5.04:1 |
+
+Everything else passes. Notable ratios: body text 21:1, links `#2E1FB8` 10.48:1,
+`#767676` 4.54:1, the `attention` banner 18.47:1, footer turquoise links on
+black 8.63:1. Turquoise as text only ever appears on the black footer — on
+white it would be 2.43:1.
+
+**Navigation state.** The submenu toggles and the mobile menu button carried no
+ARIA at all, so assistive technology was told nothing about whether a menu was
+open, and every toggle announced the same unlabelled "Expand". They now carry
+`aria-expanded` and `aria-controls`, and name the item they belong to
+("Visa undermeny för Om oss"); `.icon-replace` indents the label off-screen so
+this costs nothing visually. `src/js/nav-a11y.js` keeps `aria-expanded` in step
+by reading the class `vocabulary.js` toggles, rather than tracking state of its
+own — so it stays correct if that script changes. It must load after it.
+
+**One h1 per page.** Upstream wraps the masthead logo in an `<h1>`, giving every
+page two. Screen reader users jump by h1 to find the page heading, so
+`header.php` uses `div.masthead-identity` and `style.css` reproduces the three
+masthead rules that were keyed on the `h1`.
+
+**Skip link.** `#main-content-marker` is a `<span>`, which is not focusable, so
+the skip link moved the viewport but left keyboard focus behind on the link.
+It now carries `tabindex="-1"`.
+
+**Alt text.** All 84 `<img>` tags in reachable templates have `alt`. The only
+four without are in `front-page-old.php`, which WordPress never loads.
+
+**Landmarks** are present and named: `<header>`, `<nav aria-label>`, `<main>`,
+`<footer>`.
+
+Not yet verified: rendering and keyboard behaviour in a real browser at desktop
+and mobile widths. That needs a person.
+
+
+## Privacy and tracking
+
+Audited as ROADMAP Phase 6 (the cookie and analytics item; the hosting decision
+is still open).
+
+**A live page loads nothing from a third party.** No analytics, no tag
+managers, no web fonts from a CDN — every font, icon and image is served from
+the theme. The theme sets no cookies and uses no `localStorage` or
+`sessionStorage`, and makes no server-side outbound requests (no `wp_remote_*`,
+no `curl`, no remote `file_get_contents`).
+
+Two third-party dependencies exist but are unreachable, and both would need a
+cookie/consent decision if ever re-enabled:
+
+- `page_home.php` embeds a **Vimeo player** iframe. That template is retired.
+- `chooser/js/chooser.js` builds `<img>` tags pointing at
+  `mirrors.creativecommons.org`. It is only loaded by
+  `static-templates/static-chooser.php`, which has no page-template header.
+
+This means the site needs a cookie banner only for what is added on top of the
+theme — analytics, embeds, or a plugin that sets cookies.
+
+
 ## Deliberately not done
 
 - **No `theme.json`.** It would pin the block-editor palette to the brand

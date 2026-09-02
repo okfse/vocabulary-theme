@@ -357,6 +357,14 @@ discrepancy between CC's index and its deed pages.
 
 ### Phase 6 — Policy, hosting, verification
 
+**Done except hosting.** The accessibility pass and the cookie/analytics audit
+are complete and recorded in `docs/BRAND.md`: two WCAG AA contrast failures
+fixed, ARIA state added to the navigation toggles, one `h1` per page, the skip
+link made focusable, and confirmation that a live page loads nothing from a
+third party and sets no cookies. Still open: the domain decision, the resulting
+policy pages, and browser verification at desktop and mobile widths, which
+needs a person.
+
 - Confirm domain strategy: keep `se.creativecommons.net` (HQ multisite) vs self-host `creativecommons.se` (chapter owns privacy/terms)
 - Cookie and analytics choice (no non-essential trackers without consent)
 - Accessibility pass (alt text, contrast, skip link already present)

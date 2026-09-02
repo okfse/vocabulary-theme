@@ -115,6 +115,41 @@ body {
 }
 
 
+/* --- One h1 per page ----------------------------------------------------
+
+   Upstream wraps the masthead logo in an <h1>, so every page carried two: the
+   site name and the page title. Screen reader users jump by h1 to find the
+   page heading, so header.php uses a div instead.
+
+   vocabulary.css keys three masthead rules on that h1
+   (`body > header .masthead h1`, `:before`, `:has(a:hover):before`), so they
+   are reproduced here verbatim on the new class -- including the decorative
+   :before, whose declarations are copied as-is rather than judged, so the
+   result is identical either way. Re-check these against vocabulary.css when
+   merging from upstream. */
+
+body > header .masthead .masthead-identity {
+    margin: 0;
+    position: relative;
+}
+
+body > header .masthead .masthead-identity:before {
+    position: absolute;
+    left: .2em;
+    top: .4em;
+    transition: .2s ease;
+}
+
+body > header .masthead .masthead-identity:has(a:hover):before {
+    left: -.5em;
+    top: -.2em;
+    height: 2em;
+    width: 2em;
+
+    animation: twenty-fifth 10s infinite;
+}
+
+
 /* --- Chapter identity lockup, footer -------------------------------------
 
    vocabulary.css implements `.identity-logo.product` (the compact CC
@@ -165,6 +200,32 @@ body > footer .identity-logo.product:hover {
 
 body > footer .identity-logo.product:hover:before {
     background-color: #FF9CFF;
+}
+
+
+/* --- Contrast fixes (WCAG 2.1 AA) --------------------------------------
+
+   Two colour pairs in vocabulary.css fall below the 4.5:1 minimum for normal
+   text. Neither is a Vocabulary brand token, so these are accessibility fixes
+   rather than a rebrand -- see docs/BRAND.md.
+
+   1. The `attention` nav pill set white on turquoise: 2.43:1. Black on the
+      same turquoise is 8.63:1, so the brand colour is kept and only the text
+      colour changes.
+   2. A hardcoded #FF0000 is used for link hover in three places and, on the
+      licences page, for the resting colour of the licence links. On white it
+      is 4.00:1. #E00000 is 5.04:1 and reads as the same red. */
+
+body > header .masthead .primary-menu ul li a.attention {
+    color: black;
+}
+
+article.posts .post a:hover,
+.event-post .content .speakers .speaker h3 a:hover,
+.event-post main .previous:hover,
+.event-post main .next:hover,
+.licenses-page .licenses > ul > li a {
+    color: #E00000;
 }
 
 

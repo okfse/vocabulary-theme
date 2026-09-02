@@ -17,4 +17,5 @@
 <body class="<?php echo esc_attr( isset( $args['body-classes'] ) ? $args['body-classes'] : '' ); ?>">
 <a class="skip-to-content" href="#main-content-marker"><?php esc_html_e( 'Skip to content', 'vocabulary' ); ?></a>
 
-<span id="main-content-marker"></span>
+<?php // tabindex allows the skip link to actually move keyboard focus here ?>
+<span id="main-content-marker" tabindex="-1"></span>
