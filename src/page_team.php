@@ -71,7 +71,7 @@
 ?>
 
 <article class="persons">
-    <h2>Board</h2>
+    <h2><?php esc_html_e( 'Board', 'vocabulary' ); ?></h2>
     <ul>
         <?php foreach($board_listing as $board_person) : ?>
         <?php
@@ -102,7 +102,7 @@
 ?>
 
 <article class="persons">
-    <h2>Emeritus</h2>
+    <h2><?php esc_html_e( 'Emeritus', 'vocabulary' ); ?></h2>
     <ul>
         <?php foreach($emeritus_listing as $emeritus_person) : ?>
         <?php
@@ -134,7 +134,7 @@
 ?>
 
 <article class="persons">
-    <h2>Advisory Council</h2>
+    <h2><?php esc_html_e( 'Advisory Council', 'vocabulary' ); ?></h2>
     <ul>
         <?php foreach($advisory_listing as $advisory_person) : ?>
         <?php
@@ -166,7 +166,7 @@
 ?>
 
 <article class="persons">
-    <h2>Audit Committee</h2>
+    <h2><?php esc_html_e( 'Audit Committee', 'vocabulary' ); ?></h2>
     <ul>
         <?php foreach($audit_listing as $audit_person) : ?>
         <?php

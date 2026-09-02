@@ -93,7 +93,7 @@
 
 <article class="posts">
 
-    <h2>Recently from the blog</h2>
+    <h2><?php esc_html_e( 'Recently from the blog', 'vocabulary' ); ?></h2>
 
     <?php
     $query = new WP_Query(array(
@@ -199,7 +199,7 @@
     </ul>
 
     <footer>
-        <a class="more" href="/blog/archive/">more posts</a>
+        <a class="more" href="/blog/archive/"><?php esc_html_e( 'more posts', 'vocabulary' ); ?></a>
     </footer>
 
 </article>

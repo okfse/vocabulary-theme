@@ -45,7 +45,7 @@
 ?>
 
 <article class="trainings extends events">
-    <h2>Foundations Courses</h2>
+    <h2><?php esc_html_e( 'Foundations Courses', 'vocabulary' ); ?></h2>
     <ul>
         <?php foreach($training_highlights as $training) : ?>
         <?php
@@ -61,7 +61,7 @@
 
                 <p><?php echo wp_trim_words($excerpt, 50); ?></p>
 
-                <a href="<?php echo $url; ?>">View Item</a>
+                <a href="<?php echo $url; ?>"><?php esc_html_e( 'View Item', 'vocabulary' ); ?></a>
                 </div>
 
                 <figure>
@@ -91,7 +91,7 @@
 ?>
 
 <article class="trainings extends events">
-    <h2>Free Videos</h2>
+    <h2><?php esc_html_e( 'Free Videos', 'vocabulary' ); ?></h2>
     <ul>
         <?php foreach($training_highlights as $training) : ?>
         <?php
@@ -107,7 +107,7 @@
 
                 <p><?php echo wp_trim_words($excerpt, 50); ?></p>
 
-                <a href="<?php echo $url; ?>">View Item</a>
+                <a href="<?php echo $url; ?>"><?php esc_html_e( 'View Item', 'vocabulary' ); ?></a>
                 </div>
 
                 <figure>

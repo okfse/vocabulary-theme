@@ -2,7 +2,7 @@
 
 </footer> -->
 
-<script src="<?php echo get_bloginfo( 'template_directory' ); ?>/vocabulary/js/vocabulary.js"></script>
+<script src="<?php echo esc_url( get_template_directory_uri() ); ?>/vocabulary/js/vocabulary.js"></script>
 
 <?php wp_footer(); ?>
 </body>

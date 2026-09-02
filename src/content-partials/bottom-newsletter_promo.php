@@ -15,14 +15,12 @@ $noticeQuery = new WP_Query(array(
         <h2><?php the_field('message'); ?></h2>
         <a href="<?php the_field('url'); ?>"><?php the_field('link_text'); ?></a>
     </div>
+    <?php $image = get_field('graphic'); ?>
+    <?php if ( ! empty( $image['url'] ) ) : ?>
     <figure>
-        <?php $image = get_field('graphic'); ?>
-        <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
-
-        <!-- <figcaption>
-            <p></p>
-        </figcaption> -->
+        <img src="<?php echo esc_url( $image['url'] ); ?>" alt="<?php echo esc_attr( isset( $image['alt'] ) ? $image['alt'] : '' ); ?>" />
     </figure>
+    <?php endif; ?>
 
 </article>
 

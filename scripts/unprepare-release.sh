@@ -11,10 +11,20 @@ printf "\e[1m\e[7m %-80s\e[0m\n" 'Remove staged directories/files'
 rm -fr -- \
     *.css \
     *.php \
+    ./chooser \
+    ./content-partials \
     ./css \
+    ./feed-templates \
     ./fonts \
+    ./inc \
     ./js \
+    ./languages \
+    ./shortcode-templates \
+    ./static-templates \
     ./svg \
+    ./vocabulary \
+    ./.release \
+    vocabulary-theme-se.zip \
     .env
 echo 'done.'
 echo

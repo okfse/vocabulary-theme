@@ -40,13 +40,13 @@
 </article>
 
 <article class="events">
-    <h2>Upcoming Events</h2>
+    <h2><?php esc_html_e( 'Upcoming Events', 'vocabulary' ); ?></h2>
     <ul>
 
     <?php
 
-    $today = date('Ymd', strtotime("now"));
-	$falloff = date('Ymd', strtotime("+12 months"));
+    $today = current_time('Ymd');
+	$falloff = wp_date('Ymd', strtotime("+12 months"));
 
     $query = new WP_Query(array(
         'post_type' => 'event',
@@ -65,7 +65,7 @@
 
     <?php
 
-    $date = DateTime::createFromFormat('Ymd', get_field('event_date'));
+    $event_date = vocab_format_date( get_field('event_date') );
 
     ?>
 
@@ -74,13 +74,13 @@
 
                 <div class="description">
                 <h3><?php the_title(); ?></h3>
-                <h4><?php echo $date->format('F j, Y'); ?></h4>
+                <h4><?php echo esc_html( $event_date ); ?></h4>
                 <span class="time"><?php the_field('event_time_start'); ?> - <?php the_field('event_time_end'); ?> <?php the_field('event_timezone'); ?></span>
                 <span class="location"><?php the_field('event_location'); ?></span>
 
                 <p><?php echo wp_trim_words($excerpt, 50); ?></p>
 
-                <a href="<?php echo the_permalink(); ?>">See Event Details</a>
+                <a href="<?php echo the_permalink(); ?>"><?php esc_html_e( 'See Event Details', 'vocabulary' ); ?></a>
                 </div>
 
                 <figure>
@@ -108,7 +108,7 @@
     </ul>
 
     <footer>
-        <a class="more" href="/events-archive">more events</a>
+        <a class="more" href="/events-archive"><?php esc_html_e( 'more events', 'vocabulary' ); ?></a>
     </footer>
 
 
@@ -120,7 +120,7 @@
 
     <?php
 
-    $today = date('Ymd', strtotime("now"));
+    $today = current_time('Ymd');
 
     $query = new WP_Query(array(
         'post_type' => 'event',
@@ -139,7 +139,7 @@
 
     <?php
 
-    $date = DateTime::createFromFormat('Ymd', get_field('event_date'));
+    $event_date = vocab_format_date( get_field('event_date') );
 
     ?>
 
@@ -148,13 +148,13 @@
 
                 <div class="description">
                 <h3><?php the_title(); ?></h3>
-                <h4><?php echo $date->format('F j, Y'); ?></h4>
+                <h4><?php echo esc_html( $event_date ); ?></h4>
                 <span class="time"><?php the_field('event_time_start'); ?> - <?php the_field('event_time_end'); ?> <?php the_field('event_timezone'); ?></span>
                 <span class="location"><?php the_field('event_location'); ?></span>
 
                 <p><?php echo wp_trim_words($excerpt, 50); ?></p>
 
-                <a href="<?php echo the_permalink(); ?>">See Event Details</a>
+                <a href="<?php echo the_permalink(); ?>"><?php esc_html_e( 'See Event Details', 'vocabulary' ); ?></a>
                 </div>
 
                 <figure>
@@ -182,7 +182,7 @@
     </ul>
 
     <footer>
-        <a class="more" href="/events-archive/?filtered=past">more events</a>
+        <a class="more" href="/events-archive/?filtered=past"><?php esc_html_e( 'more events', 'vocabulary' ); ?></a>
     </footer>
 
 

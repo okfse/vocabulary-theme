@@ -28,25 +28,25 @@ get_header('', array( 'body-classes' => 'home-narrative') );
     <ul>
         <li>
             <figure>
-                <img src="<?php echo get_bloginfo( 'template_directory' ); ?>/imgs/home1.jpg" />
+                <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/imgs/home1.jpg" />
                 <figcaption class="attribution">"<a href="https://www.loc.gov/pictures/item/2017786790/">Farmer and his brother making music</a>” by <a href="https://www.loc.gov/pictures/related/?fi=name&q=Lee%2C%20Russell%2C%201903-1986">Russell Lee</a>, here cropped, is marked with <a href="https://creativecommons.org/publicdomain/mark/1.0/">CC PDM 1.0</a></figcaption>
             </figure>
         </li>
         <li>
             <figure>
-                <img src="<?php echo get_bloginfo( 'template_directory' ); ?>/imgs/home2.jpg" />
+                <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/imgs/home2.jpg" />
                 <figcaption class="attribution">“<a href="https://www.flickr.com/photos/ter-burg/32896267507/">Flickr photowalk at the Creative Commons Global Summit 2019, Lisbon</a>” by <a href="https://www.flickr.com/photos/ter-burg/">Sebastiaan ter Burg</a>, here cropped, is licensed via <a href="https://creativecommons.org/licenses/by/2.0/">CC BY 2.0</a></figcaption>
             </figure>
         </li>
         <li>
             <figure>
-                <img src="<?php echo get_bloginfo( 'template_directory' ); ?>/imgs/home3.jpg" />
+                <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/imgs/home3.jpg" />
                 <figcaption class="attribution">“<a href="https://www.flickr.com/photos/niaid/49557785797">Novel Coronavirus SARS-CoV-2” by <a href=https://www.flickr.com/photos/niaid/>NIAID</a>, here cropped, is licensed via <a href="https://creativecommons.org/licenses/by/2.0/">CC BY 2.0</a></figcaption>
             </figure>
         </li>
         <li>
             <figure>
-                <img src="<?php echo get_bloginfo( 'template_directory' ); ?>/imgs/home4.jpg" />
+                <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/imgs/home4.jpg" />
                 <figcaption class="attribution">“<a href="https://www.flickr.com/photos/lensonjapan/8724992177">Children kabuki theater in Nagahama (warrior Kumagai, 12 y.o.)</a>” by <a href="https://www.flickr.com/photos/lensonjapan/">lensonjapan</a>, here cropped, is licensed via <a href="https://creativecommons.org/licenses/by/2.0/">CC BY 2.0</a></figcaption>
             </figure>
         </li>

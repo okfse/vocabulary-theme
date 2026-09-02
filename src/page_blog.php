@@ -133,7 +133,7 @@
 
 
 <article class="posts">
-<h2>Recent Posts</h2>
+<h2><?php esc_html_e( 'Recent Posts', 'vocabulary' ); ?></h2>
 
 <?php
 $query = new WP_Query(array(
@@ -223,7 +223,7 @@ $query = new WP_Query(array(
     </ul>
 
     <footer>
-        <a class="more" href="/blog/archive/">more posts</a>
+        <a class="more" href="/blog/archive/"><?php esc_html_e( 'more posts', 'vocabulary' ); ?></a>
     </footer>
 
 
@@ -329,7 +329,7 @@ $query = new WP_Query(array(
     </ul>
 
     <footer>
-        <a class="more" href="/blog/archive/">more posts</a>
+        <a class="more" href="/blog/archive/"><?php esc_html_e( 'more posts', 'vocabulary' ); ?></a>
     </footer>
 
 
@@ -436,7 +436,7 @@ $query = new WP_Query(array(
     </ul>
 
     <footer>
-        <a class="more" href="/blog/archive/">more posts</a>
+        <a class="more" href="/blog/archive/"><?php esc_html_e( 'more posts', 'vocabulary' ); ?></a>
     </footer>
 
 

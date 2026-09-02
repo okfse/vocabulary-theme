@@ -1,14 +1,16 @@
 /*
-Theme Name: CC Vocabulary Theme
-Author: the Creative Commons team; possumbilities, Timid Robot
-Author URI: https://opensource.creativecommons.org/
-Description: Theme based on the Vocabulary Design System
-Version: 2.8
-Requires at least: 5.0
-Tested up to: 6.2.2
-Requires PHP: 7.0
+Theme Name: CC Vocabulary Theme (Sverige)
+Author: the Creative Commons team; possumbilities, Timid Robot; Creative Commons Sverige
+Author URI: https://creativecommons.se/
+Description: Creative Commons Sverige build of the Vocabulary Design System theme. Adds admin-editable navigation, Swedish translations, and per-site footer configuration on top of creativecommons/vocabulary-theme.
+Version: 2.8-se.1
+Requires at least: 5.7
+Tested up to: 6.8
+Requires PHP: 7.4
+Text Domain: vocabulary
+Domain Path: /languages
 License: MIT License
-License URI: https://github.com/creativecommons/vocabulary-theme/blob/main/LICENSE
+License URI: https://github.com/okfse/vocabulary-theme/blob/se-main/LICENSE
 */
 
 @import 'vocabulary/css/vocabulary.css' layer(vocabulary);

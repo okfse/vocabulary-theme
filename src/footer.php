@@ -1,78 +1,75 @@
 <footer>
-    <a class="identity-logo" href="/">Creative Commons</a>
+    <a class="identity-logo" href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a>
 
     <div class="search">
-        <form method="get" id="" name="" class="" action="<?php echo esc_url( home_url( '/' ) ); ?>">
-            <input type="text" value="" name="s" class="" id="s" placeholder="Search">
-            <!-- <input type="submit" value="submit" id="" class=""> -->
+        <form method="get" class="" action="<?php echo esc_url( home_url( '/' ) ); ?>">
+            <label class="screen-reader-text" for="s"><?php esc_html_e( 'Search', 'vocabulary' ); ?></label>
+            <input type="text" value="<?php echo esc_attr( get_search_query() ); ?>" name="s" id="s" placeholder="<?php esc_attr_e( 'Search', 'vocabulary' ); ?>">
 
-            <button class="icon-attach fa-search">submit</button>
-
-            <!-- <div class="icon-replace fa-search">hmmm</div> -->
+            <button class="icon-attach fa-search"><?php esc_html_e( 'Submit', 'vocabulary' ); ?></button>
         </form>
     </div>
 
-    <nav class="footer-menu" aria-label="Footer menu">
-        <ul>
-            <li><a href="/who-we-are">Who we are</a></li>
-            <li><a href="/what-we-do">What we do</a></li>
-            <li><a href="/blog">Blog</a></li>
-            <li><a href="/support">Support us</a></li>
-            <li><a href="https://creative-commons-shop.fourthwall.com/">Store</a></li>
-
-            <li><a href="/contact">Contact</a></li>
-            <li><a href="/privacy">Privacy</a></li>
-            <li><a href="/policies">Policies</a></li>
-            <li><a href="/terms">Terms</a></li>
-        </ul>
-    </nav>
-
-
+    <?php vocab_nav_menu( 'footer-menu', 'nav', 'footer-menu', __( 'Footer menu', 'vocabulary' ) ); ?>
 
     <div class="contact">
-    <!-- this area lacks a heading? -->
-    <h2>Contact Us</h2>
-    <p>Creative Commons <br /> PO Box 1866, Mountain View, <br /> CA 94042</p>
-    <p><a href="mailto:info@creativecommons.org">info@creativecommons.org</a></p>
+    <h2><?php esc_html_e( 'Contact Us', 'vocabulary' ); ?></h2>
+    <?php $address = vocab_site( 'address', array() ); ?>
+    <?php if ( ! empty( $address ) ) : ?>
+    <p><?php echo wp_kses( implode( '<br />', array_map( 'esc_html', (array) $address ) ), array( 'br' => array() ) ); ?></p>
+    <?php endif; ?>
+    <?php if ( vocab_site( 'email' ) ) : ?>
+    <p><a href="<?php echo esc_url( 'mailto:' . vocab_site( 'email' ) ); ?>"><?php echo esc_html( vocab_site( 'email' ) ); ?></a></p>
+    <?php endif; ?>
 
-    <nav class="social-menu" aria-label="Social menu">
-        <ul>
-            <!-- <li><a class="icon-replace fa-instagram" href="#">Instagram</a></li> -->
-            <li><a class="icon-replace fa-bluesky" href="https://bsky.app/profile/creativecommons.bsky.social" target="_blank">Bluesky</a></li>
-            <li><a class="icon-replace fa-mastodon" href="https://mastodon.social/@creativecommons" target="_blank">Mastodon</a></li>
-            <!-- <li><a class="icon-replace fa-facebook" href="https://www.facebook.com/creativecommons" target="_blank">Facebook</a></li> -->
-            <li><a class="icon-replace fa-linkedin" href="https://www.linkedin.com/company/creative-commons/" target="_blank">LinkedIn</a></li>
-        </ul>
-    </nav>
+    <?php vocab_nav_menu( 'social-menu', 'nav', 'social-menu', __( 'Social menu', 'vocabulary' ) ); ?>
     </div>
 
+    <?php if ( vocab_site( 'newsletter_url' ) ) : ?>
     <div class="subscribe">
-    <h2>Subscribe to our newsletter</h2>
-    <a href="https://mail.creativecommons.org/subscribe">Subscribe</a>
+    <h2><?php esc_html_e( 'Subscribe to our newsletter', 'vocabulary' ); ?></h2>
+    <a href="<?php echo esc_url( vocab_site( 'newsletter_url' ) ); ?>"><?php esc_html_e( 'Subscribe', 'vocabulary' ); ?></a>
     </div>
-
-    <!-- <div class="donate">
-        <h2>Support Our Work</h2>
-        <p>Our work relies on you! Help us keep the Internet free and open.</p>
-        <a class="donate icon-attach cc-heart-filled" href="https://www.classy.org/give/313412/#!/donation/checkout?c_src=website&c_src2=top-of-page-banner" target="_blank">Donate Now</a>
-    </div> -->
-
+    <?php endif; ?>
 
     <div class="license">
+        <?php foreach ( (array) vocab_site( 'license_icons', array() ) as $license_icon ) : ?>
         <svg>
-            <use href="<?php echo get_bloginfo( 'template_directory' ); ?>/vocabulary/svg/cc/icons/cc-icons.svg#cc-logo"></use>
+            <use href="<?php echo esc_url( get_template_directory_uri() . '/vocabulary/svg/cc/icons/cc-icons.svg#' . $license_icon ); ?>"></use>
         </svg>
-        <svg>
-            <use href="<?php echo get_bloginfo( 'template_directory' ); ?>/vocabulary/svg/cc/icons/cc-icons.svg#cc-by"></use>
-        </svg>
+        <?php endforeach; ?>
 
-        <p>Except where otherwise <a href="/policies/#license">noted</a>, content on this site is licensed under a <a href="/licenses/by/4.0/">Creative Commons Attribution 4.0 International license</a>. Icons by <a href="https://fontawesome.com/" target="_blank">Font Awesome</a>.</p>
+        <p>
+        <?php
+        printf(
+            /* translators: 1: link to the site's licensing policy, 2: link to the licence deed. */
+            esc_html__( 'Except where otherwise %1$s, content on this site is licensed under a %2$s.', 'vocabulary' ),
+            sprintf(
+                '<a href="%s">%s</a>',
+                esc_url( vocab_site( 'license_url', '/' ) . vocab_site( 'license_anchor' ) ),
+                esc_html__( 'noted', 'vocabulary' )
+            ),
+            sprintf(
+                '<a href="%s">%s</a>',
+                esc_url( vocab_site( 'license_deed', 'https://creativecommons.org/licenses/by/4.0/' ) ),
+                esc_html__( 'Creative Commons Attribution 4.0 International license', 'vocabulary' )
+            )
+        );
+        ?>
+        <?php
+        printf(
+            /* translators: %s: link to fontawesome.com. */
+            esc_html__( 'Icons by %s.', 'vocabulary' ),
+            '<a href="https://fontawesome.com/" target="_blank" rel="noopener">Font Awesome</a>'
+        );
+        ?>
+        </p>
 
     </div>
 
     </footer>
 
-    <script src="<?php echo get_bloginfo( 'template_directory' ); ?>/vocabulary/js/vocabulary.js"></script>
+    <script src="<?php echo esc_url( get_template_directory_uri() ); ?>/vocabulary/js/vocabulary.js"></script>
 
 <?php wp_footer(); ?>
 </body>

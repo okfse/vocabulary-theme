@@ -3,3 +3,7 @@
 .AppleDouble
 .LSOverride
 .vscode/
+
+# release artifacts
+vocabulary-theme-se.zip
+.release/

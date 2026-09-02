@@ -37,11 +37,11 @@ if (array_key_exists('filtered', $wp->query_vars) && isset($wp->query_vars['filt
 <aside class="sidebar">
 
     <nav class="filter-menu">
-        <h2>Related Links</h2>
+        <h2><?php esc_html_e( 'Related Links', 'vocabulary' ); ?></h2>
         <ul>
-            <li class="<?php if($eventsFiltered == ''){echo 'current';} ?>"><a href="/events-archive/?filtered=all">All</a></li>
-            <li class="<?php if($eventsFiltered == 'Upcoming'){echo 'current';} ?>"><a href="/events-archive/?filtered=future">Upcoming</a></li>
-            <li class="<?php if($eventsFiltered == 'Past'){echo 'current';} ?>"><a href="/events-archive/?filtered=past">Past</a></li>
+            <li class="<?php if($eventsFiltered == ''){echo 'current';} ?>"><a href="/events-archive/?filtered=all"><?php esc_html_e( 'All', 'vocabulary' ); ?></a></li>
+            <li class="<?php if($eventsFiltered == 'Upcoming'){echo 'current';} ?>"><a href="/events-archive/?filtered=future"><?php esc_html_e( 'Upcoming', 'vocabulary' ); ?></a></li>
+            <li class="<?php if($eventsFiltered == 'Past'){echo 'current';} ?>"><a href="/events-archive/?filtered=past"><?php esc_html_e( 'Past', 'vocabulary' ); ?></a></li>
         </ul>
     </nav>
 
@@ -54,14 +54,14 @@ if (array_key_exists('filtered', $wp->query_vars) && isset($wp->query_vars['filt
 <?php while ( have_posts() ) : the_post(); ?>
 
 <?php
-$date = DateTime::createFromFormat('Ymd', get_field('event_date'));
+$event_date = vocab_format_date( get_field('event_date') );
 ?>
 
 
 <article class="post">
     <header>
         <h2><a href="<?php echo the_permalink(); ?>"><?php the_title(); ?></a></h2>
-        <span><?php echo $date->format('F j, Y'); ?>, <?php the_field('event_time_start'); ?> - <?php the_field('event_time_end'); ?> <?php the_field('event_timezone'); ?> | <?php the_field('event_location'); ?></span>
+        <span><?php echo esc_html( $event_date ); ?>, <?php the_field('event_time_start'); ?> - <?php the_field('event_time_end'); ?> <?php the_field('event_timezone'); ?> | <?php the_field('event_location'); ?></span>
         <?php if ( get_field('authorship') ) : ?>
         <span class="byline">by
         <?php
@@ -110,7 +110,7 @@ $date = DateTime::createFromFormat('Ymd', get_field('event_date'));
 
 </article>
 
-<nav class="pagination" aria-label="Pagination">
+<nav class="pagination" aria-label="<?php esc_attr_e( 'Pagination', 'vocabulary' ); ?>">
 <?php
 $big = 999999999; // need an unlikely integer
 
@@ -118,8 +118,8 @@ echo paginate_links( array(
 	'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
 	'format' => '?paged=%#%',
     'mid_size'  => 2,
-    'prev_text' => __( '<', 'textdomain' ),
-    'next_text' => __( '>', 'textdomain' ),
+    'prev_text' => __( '&laquo;', 'vocabulary' ),
+    'next_text' => __( '&raquo;', 'vocabulary' ),
 	'current' => max( 1, get_query_var('paged') ),
     'type' => 'list',
 	'total' => $wp_query->max_num_pages

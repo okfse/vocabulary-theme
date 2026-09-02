@@ -5,7 +5,7 @@
 <?php while ( have_posts() ) : the_post(); ?>
 
 <?php
-$date = DateTime::createFromFormat('Ymd', get_field('event_date'));
+$event_date = vocab_format_date( get_field('event_date') );
 ?>
 
 <header>
@@ -14,39 +14,42 @@ $date = DateTime::createFromFormat('Ymd', get_field('event_date'));
 <h1><?php the_title(); ?></h1>
 </div>
 
+<?php $image = get_field('header_graphic'); ?>
+<?php if ( ! empty( $image['url'] ) ) : ?>
 <figure>
-    <?php $image = get_field('header_graphic'); ?>
-    <img src="<?php echo $image['url']; ?>" alt="" />
+    <img src="<?php echo esc_url( $image['url'] ); ?>" alt="<?php echo esc_attr( isset( $image['alt'] ) ? $image['alt'] : '' ); ?>" />
 
+    <?php if ( ! empty( $image['caption'] ) ) : ?>
     <figcaption>
-        <p><?php echo $image['caption']; ?></p>
-
+        <p><?php echo wp_kses_post( $image['caption'] ); ?></p>
     </figcaption>
+    <?php endif; ?>
 </figure>
+<?php endif; ?>
 </header>
 
 <aside class="sidebar">
     <article class="event-meta">
-        <h2>Date & Time</h2>
-        <p class="date"><?php echo $date->format('F j, Y'); ?></p>
+        <h2><?php esc_html_e( 'Date & Time', 'vocabulary' ); ?></h2>
+        <p class="date"><?php echo esc_html( $event_date ); ?></p>
         <p class="time"><?php the_field('event_time_start'); ?> - <?php the_field('event_time_end'); ?> <?php the_field('event_timezone'); ?></p>
 
-        <h2>Location</h2>
+        <h2><?php esc_html_e( 'Location', 'vocabulary' ); ?></h2>
 
         <p class="location"><?php the_field('event_location'); ?></p>
 
         <?php if (get_field('event_registration_url')) : ?>
-        <a href="<?php the_field('event_registration_url'); ?>">Register</a>
+        <a href="<?php the_field('event_registration_url'); ?>"><?php esc_html_e( 'Register', 'vocabulary' ); ?></a>
         <?php endif; ?>
     </article>
 </aside>
 
 <div class="content">
-    <h2>Event Details</h2>
+    <h2><?php esc_html_e( 'Event Details', 'vocabulary' ); ?></h2>
     <?php the_content(); ?>
 
     <?php if(get_field('event_files_download_url')) : ?>
-    <a href="<?php the_field('event_files_download_url'); ?>" class="files">Download Event Files</a>
+    <a href="<?php the_field('event_files_download_url'); ?>" class="files"><?php esc_html_e( 'Download Event Files', 'vocabulary' ); ?></a>
     <?php endif; ?>
 
 
@@ -56,7 +59,7 @@ $date = DateTime::createFromFormat('Ymd', get_field('event_date'));
     ?>
 
     <article class="speakers">
-        <h2>Meet the speakers</h2>
+        <h2><?php esc_html_e( 'Meet the speakers', 'vocabulary' ); ?></h2>
         <ul>
             <?php foreach($speaker_listing as $speaker_person) : ?>
             <?php
@@ -90,7 +93,7 @@ $date = DateTime::createFromFormat('Ymd', get_field('event_date'));
 
 <footer>
 
-    <a href="/events" class="more">View All Events</a>
+    <a href="/events" class="more"><?php esc_html_e( 'View All Events', 'vocabulary' ); ?></a>
 
 </footer>
 

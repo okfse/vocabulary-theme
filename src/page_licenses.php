@@ -128,7 +128,7 @@ The CC icons, now recognized around the world, represent openness, collaboration
         <li>
             <article class="license">
                 <h3><a href="https://creativecommons.org/licenses/by/4.0/"><?php the_field('license_1_title'); ?></a></h3>
-                <img src="<?php echo get_bloginfo( 'template_directory' ); ?>/vocabulary/svg/cc/license_badges/big/by.svg" class="badge" />
+                <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/vocabulary/svg/cc/license_badges/big/by.svg" class="badge" />
                 <?php the_field('license_1_summary'); ?>
 
                 <dl class="conditions-definitions">
@@ -143,7 +143,7 @@ The CC icons, now recognized around the world, represent openness, collaboration
         <li>
             <article class="license">
                 <h3><a href="https://creativecommons.org/licenses/by-sa/4.0/"><?php the_field('license_2_title'); ?></a></h3>
-                <img src="<?php echo get_bloginfo( 'template_directory' ); ?>/vocabulary/svg/cc/license_badges/big/by_sa.svg" class="badge" />
+                <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/vocabulary/svg/cc/license_badges/big/by_sa.svg" class="badge" />
                 <?php the_field('license_2_summary'); ?>
                 <dl class="conditions-definitions">
                     <div>
@@ -162,7 +162,7 @@ The CC icons, now recognized around the world, represent openness, collaboration
         <li>
             <article class="license">
                 <h3><a href="https://creativecommons.org/licenses/by-nd/4.0/"><?php the_field('license_3_title'); ?></a></h3>
-                <img src="<?php echo get_bloginfo( 'template_directory' ); ?>/vocabulary/svg/cc/license_badges/big/by_nd.svg" class="badge" />
+                <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/vocabulary/svg/cc/license_badges/big/by_nd.svg" class="badge" />
                 <?php the_field('license_3_summary'); ?>
                 <dl class="conditions-definitions">
 
@@ -182,7 +182,7 @@ The CC icons, now recognized around the world, represent openness, collaboration
         <li>
             <article class="license">
                 <h3><a href="https://creativecommons.org/licenses/by-nc/4.0/"><?php the_field('license_4_title'); ?></a></h3>
-                <img src="<?php echo get_bloginfo( 'template_directory' ); ?>/vocabulary/svg/cc/license_badges/big/by_nc.svg" class="badge" />
+                <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/vocabulary/svg/cc/license_badges/big/by_nc.svg" class="badge" />
                 <?php the_field('license_4_summary'); ?>
                 <dl class="conditions-definitions">
                     <div>
@@ -206,7 +206,7 @@ The CC icons, now recognized around the world, represent openness, collaboration
         <li>
             <article class="license">
                 <h3><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><?php the_field('license_5_title'); ?></a></h3>
-                <img src="<?php echo get_bloginfo( 'template_directory' ); ?>/vocabulary/svg/cc/license_badges/big/by_nc_sa.svg" class="badge" />
+                <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/vocabulary/svg/cc/license_badges/big/by_nc_sa.svg" class="badge" />
                 <?php the_field('license_5_summary'); ?>
                 <dl class="conditions-definitions">
                     <div>
@@ -233,7 +233,7 @@ The CC icons, now recognized around the world, represent openness, collaboration
         <li>
             <article class="license">
                 <h3><a href="https://creativecommons.org/licenses/by-nc-nd/4.0/"><?php the_field('license_6_title'); ?></a></h3>
-                <img src="<?php echo get_bloginfo( 'template_directory' ); ?>/vocabulary/svg/cc/license_badges/big/by_nc_nd.svg" class="badge" />
+                <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/vocabulary/svg/cc/license_badges/big/by_nc_nd.svg" class="badge" />
                 <?php the_field('license_6_summary'); ?>
                 <dl class="conditions-definitions">
                     <div>
@@ -305,7 +305,7 @@ The CC icons, now recognized around the world, represent openness, collaboration
 <?php if (get_field('more_links_display')) : ?>
 <aside class="more-links">
     <nav>
-        <h2>More Links</h2>
+        <h2><?php esc_html_e( 'More Links', 'vocabulary' ); ?></h2>
         <?php the_field('more_links_content'); ?>
     </nav>
 </aside>

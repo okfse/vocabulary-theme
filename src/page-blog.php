@@ -4,7 +4,7 @@
 
 <header>
 
-<h1>Blog</h1>
+<h1><?php esc_html_e( 'Blog', 'vocabulary' ); ?></h1>
 
 <!-- <span class="byline">by <a href="#">Brigitte Vezina</a>, <a href="#">Ony Anukem</a></span> -->
 
@@ -33,7 +33,7 @@
 
 
 <article class="posts featured">
-<h2>Recent Posts</h2>
+<h2><?php esc_html_e( 'Recent Posts', 'vocabulary' ); ?></h2>
 
 <?php
 $query = new WP_Query(array(
@@ -98,7 +98,7 @@ $query = new WP_Query(array(
 
 <footer>
 
-    <a class="more" href="/blog/archive/">more posts</a>
+    <a class="more" href="/blog/archive/"><?php esc_html_e( 'more posts', 'vocabulary' ); ?></a>
 
     <article class="attribution-list">
 

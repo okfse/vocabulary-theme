@@ -74,7 +74,7 @@
 
 
     <article class="featured">
-        <h2>Focus Areas</h2>
+        <h2><?php esc_html_e( 'Focus Areas', 'vocabulary' ); ?></h2>
         <ul>
         <?php foreach ($groups as $group) : ?>
             <?php
@@ -129,7 +129,7 @@
         <?php $questions = get_field('faqs_listing', $group->ID); ?>
 
         <details open>
-            <summary>Table of Contents</summary>
+            <summary><?php esc_html_e( 'Table of Contents', 'vocabulary' ); ?></summary>
             <ul>
             <?php foreach ($questions as $question) : ?>
                 <li>
@@ -168,7 +168,7 @@
         <?php foreach ($questions as $question) : ?>
 
             <h3 id="<?php echo (str_replace(' ', '-', strtolower($question->post_title))); ?>"><?php echo $question->post_title ?></h3>
-            <a href="<?php echo get_edit_post_link($question->ID); ?>" class="edit" >[edit]</a>
+            <a href="<?php echo get_edit_post_link($question->ID); ?>" class="edit" ><?php esc_html_e( '[edit]', 'vocabulary' ); ?></a>
             <?php echo apply_filters( 'the_content', $question->post_content ); ?>
 
         <?php endforeach; ?>
@@ -191,7 +191,7 @@
         <?php foreach ($questions as $question) : ?>
 
             <h4 id="<?php echo (str_replace(' ', '-', strtolower($question->post_title))); ?>"><?php echo $question->post_title ?></h4>
-            <a href="<?php echo get_edit_post_link($question->ID); ?>" class="edit" >[edit]</a>
+            <a href="<?php echo get_edit_post_link($question->ID); ?>" class="edit" ><?php esc_html_e( '[edit]', 'vocabulary' ); ?></a>
             <?php echo apply_filters( 'the_content', $question->post_content ); ?>
 
 
@@ -225,7 +225,7 @@
 
 </div>
 
-<a href="#main-content-marker" class="return-to-top"><span class="icon-attach fa-angle-up">Return to top</span></a>
+<a href="#main-content-marker" class="return-to-top"><span class="icon-attach fa-angle-up"><?php esc_html_e( 'Return to top', 'vocabulary' ); ?></span></a>
 
 <?php endwhile; // end of the loop. ?>
 

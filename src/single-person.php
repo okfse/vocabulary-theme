@@ -121,7 +121,7 @@ $query = new WP_Query(array(
 
 <?php endif; ?>
 
-<nav class="pagination" aria-label="Pagination">
+<nav class="pagination" aria-label="<?php esc_attr_e( 'Pagination', 'vocabulary' ); ?>">
 <?php
 $big = 999999999; // need an unlikely integer
 
@@ -129,8 +129,8 @@ echo paginate_links( array(
 	'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
 	'format' => '?paged=%#%',
     'mid_size'  => 2,
-    'prev_text' => __( '<', 'textdomain' ),
-    'next_text' => __( '>', 'textdomain' ),
+    'prev_text' => __( '&laquo;', 'vocabulary' ),
+    'next_text' => __( '&raquo;', 'vocabulary' ),
 	'current' => max( 1, get_query_var('paged') ),
     'type' => 'list',
 	'total' => $query->max_num_pages

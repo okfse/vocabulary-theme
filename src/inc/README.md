@@ -1,25 +1,42 @@
 # Advanced Custom Fields
 
-This theme utilizes [Advanced Custom Field](https://www.advancedcustomfields.com/) to create new custom meta fields for various POST types, as well as setup new custom post types.
+This theme uses [Advanced Custom Fields][acf] (ACF, free edition, 6.1 or later)
+to define its custom post types, taxonomies and meta fields. **ACF is not
+optional**: without it none of the theme's content types register.
 
-The relevant ACF configuration data is included via the `acf.php` file, and loaded automatically via the theme's `functions.php` file.
+[acf]: https://www.advancedcustomfields.com/
 
-To modify these fields later, do not edit the acf.php file directly. The best method is through the ACF GUI editor in the WP installation.
 
-1. disable the following line in `functions.php` (comment it out):
-```
-    // code here
-```
-2. verify the WP docker environment for this repository is running, see main `README.md` for details
-3. navigate to the [ACF]->[Tools] menu
-4. from this menu you can import the most recent `acf-export-DATE-HERE.json` file
-5. once imported, the fields, custom post types, etc. and their relevant configuration options are available through the relevant [ACF] sub-menus.
-6. once configuration is set, go back to the [ACF]->[Tools] menu
-7. peform a PHP export, and copy the code into the `acf.php` file
-8. peform an XMl .json export, and copy the file into the `/src/inc/` directory
-9. enable the following line, previously commented out in `functions.php`
-```
-    // code here
-```
-10. Commit changes
+## How the configuration is loaded
 
+The live configuration is the JSON in [`acf-json/`](acf-json/). ACF's local JSON
+feature reads it directly; the theme only redirects ACF's save and load paths to
+this directory, in `functions.php`:
+
+```php
+add_filter( 'acf/settings/save_json', 'vocab_acf_json_save_point' );
+add_filter( 'acf/settings/load_json', 'vocab_acf_json_load_point' );
+```
+
+Both filters use `get_stylesheet_directory()`. If you ever run this theme as a
+parent theme with a child theme active, override them to use
+`get_template_directory()` or the field groups will not be found.
+
+Nothing includes [`acf-backups/`](acf-backups/) — it is a historical snapshot
+kept for reference only. (Note that `acf-backups/acf.php` has no opening `<?php`
+tag, so it must not be `require`d.)
+
+
+## Editing fields
+
+Edit field groups, post types and taxonomies through the ACF admin UI. ACF
+writes the changes straight back into `acf-json/`, so the workflow is:
+
+1. Start the development environment (see the main [`README.md`](../../README.md)).
+2. Make the change under **ACF → Field Groups** / **Post Types** / **Taxonomies**.
+3. Confirm the corresponding file in `acf-json/` changed on disk.
+4. Commit the changed JSON.
+
+On a server, a change made in the admin UI only persists if `acf-json/` is
+writable. It normally is not, so treat production field groups as read-only and
+deploy changes as part of a theme release.

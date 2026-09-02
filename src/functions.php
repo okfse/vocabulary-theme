@@ -1,5 +1,11 @@
 <?php
 
+// THEME INCLUDES
+require_once get_template_directory() . '/inc/site-config.php';
+require_once get_template_directory() . '/inc/acf-compat.php';
+require_once get_template_directory() . '/inc/i18n.php';
+require_once get_template_directory() . '/inc/nav.php';
+
 // SECURITY
 // remove output of wordpress version in source
 remove_action('wp_head', 'wp_generator');
@@ -22,14 +28,18 @@ add_action('admin_menu', function () {
 });
 
 // remove GUI file editor
-define('DISALLOW_FILE_EDIT', TRUE);
+if ( ! defined('DISALLOW_FILE_EDIT') ) {
+  define('DISALLOW_FILE_EDIT', TRUE);
+}
 
 // GENERAL WP
 // add menu locations
 function register_vocabulary_menus() {
   register_nav_menus(
     array(
-      'primary-menu' => __( 'Primary Navigation' ),
+      'primary-menu' => __( 'Primary Navigation', 'vocabulary' ),
+      'footer-menu'  => __( 'Footer Menu', 'vocabulary' ),
+      'social-menu'  => __( 'Social Menu', 'vocabulary' ),
      )
    );
  }
@@ -38,11 +48,20 @@ function register_vocabulary_menus() {
 //  add support for featured image on posts
  add_theme_support( 'post-thumbnails' );
 
+// let WordPress render <title>; the templates previously used wp_title(), which
+// needed an SEO plugin to produce anything useful
+ add_theme_support( 'title-tag' );
+
  // add custom image sizes
 // add_image_size( 'square', 300, 300, true ); // Hard crop
 
-update_option( 'thumbnail_size_w', 300 );
-update_option( 'thumbnail_size_h', 300 );
+// set the thumbnail size the theme's templates assume, once, on activation
+// (this used to run on every request, costing a DB write per page load)
+function vocab_set_thumbnail_size() {
+  update_option( 'thumbnail_size_w', 300 );
+  update_option( 'thumbnail_size_h', 300 );
+}
+add_action( 'after_switch_theme', 'vocab_set_thumbnail_size' );
 
 
 //  Thanks to Chris Coyier & Caspar Hübinger
@@ -99,48 +118,13 @@ function exclude_highlights_id ( $args, $field, $post ) {
   return $args;
 }
 
-function custom_sidebar_menu_fallback_full() {
-  $homepage = get_page_by_path( 'homepage' );
-  $homepageID = $homepage->ID;
-
-  $output = wp_list_pages( array(
-    'echo'     => 0,
-    'exclude'  => $homepageID,
-    'depth'    => 1,
-     'title_li' => ''
-  ) );
-
-  if ( is_page() ) {
-    $page = $post->ID;
-    if ( $post->post_parent ) {
-      $page = $post->post_parent;
-    }
-
-    $children = wp_list_pages( array(
-      'echo'     => 0,
-      'exclude'  => $homepageID,
-      'child_of' => $page,
-      'title_li' => ''
-    ) );
-
-    if ( $children ) {
-      $output = wp_list_pages( array(
-        'echo' => 0,
-        'exclude'  => $homepageID,
-        'child_of' => $page,
-        'title_li' => ''
-      ) );
-    }
-  }
-  echo '<ul class="default">';
-  echo $output;
-  echo '</ul>';
-}
-
-
 function custom_sidebar_menu_fallback() {
 
 global $post;
+
+if ( ! $post ) {
+  return;
+}
 
 if ( $post->post_parent ) {
   $ancestors = get_post_ancestors( $post->ID );
@@ -168,6 +152,8 @@ echo '</ul>';
 
 function find_sidebar_menu($post_id) {
 
+  $menu = array( 'title' => '', 'output' => '' );
+  $menu_type = '';
 
   if( get_field('set_menu', $post_id) ) {
     $menu_type = get_field('set_menu', $post_id);
@@ -176,10 +162,8 @@ function find_sidebar_menu($post_id) {
   // if menu set to default, fallback
   if ($menu_type == 'default') {
 
-      $menu['title'] = 'Related';
+      $menu['title'] = __( 'Related', 'vocabulary' );
       $menu['output'] = 'trigger_fallback';
-
-      //return 'trigger_fallback';
 
       return $menu;
 
@@ -199,14 +183,13 @@ function find_sidebar_menu($post_id) {
       $menu['title'] = get_field('menu_title', $post_id);
       $menu['output'] = get_field('display_menu', $post_id);
 
-      //return get_field('display_menu', $post_id);
-
       return $menu;
 
     }
 
   }
 
+  return $menu;
 
 }
 
@@ -297,7 +280,7 @@ function add_filtered() {
 // alter query params for loop on events-archive
 function customize_event_archive_display ( $query ) {
 
-        $today = date('Ymd', strtotime("now"));
+        $today = current_time('Ymd');
 
         global $wp;
         if (array_key_exists('filtered', $wp->query_vars) && isset($wp->query_vars['filtered'])) {
@@ -342,28 +325,26 @@ add_filter( 'get_edit_post_link', 'remove_get_edit_post_link' );
 // add custom shortcode to do dynamic loop lists, with templated display
 function shortcode_loop($atts = '') {
 
+  $atts = shortcode_atts(
+    array(
+      'category' => '',
+      'tags'     => '',
+      'limit'    => 5,
+      'sort'     => 'ASC',
+      'sortby'   => 'date',
+      'type'     => 'post',
+      'template' => '',
+    ),
+    (array) $atts,
+    'list'
+  );
+
   $cat = sanitize_text_field($atts['category']);
   $tag = sanitize_text_field($atts['tags']);
-
   $limit = sanitize_text_field($atts['limit']);
-  if ($atts['limit'] == '') {
-    $limit = 5;
-  }
-
   $sort = sanitize_text_field($atts['sort']);
-  if ($atts['sort'] == '') {
-    $sort = 'ASC';
-  }
-
   $sortby = sanitize_text_field($atts['sortby']);
-  if ($atts['sortby'] == '') {
-    $sortby = 'date';
-  }
-
   $type = sanitize_text_field($atts['type']);
-  if ($atts['type'] == '') {
-    $type = 'post';
-  }
 
   $query = new WP_Query(array(
       'category_name' => $cat,
@@ -414,7 +395,7 @@ add_shortcode('stats', 'stats');
 
 function stat_item($atts) {
 
-  // $output = '<li class="stat">'.sanitize_text_field($atts['num']).'</li>';
+  $atts = shortcode_atts( array( 'num' => '', 'description' => '' ), (array) $atts, 'stat' );
 
   $output = '<li><article class="datapoint"><p><span class="stat">'.sanitize_text_field($atts['num']).'</span>'.sanitize_text_field($atts['description']).'</p></article></li>';
 
@@ -433,7 +414,9 @@ add_shortcode('button', 'appearAsButton');
 
 
 function topicSummary( $atts, $content = null ) {
-	return '<article class="topic-summary focus-area"><div><h2>' . sanitize_text_field($atts['heading']) . '</h2><p>'. $atts['description'] .'</p></div>' . $content . '</article>';
+	$atts = shortcode_atts( array( 'heading' => '', 'description' => '' ), (array) $atts, 'topic-summary' );
+
+	return '<article class="topic-summary focus-area"><div><h2>' . sanitize_text_field($atts['heading']) . '</h2><p>'. wp_kses_post($atts['description']) .'</p></div>' . $content . '</article>';
 }
 
 add_shortcode('topic-summary', 'topicSummary');

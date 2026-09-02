@@ -25,9 +25,9 @@
 ?>
 
     <nav class="filter-menu" aria-labelledby="categories">
-        <h2 id="categories">Categories</h2>
+        <h2 id="categories"><?php esc_html_e( 'Categories', 'vocabulary' ); ?></h2>
         <ul>
-            <li class="current"><a href="/blog/archive/">All posts</a></li>
+            <li class="current"><a href="/blog/archive/"><?php esc_html_e( 'All posts', 'vocabulary' ); ?></a></li>
         <?php foreach($categories as $category): ?>
                 <?php
                     $category_link = get_term_link( $category );
@@ -40,7 +40,7 @@
     </nav>
 
     <!-- <nav class="">
-        <h2>Related Links</h2>
+        <h2><?php esc_html_e( 'Related Links', 'vocabulary' ); ?></h2>
         <ul>
             <li><a href="#">Another place</a></li>
             <li class="current"><a href="#">Law License Blog</a></li>
@@ -117,7 +117,7 @@ $query = new WP_Query(array(
 </article>
 
 
-<nav class="pagination" aria-label="Pagination">
+<nav class="pagination" aria-label="<?php esc_attr_e( 'Pagination', 'vocabulary' ); ?>">
 <?php
 $big = 999999999; // need an unlikely integer
 
@@ -125,8 +125,8 @@ echo paginate_links( array(
 	'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
 	'format' => '?paged=%#%',
     'mid_size'  => 2,
-    'prev_text' => __( '<', 'textdomain' ),
-    'next_text' => __( '>', 'textdomain' ),
+    'prev_text' => __( '&laquo;', 'vocabulary' ),
+    'next_text' => __( '&raquo;', 'vocabulary' ),
 	'current' => max( 1, get_query_var('paged') ),
     'type' => 'list',
 	'total' => $query->max_num_pages

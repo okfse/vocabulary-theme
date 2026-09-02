@@ -3,7 +3,7 @@
 <main>
 
 <header>
-<h1>Our Team</h1>
+<h1><?php esc_html_e( 'Our Team', 'vocabulary' ); ?></h1>
 
 <?php
      $introduction = get_field('introduction');

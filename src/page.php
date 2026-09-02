@@ -23,15 +23,19 @@
     <?php else : ?>
 
     <div class="default-image">
-    <img src="https://creativecommons.org/wp-content/uploads/2025/05/moon-3.jpg" class="photo" />
-    <img src="<?php echo get_bloginfo( 'template_directory' ); ?>/vocabulary/svg/blob4.svg" class="shape1" />
-    <img src="<?php echo get_bloginfo( 'template_directory' ); ?>/vocabulary/svg/blob3.svg" class="shape2" />
-    <img src="<?php echo get_bloginfo( 'template_directory' ); ?>/vocabulary/svg/repeat_c.svg" class="shape3" />
+    <?php if ( vocab_site( 'default_header_image' ) ) : ?>
+    <img src="<?php echo esc_url( vocab_site( 'default_header_image' ) ); ?>" alt="<?php echo esc_attr( vocab_site( 'default_header_alt' ) ); ?>" class="photo" />
+    <?php endif; ?>
+    <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/vocabulary/svg/blob4.svg" alt="" class="shape1" />
+    <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/vocabulary/svg/blob3.svg" alt="" class="shape2" />
+    <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/vocabulary/svg/repeat_c.svg" alt="" class="shape3" />
     </div>
 
+    <?php if ( vocab_site( 'default_header_caption' ) ) : ?>
     <figcaption>
-        <p>Melies color Voyage dans la lune, by <a href="https://en.wikipedia.org/wiki/Georges_M%C3%A9li%C3%A8s" target="_blank" rel="noopener">Georges Méliès</a>, Public Domain.</p>
+        <p><?php echo wp_kses_post( vocab_site( 'default_header_caption' ) ); ?></p>
     </figcaption>
+    <?php endif; ?>
     <?php endif; ?>
 </figure>
 </header>
@@ -67,7 +71,7 @@
 <?php if (get_field('more_links_display')) : ?>
 <aside class="more-links">
     <nav>
-        <h2>More Links</h2>
+        <h2><?php esc_html_e( 'More Links', 'vocabulary' ); ?></h2>
         <?php the_field('more_links_content'); ?>
     </nav>
 </aside>

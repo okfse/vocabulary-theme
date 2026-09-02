@@ -1,7 +1,57 @@
-# vocabulary-theme
+# vocabulary-theme — Creative Commons Sverige
 
 WordPress Theme implementation of the Vocabulary design system
 ([creativecommons/vocabulary](https://github.com/creativecommons/vocabulary)).
+
+This is the Creative Commons Sverige fork of
+[creativecommons/vocabulary-theme][upstream], used on `creativecommons.se`.
+
+[upstream]: https://github.com/creativecommons/vocabulary-theme
+
+
+## Documentation
+
+- **[docs/INSTALL.md](docs/INSTALL.md)** — installing the theme on a site, the
+  plugins it requires, and the full post-activation checklist.
+- **[docs/RELEASE.md](docs/RELEASE.md)** — cutting a release and building the
+  installable archive.
+- [src/inc/README.md](src/inc/README.md) — how the ACF configuration is loaded.
+
+
+## Branches
+
+| Branch | Purpose |
+|---|---|
+| `main` | Clean mirror of `upstream/main`; not edited here |
+| `se-main` | Creative Commons Sverige build — all work lands here |
+| `prep-*` | Throwaway release-prep branches, deleted after each release |
+
+```shell
+git remote add upstream https://github.com/creativecommons/vocabulary-theme.git
+git fetch upstream
+git checkout se-main
+git merge upstream/main
+```
+
+
+## Differences from upstream
+
+- Advanced Custom Fields is no longer an unguarded hard dependency: missing ACF
+  degrades the site and shows an admin notice instead of a fatal error
+  (`src/inc/acf-compat.php`).
+- The header, footer and social navigation are managed in **Appearance → Menus**
+  instead of being hardcoded, via a walker that emits Vocabulary's submenu
+  toggle buttons (`src/inc/nav.php`).
+- UI strings are translatable, with a Swedish catalogue in `src/languages/`
+  (`src/inc/i18n.php`).
+- Footer contact details, newsletter link, site licence and the fallback header
+  image are per-site settings (`src/inc/site-config.php`) instead of
+  creativecommons.org values hardcoded in the templates.
+- `<title>` comes from core's `title-tag` support rather than `wp_title()`, so
+  no SEO plugin is required.
+- Release archives use a stable theme slug (`scripts/build-se-zip.sh`).
+
+Changes that are not Sweden-specific are worth contributing back upstream.
 
 
 ## Code of conduct
@@ -56,7 +106,7 @@ The shortcode operates as follows:
 
 `````
 
-[list cat="category" tag="tag,tag,tag" type="post" limit="10" sort="ASC" sortby="date" template="blog_posts"]
+[list category="category" tags="tag,tag,tag" type="post" limit="10" sort="ASC" sortby="date" template="blog_posts"]
 
 `````
 
@@ -70,7 +120,7 @@ The most minimal usecase:
 The defaults are as follows:
 
 * category:
-* tag:
+* tags:
 * type: post
 * limit: 5
 * sort: ASC
@@ -79,7 +129,7 @@ The defaults are as follows:
 
 The template can be set to a custom partial, loaded from the `shortcode-templates` folder, if no template is set, it will instead display as the default template (a bulleted list of links)
 
-The arguments accept the counterpart values from the subset of [args in the WPQuery Class](https://developer.wordpress.org/reference/classes/wp_query/). This means that the `category` and `tag` arguments can be a single or comma separate list of values. `sort` maps to `order` and `sortby` maps to `orderby` for some beneficial UX for endusers to be more clear in purpose.
+The arguments accept the counterpart values from the subset of [args in the WPQuery Class](https://developer.wordpress.org/reference/classes/wp_query/). This means that the `category` and `tags` arguments can be a single or comma separate list of values. `sort` maps to `order` and `sortby` maps to `orderby` for some beneficial UX for endusers to be more clear in purpose.
 
 ### Docker containers
 
@@ -95,7 +145,8 @@ containers:
 
 ### Releases
 
-See [scripts/README.md](scripts/README.md).
+See [docs/RELEASE.md](docs/RELEASE.md) for the full procedure and
+[scripts/README.md](scripts/README.md) for what each script does.
 
 
 ## Cache warning

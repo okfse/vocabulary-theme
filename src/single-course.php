@@ -123,7 +123,7 @@ $aunts = get_children($grandparent->ID);
 
 <?php if ($contextType == 'course-page') : ?>
 <details>
-    <summary>Licenses & Attribution</summary>
+    <summary><?php esc_html_e( 'Licenses & Attribution', 'vocabulary' ); ?></summary>
 
     <ul>
         <li><strong>Provided by</strong>: Creative Commons. <strong>License</strong>: <em><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">CC BY: Attribution</a></em></li>
@@ -147,6 +147,11 @@ if (has_post_parent()) {
         }
     }
 }
+
+// default these before the fallback scans below read them
+$previousLink = isset($previousLink) ? $previousLink : '';
+$nextLink = isset($nextLink) ? $nextLink : '';
+
 
 if ($previousLink == '') {
 
@@ -193,11 +198,11 @@ if ($nextLink == '' && $contextType == 'course-page') {
 <nav class="pagination" aria-label="Pagination">
     <ul>
         <?php if ($previousLink != '') : ?>
-        <li><a href="<?php echo $previousLink; ?>">Previous</a></li>
+        <li><a href="<?php echo $previousLink; ?>"><?php esc_html_e( 'Previous', 'vocabulary' ); ?></a></li>
         <?php endif; ?>
 
         <?php if ($nextLink != '') : ?>
-        <li><a href="<?php echo $nextLink; ?>">Next</a></li>
+        <li><a href="<?php echo $nextLink; ?>"><?php esc_html_e( 'Next', 'vocabulary' ); ?></a></li>
         <?php endif; ?>
     </ul>
 </nav>

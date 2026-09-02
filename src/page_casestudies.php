@@ -61,7 +61,7 @@
 
             <?php the_excerpt(); ?>
 
-            <a href="<?php echo the_permalink(); ?>">Learn More</a>
+            <a href="<?php echo the_permalink(); ?>"><?php esc_html_e( 'Learn More', 'vocabulary' ); ?></a>
             </div>
 
             <figure>
@@ -88,7 +88,7 @@
     </ul>
 
     <footer>
-        <a class="more" href="/case-studies-archive">more case studies</a>
+        <a class="more" href="/case-studies-archive"><?php esc_html_e( 'more case studies', 'vocabulary' ); ?></a>
     </footer>
 
 

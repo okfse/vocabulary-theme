@@ -411,10 +411,10 @@
         <h3>CC0 1.0</h3>
         <span class="tool-icons">
             <svg>
-                <use href="<?php echo get_bloginfo( 'template_directory' ); ?>/vocabulary/svg/cc/icons/cc-icons.svg#cc-logo"></use>
+                <use href="<?php echo esc_url( get_template_directory_uri() ); ?>/vocabulary/svg/cc/icons/cc-icons.svg#cc-logo"></use>
             </svg>
             <svg>
-                <use href="<?php echo get_bloginfo( 'template_directory' ); ?>/vocabulary/svg/cc/icons/cc-icons.svg#cc-zero"></use>
+                <use href="<?php echo esc_url( get_template_directory_uri() ); ?>/vocabulary/svg/cc/icons/cc-icons.svg#cc-zero"></use>
             </svg>
         </span>
         <h4>CC0 1.0 Universal</h4>
@@ -439,10 +439,10 @@
         <h3>CC-BY 4.0</h3>
         <span class="tool-icons">
             <svg>
-                <use href="<?php echo get_bloginfo( 'template_directory' ); ?>/vocabulary/svg/cc/icons/cc-icons.svg#cc-logo"></use>
+                <use href="<?php echo esc_url( get_template_directory_uri() ); ?>/vocabulary/svg/cc/icons/cc-icons.svg#cc-logo"></use>
             </svg>
             <svg>
-                <use href="<?php echo get_bloginfo( 'template_directory' ); ?>/vocabulary/svg/cc/icons/cc-icons.svg#cc-by"></use>
+                <use href="<?php echo esc_url( get_template_directory_uri() ); ?>/vocabulary/svg/cc/icons/cc-icons.svg#cc-by"></use>
             </svg>
         </span>
         <h4>Creative Commons Attribution 4.0 International</h4>
@@ -467,13 +467,13 @@
         <h3>CC BY-SA 4.0</h3>
         <span class="tool-icons">
             <svg>
-                <use href="<?php echo get_bloginfo( 'template_directory' ); ?>/vocabulary/svg/cc/icons/cc-icons.svg#cc-logo"></use>
+                <use href="<?php echo esc_url( get_template_directory_uri() ); ?>/vocabulary/svg/cc/icons/cc-icons.svg#cc-logo"></use>
             </svg>
             <svg>
-                <use href="<?php echo get_bloginfo( 'template_directory' ); ?>/vocabulary/svg/cc/icons/cc-icons.svg#cc-by"></use>
+                <use href="<?php echo esc_url( get_template_directory_uri() ); ?>/vocabulary/svg/cc/icons/cc-icons.svg#cc-by"></use>
             </svg>
             <svg>
-                <use href="<?php echo get_bloginfo( 'template_directory' ); ?>/vocabulary/svg/cc/icons/cc-icons.svg#cc-sa"></use>
+                <use href="<?php echo esc_url( get_template_directory_uri() ); ?>/vocabulary/svg/cc/icons/cc-icons.svg#cc-sa"></use>
             </svg>
         </span>
         <h4>Creative Commons Attribution-ShareAlike 4.0 International</h4>
@@ -503,13 +503,13 @@
         <h3>CC BY-ND 4.0</h3>
         <span class="tool-icons">
             <svg>
-                <use href="<?php echo get_bloginfo( 'template_directory' ); ?>/vocabulary/svg/cc/icons/cc-icons.svg#cc-logo"></use>
+                <use href="<?php echo esc_url( get_template_directory_uri() ); ?>/vocabulary/svg/cc/icons/cc-icons.svg#cc-logo"></use>
             </svg>
             <svg>
-                <use href="<?php echo get_bloginfo( 'template_directory' ); ?>/vocabulary/svg/cc/icons/cc-icons.svg#cc-by"></use>
+                <use href="<?php echo esc_url( get_template_directory_uri() ); ?>/vocabulary/svg/cc/icons/cc-icons.svg#cc-by"></use>
             </svg>
             <svg>
-                <use href="<?php echo get_bloginfo( 'template_directory' ); ?>/vocabulary/svg/cc/icons/cc-icons.svg#cc-nd"></use>
+                <use href="<?php echo esc_url( get_template_directory_uri() ); ?>/vocabulary/svg/cc/icons/cc-icons.svg#cc-nd"></use>
             </svg>
         </span>
         <h4>Creative Commons Attribution-NoDerivatives 4.0 International</h4>
@@ -540,13 +540,13 @@
         <h3>CC BY-NC 4.0</h3>
         <span class="tool-icons">
             <svg>
-                <use href="<?php echo get_bloginfo( 'template_directory' ); ?>/vocabulary/svg/cc/icons/cc-icons.svg#cc-logo"></use>
+                <use href="<?php echo esc_url( get_template_directory_uri() ); ?>/vocabulary/svg/cc/icons/cc-icons.svg#cc-logo"></use>
             </svg>
             <svg>
-                <use href="<?php echo get_bloginfo( 'template_directory' ); ?>/vocabulary/svg/cc/icons/cc-icons.svg#cc-by"></use>
+                <use href="<?php echo esc_url( get_template_directory_uri() ); ?>/vocabulary/svg/cc/icons/cc-icons.svg#cc-by"></use>
             </svg>
             <svg>
-                <use href="<?php echo get_bloginfo( 'template_directory' ); ?>/vocabulary/svg/cc/icons/cc-icons.svg#cc-nc"></use>
+                <use href="<?php echo esc_url( get_template_directory_uri() ); ?>/vocabulary/svg/cc/icons/cc-icons.svg#cc-nc"></use>
             </svg>
         </span>
         <h4>Creative Commons Attribution-NonCommercial 4.0 International</h4>
@@ -581,16 +581,16 @@
         <h3>CC BY-NC-SA 4.0</h3>
         <span class="tool-icons">
             <svg>
-                <use href="<?php echo get_bloginfo( 'template_directory' ); ?>/ocabulary/svg/cc/icons/cc-icons.svg#cc-logo"></use>
+                <use href="<?php echo esc_url( get_template_directory_uri() ); ?>/ocabulary/svg/cc/icons/cc-icons.svg#cc-logo"></use>
             </svg>
             <svg>
-                <use href="<?php echo get_bloginfo( 'template_directory' ); ?>/vocabulary/svg/cc/icons/cc-icons.svg#cc-by"></use>
+                <use href="<?php echo esc_url( get_template_directory_uri() ); ?>/vocabulary/svg/cc/icons/cc-icons.svg#cc-by"></use>
             </svg>
             <svg>
-                <use href="<?php echo get_bloginfo( 'template_directory' ); ?>/vocabulary/svg/cc/icons/cc-icons.svg#cc-nc"></use>
+                <use href="<?php echo esc_url( get_template_directory_uri() ); ?>/vocabulary/svg/cc/icons/cc-icons.svg#cc-nc"></use>
             </svg>
             <svg>
-                <use href="<?php echo get_bloginfo( 'template_directory' ); ?>/vocabulary/svg/cc/icons/cc-icons.svg#cc-sa"></use>
+                <use href="<?php echo esc_url( get_template_directory_uri() ); ?>/vocabulary/svg/cc/icons/cc-icons.svg#cc-sa"></use>
             </svg>
         </span>
         <h4>Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International</h4>
@@ -628,16 +628,16 @@
         <h3>CC BY-NC-ND 4.0</h3>
         <span class="tool-icons">
             <svg>
-                <use href="<?php echo get_bloginfo( 'template_directory' ); ?>/vocabulary/svg/cc/icons/cc-icons.svg#cc-logo"></use>
+                <use href="<?php echo esc_url( get_template_directory_uri() ); ?>/vocabulary/svg/cc/icons/cc-icons.svg#cc-logo"></use>
             </svg>
             <svg>
-                <use href="<?php echo get_bloginfo( 'template_directory' ); ?>/vocabulary/svg/cc/icons/cc-icons.svg#cc-by"></use>
+                <use href="<?php echo esc_url( get_template_directory_uri() ); ?>/vocabulary/svg/cc/icons/cc-icons.svg#cc-by"></use>
             </svg>
             <svg>
-                <use href="<?php echo get_bloginfo( 'template_directory' ); ?>/vocabulary/svg/cc/icons/cc-icons.svg#cc-nc"></use>
+                <use href="<?php echo esc_url( get_template_directory_uri() ); ?>/vocabulary/svg/cc/icons/cc-icons.svg#cc-nc"></use>
             </svg>
             <svg>
-                <use href="<?php echo get_bloginfo( 'template_directory' ); ?>/vocabulary/svg/cc/icons/cc-icons.svg#cc-nd"></use>
+                <use href="<?php echo esc_url( get_template_directory_uri() ); ?>/vocabulary/svg/cc/icons/cc-icons.svg#cc-nd"></use>
             </svg>
         </span>
         <h4>Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International</h4>
@@ -678,6 +678,6 @@
     <p>This work is {{typeAsVerb}} {{toolName}}. To view a copy of this {{type}}, visit {{toolURL}}</p>
 </template>
 
-<script src="<?php echo get_bloginfo( 'template_directory' ); ?>/chooser/js/chooser.js"></script>
+<script src="<?php echo esc_url( get_template_directory_uri() ); ?>/chooser/js/chooser.js"></script>
 
 <?php get_footer(); ?>

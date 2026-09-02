@@ -23,12 +23,12 @@ then
     {
         echo
         echo -en "${RED}missing VERSION argument ("
-        echo -n 'format: vMAJOR.MINOR.PATCH,'
-        echo -e " example: v0.1.0)${NC}"
+        echo -n 'format: vMAJOR.MINOR.PATCH[-se.N],'
+        echo -e " example: v2.8-se.1)${NC}"
         echo
     } 1>&2
     exit 1
-elif [[ ! "${VERSION}" =~ ^v[0-9]+[.][0-9]+([.][0-9]+)?$ ]]
+elif [[ ! "${VERSION}" =~ ^v[0-9]+[.][0-9]+([.][0-9]+)?(-se[.][0-9]+)?$ ]]
 then
      {
         echo
@@ -48,6 +48,7 @@ else
     rm -fr -- \
         ./.devcontainer \
         ./.github \
+        ./docs \
         ./src \
         ./docker \
         ./scripts \

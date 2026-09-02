@@ -84,7 +84,7 @@
 
 <article class="posts">
 
-    <h2>Related Posts</h2>
+    <h2><?php esc_html_e( 'Related Posts', 'vocabulary' ); ?></h2>
 
     <details class="attribution">
     <summary>Attribution <span class="icon icon-replace fa-angle-up"></span></summary>

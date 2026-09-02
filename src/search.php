@@ -4,16 +4,16 @@
 
 <header>
 
-<h1>Search</h1>
+<h1><?php esc_html_e( 'Search', 'vocabulary' ); ?></h1>
 
 <!-- <span class="byline">by <a href="#">Brigitte Vezina</a>, <a href="#">Ony Anukem</a></span> -->
 
 <article class="search-form">
     <form role="search" method="get" class="search-form" action="<?php echo esc_url( home_url( '/' ) ); ?>">
 
-        <input type="search" class="search-field" placeholder="Search for..." value="" name="s" title="Search">
+        <input type="search" class="search-field" placeholder="<?php esc_attr_e( 'Search for&hellip;', 'vocabulary' ); ?>" value="<?php echo esc_attr( get_search_query() ); ?>" name="s" title="<?php esc_attr_e( 'Search', 'vocabulary' ); ?>">
 
-        <button type="submit" value="Search">Search</button>
+        <button type="submit"><?php esc_html_e( 'Search', 'vocabulary' ); ?></button>
     </form>
 </article>
 
@@ -122,7 +122,7 @@
 
     <?php endwhile; // end of the loop. ?>
 
-<nav class="pagination" aria-label="Pagination">
+<nav class="pagination" aria-label="<?php esc_attr_e( 'Pagination', 'vocabulary' ); ?>">
 <?php
 $big = 999999999; // need an unlikely integer
 
@@ -130,8 +130,8 @@ echo paginate_links( array(
 	'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
 	'format' => '?paged=%#%',
     'mid_size'  => 2,
-    'prev_text' => __( '<', 'textdomain' ),
-    'next_text' => __( '>', 'textdomain' ),
+    'prev_text' => __( '&laquo;', 'vocabulary' ),
+    'next_text' => __( '&raquo;', 'vocabulary' ),
 	'current' => max( 1, get_query_var('paged') ),
     'type' => 'list',
 	'total' => $wp_query->max_num_pages

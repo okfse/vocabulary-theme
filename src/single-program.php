@@ -75,7 +75,7 @@ if ( get_field('nested_programs') ) {
     $children = get_field('nested_programs');
 ?>
 <article class="projects">
-    <h2>On-going initiatives</h2>
+    <h2><?php esc_html_e( 'On-going initiatives', 'vocabulary' ); ?></h2>
     <p><?php the_field('nested_programs_lead_in_copy'); ?></p>
     <ul>
         <?php
@@ -117,7 +117,7 @@ $query = new WP_Query(array(
 <?php if ( $query->have_posts() ) : ?>
 
 <article class="posts related">
-    <h2>Related posts</h2>
+    <h2><?php esc_html_e( 'Related posts', 'vocabulary' ); ?></h2>
 
     <ul>
 

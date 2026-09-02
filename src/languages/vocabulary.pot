@@ -1,0 +1,366 @@
+# Copyright (C) 2026 the Creative Commons team; possumbilities, Timid Robot; Creative Commons Sverige
+# This file is distributed under the MIT License.
+msgid ""
+msgstr ""
+"Project-Id-Version: CC Vocabulary Theme (Sverige) 2.8-se.1\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/theme/theme\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-09-02T16:32:21+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.12.0\n"
+"X-Domain: vocabulary\n"
+
+#. Theme Name of the theme
+#: style.css
+msgid "CC Vocabulary Theme (Sverige)"
+msgstr ""
+
+#. Description of the theme
+#: style.css
+msgid "Creative Commons Sverige build of the Vocabulary Design System theme. Adds admin-editable navigation, Swedish translations, and per-site footer configuration on top of creativecommons/vocabulary-theme."
+msgstr ""
+
+#. Author of the theme
+#: style.css
+msgid "the Creative Commons team; possumbilities, Timid Robot; Creative Commons Sverige"
+msgstr ""
+
+#. Author URI of the theme
+#: style.css
+msgid "https://creativecommons.se/"
+msgstr ""
+
+#: 404.php:7
+msgid "Page not found"
+msgstr ""
+
+#: 404.php:13
+msgid "Sorry, we could not find the page you were looking for."
+msgstr ""
+
+#: 404.php:15
+msgid "Go to the front page"
+msgstr ""
+
+#: archive-event.php:40
+#: archive.php:51
+#: page-archive.php:43
+msgid "Related Links"
+msgstr ""
+
+#: archive-event.php:42
+msgid "All"
+msgstr ""
+
+#: archive-event.php:43
+msgid "Upcoming"
+msgstr ""
+
+#: archive-event.php:44
+msgid "Past"
+msgstr ""
+
+#: archive-event.php:113
+#: archive.php:119
+#: page-archive.php:120
+#: search.php:125
+#: single-person.php:124
+msgid "Pagination"
+msgstr ""
+
+#: archive-event.php:121
+#: archive.php:127
+#: page-archive.php:128
+#: search.php:133
+#: single-person.php:132
+msgid "&laquo;"
+msgstr ""
+
+#: archive-event.php:122
+#: archive.php:128
+#: page-archive.php:129
+#: search.php:134
+#: single-person.php:133
+msgid "&raquo;"
+msgstr ""
+
+#: archive.php:32
+#: page-archive.php:28
+msgid "Categories"
+msgstr ""
+
+#: archive.php:34
+#: page-archive.php:30
+msgid "All posts"
+msgstr ""
+
+#: footer.php:6
+#: footer.php:7
+#: search.php:7
+#: search.php:14
+#: search.php:16
+msgid "Search"
+msgstr ""
+
+#: footer.php:9
+msgid "Submit"
+msgstr ""
+
+#: footer.php:13
+msgid "Footer menu"
+msgstr ""
+
+#: footer.php:16
+msgid "Contact Us"
+msgstr ""
+
+#: footer.php:25
+msgid "Social menu"
+msgstr ""
+
+#: footer.php:30
+msgid "Subscribe to our newsletter"
+msgstr ""
+
+#: footer.php:31
+msgid "Subscribe"
+msgstr ""
+
+#. translators: 1: link to the site's licensing policy, 2: link to the licence deed.
+#: footer.php:46
+#, php-format
+msgid "Except where otherwise %1$s, content on this site is licensed under a %2$s."
+msgstr ""
+
+#: footer.php:50
+msgid "noted"
+msgstr ""
+
+#: footer.php:55
+msgid "Creative Commons Attribution 4.0 International license"
+msgstr ""
+
+#. translators: %s: link to fontawesome.com.
+#: footer.php:62
+#, php-format
+msgid "Icons by %s."
+msgstr ""
+
+#: functions.php:40
+msgid "Primary Navigation"
+msgstr ""
+
+#: functions.php:41
+msgid "Footer Menu"
+msgstr ""
+
+#: functions.php:42
+msgid "Social Menu"
+msgstr ""
+
+#: functions.php:165
+msgid "Related"
+msgstr ""
+
+#: header-course_embed.php:18
+#: header.php:18
+msgid "Skip to content"
+msgstr ""
+
+#: header.php:26
+msgid "Menu"
+msgstr ""
+
+#: header.php:28
+msgid "Primary navigation"
+msgstr ""
+
+#: inc/acf-compat.php:85
+msgid "CC Vocabulary Theme:"
+msgstr ""
+
+#: inc/acf-compat.php:86
+msgid "Advanced Custom Fields (version 6.1 or later) must be installed and activated. Without it none of the theme's post types, taxonomies or fields are registered and the site renders incomplete content."
+msgstr ""
+
+#: inc/nav.php:127
+msgid "Expand"
+msgstr ""
+
+#: page-blog.php:7
+msgid "Blog"
+msgstr ""
+
+#: page-blog.php:36
+#: page_blog.php:136
+msgid "Recent Posts"
+msgstr ""
+
+#: page-blog.php:101
+#: page_blog.php:226
+#: page_blog.php:332
+#: page_blog.php:439
+#: page_home-narrative.php:202
+msgid "more posts"
+msgstr ""
+
+#: page-team.php:6
+msgid "Our Team"
+msgstr ""
+
+#: page.php:74
+#: page_licenses.php:308
+#: page_support.php:105
+#: page_training.php:447
+msgid "More Links"
+msgstr ""
+
+#: page_casestudies.php:64
+msgid "Learn More"
+msgstr ""
+
+#: page_casestudies.php:91
+msgid "more case studies"
+msgstr ""
+
+#: page_events.php:43
+msgid "Upcoming Events"
+msgstr ""
+
+#: page_events.php:83
+#: page_events.php:157
+msgid "See Event Details"
+msgstr ""
+
+#: page_events.php:111
+#: page_events.php:185
+msgid "more events"
+msgstr ""
+
+#: page_faqs.php:77
+msgid "Focus Areas"
+msgstr ""
+
+#: page_faqs.php:132
+#: single-faqs-group.php:39
+msgid "Table of Contents"
+msgstr ""
+
+#: page_faqs.php:171
+#: page_faqs.php:194
+#: single-faqs-group.php:81
+#: single-faqs-group.php:104
+msgid "[edit]"
+msgstr ""
+
+#: page_faqs.php:228
+#: single-faqs-group.php:122
+msgid "Return to top"
+msgstr ""
+
+#: page_home-narrative.php:96
+msgid "Recently from the blog"
+msgstr ""
+
+#: page_team.php:74
+msgid "Board"
+msgstr ""
+
+#: page_team.php:105
+msgid "Emeritus"
+msgstr ""
+
+#: page_team.php:137
+msgid "Advisory Council"
+msgstr ""
+
+#: page_team.php:169
+msgid "Audit Committee"
+msgstr ""
+
+#: page_training-videos.php:48
+msgid "Foundations Courses"
+msgstr ""
+
+#: page_training-videos.php:64
+#: page_training-videos.php:110
+msgid "View Item"
+msgstr ""
+
+#: page_training-videos.php:94
+msgid "Free Videos"
+msgstr ""
+
+#: search.php:14
+msgid "Search for&hellip;"
+msgstr ""
+
+#: single-course.php:126
+msgid "Licenses & Attribution"
+msgstr ""
+
+#: single-course.php:196
+msgid "Previous"
+msgstr ""
+
+#: single-course.php:200
+msgid "Next"
+msgstr ""
+
+#: single-event.php:30
+msgid "Date & Time"
+msgstr ""
+
+#: single-event.php:34
+msgid "Location"
+msgstr ""
+
+#: single-event.php:39
+msgid "Register"
+msgstr ""
+
+#: single-event.php:45
+msgid "Event Details"
+msgstr ""
+
+#: single-event.php:49
+msgid "Download Event Files"
+msgstr ""
+
+#: single-event.php:59
+msgid "Meet the speakers"
+msgstr ""
+
+#: single-event.php:93
+msgid "View All Events"
+msgstr ""
+
+#: single-program.php:78
+msgid "On-going initiatives"
+msgstr ""
+
+#: single-program.php:120
+msgid "Related posts"
+msgstr ""
+
+#: single-project.php:87
+msgid "Related Posts"
+msgstr ""
+
+#. translators: %s: publication date.
+#: singular.php:116
+#, php-format
+msgid "Posted %s"
+msgstr ""
+
+#: singular.php:126
+msgid "Tags"
+msgstr ""
+
+#: singular.php:162
+msgid "You might also like&hellip;"
+msgstr ""

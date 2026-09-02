@@ -444,7 +444,7 @@
 <?php if (get_field('more_links_display')) : ?>
 <aside class="more-links">
     <nav>
-        <h2>More Links</h2>
+        <h2><?php esc_html_e( 'More Links', 'vocabulary' ); ?></h2>
         <?php the_field('more_links_content'); ?>
     </nav>
 </aside>
